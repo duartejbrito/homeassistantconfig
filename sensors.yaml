@@ -1,0 +1,8 @@
+  - platform: yr
+  - platform: plex
+    host: 192.168.1.20
+    port: 32400
+  - platform: speedtest
+    monitored_conditions:
+      - download
+      - upload

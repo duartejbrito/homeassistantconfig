@@ -1,0 +1,4 @@
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 100

@@ -1,0 +1,96 @@
+####################################################
+#                                                  #
+#                 HOME ASSISTANT                   #
+#                                                  #
+####################################################
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+####################################################
+#                                                  #
+#                     GENERAL                      #
+#                                                  #
+####################################################
+
+config:
+
+frontend:
+  javascript_version: latest
+
+http:
+  api_password: !secret api_password
+  ip_ban_enabled: true
+  login_attempts_threshold: 2
+
+logger:
+  default: error
+
+history:
+logbook:
+sun:
+map:
+
+####################################################
+#                                                  #
+#      LINKS TO INDIVUAL CONFIGURATION FILES       #
+#                                                  #
+####################################################
+
+group: !include groups.yaml
+binary_sensor: !include binary_sensor.yaml
+sensor: !include sensors.yaml
+media_player: !include media_players.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+
+####################################################
+#                                                  #
+#                   WEATHER                        #
+#                                                  #
+####################################################
+
+weather:
+  - platform: ipma 
+
+####################################################
+#                                                  #
+#                TRADFRI HUB                       #
+#                                                  #
+####################################################
+
+tradfri:
+  host: 192.168.1.96
+  allow_tradfri_groups: false
+
+####################################################
+#                                                  #
+#                     MQTT                         #
+#                                                  #
+####################################################
+
+mqtt:
+  broker: 192.168.1.20
+  port: 1883
+  client_id: home-assistant-1
+
+####################################################
+#                                                  #
+#                DEVICE TRACKER                    #
+#                                                  #
+####################################################
+
+device_tracker:
+  - platform: owntracks
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

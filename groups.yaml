@@ -1,0 +1,15 @@
+  Device Status:
+   view: yes
+   entities:
+     - group.devices
+     - group.network
+
+  Devices:
+    - binary_sensor.SyTeRGaming
+    - binary_sensor.Router
+    - binary_sensor.NAS
+
+  Network:
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload

@@ -1,0 +1,13 @@
+- alias: Turn On Light when Sun below horizon
+  trigger:
+  - entity_id: sun.sun
+    platform: state
+    to: below_horizon
+  condition:
+  - condition: state
+    entity_id: device_tracker.syterphone_syterphone
+    state: home
+  action:
+  - data:
+      entity_id: light.sala
+    service: light.turn_on
