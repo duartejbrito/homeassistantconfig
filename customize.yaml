@@ -14,8 +14,8 @@ sensor.battery_syterphone:
 device_tracker.shyva_galaxys6:
   friendly_name: Silvia Phone
 
-sensor.battery_silvia:
-  friendly_name: Silvia Phone Battery
+#sensor.battery_silvia:
+#  friendly_name: Silvia Phone Battery
 
 group.devices:
   friendly_name: Devices

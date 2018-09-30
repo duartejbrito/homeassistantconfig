@@ -1,20 +1,24 @@
   - platform: yr
+
   - platform: plex
     host: 192.168.1.20
     port: 32400
+
   - platform: speedtest
     monitored_conditions:
       - download
       - upload
+
   - platform: mqtt
     state_topic: "owntracks/syterphone/syterphone"
     name: "Battery SyTeRPhone"
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
     device_class: battery
-  - platform: mqtt
-    state_topic: "owntracks/shyva/galaxy6"
-    name: "Battery Silvia"
-    unit_of_measurement: "%"
-    value_template: '{{ value_json.batt }}'
-    device_class: battery
+
+ # - platform: mqtt
+ #   state_topic: "owntracks/shyva/galaxy6"
+ #   name: "Battery Silvia"
+ #   unit_of_measurement: "%"
+ #   value_template: '{{ value_json.batt }}'
+ #   device_class: battery
