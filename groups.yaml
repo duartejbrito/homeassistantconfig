@@ -20,4 +20,4 @@
     - device_tracker.syterphone_syterphone
     - sensor.battery_syterphone
     - device_tracker.shyva_galaxys6
-#    - sensor.battery_silvia
+    - sensor.battery_silvia
