@@ -18,3 +18,4 @@
 
   Phone Status:
     - device_tracker.syterphone_syterphone
+    - sensor.battery_syterphone
