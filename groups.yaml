@@ -7,9 +7,10 @@
      - group.phone_status
 
   Devices:
-    - binary_sensor.SyTeRGaming
-    - binary_sensor.Router
-    - binary_sensor.NAS
+    - binary_sensor.sytergaming
+    - binary_sensor.router
+    - binary_sensor.nas
+    - binary_sensor.duarte_phone
 
   Network:
     entities:
