@@ -2,3 +2,19 @@
     latitude: !secret latitude
     longitude: !secret longitude
     radius: 100
+  - name: Silvia Work
+    latitude: !secret latitudeSilviaWork
+    longitude: !secret longitudeSilviaWork
+    radius: 100
+  - name: Duarte Work
+    latitude: !secret latitudeDuarteWork
+    longitude: !secret longitudeDuarteWork
+    radius: 100
+  - name: Rita School
+    latitude: !secret latitudeRitaSchool
+    longitude: !secret longitudeRitaSchool
+    radius: 100
+  - name: Carolina School
+    latitude: !secret latitudeCarolinaSchool
+    longitude: !secret longitudeCarolinaSchool
+    radius: 100
