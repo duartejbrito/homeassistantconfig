@@ -1,8 +1,10 @@
   Device Status:
    view: yes
+   icon: mdi:home
    entities:
      - group.devices
      - group.network
+     - group.phone_status
 
   Devices:
     - binary_sensor.SyTeRGaming
@@ -13,3 +15,6 @@
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
+
+  Phone Status:
+    - device_tracker.syterphone_syterphone
