@@ -6,3 +6,9 @@
     monitored_conditions:
       - download
       - upload
+  - platform: mqtt
+    state_topic: "owntracks/syterphone/syterphone"
+    name: "Battery SyTeRPhone"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+    device_class: battery
