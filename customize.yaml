@@ -5,16 +5,16 @@ binary_sensor.Router:
 binary_sensor.NAS:
   icon: mdi:nas
 
-device_tracker.syterphone_syterphone:
+device_tracker.syter_galaxys8:
   friendly_name: Duarte Phone
 
-sensor.battery_syterphone:
+sensor.battery_syter_galaxys8:
   friendly_name: Duarte Phone Battery
 
 device_tracker.shyva_galaxys6:
   friendly_name: Silvia Phone
 
-sensor.battery_silvia:
+sensor.battery_shyva_galaxys6:
   friendly_name: Silvia Phone Battery
 
 group.devices:

@@ -10,15 +10,15 @@
       - upload
 
   - platform: mqtt
-    state_topic: "owntracks/syterphone/syterphone"
-    name: "Battery SyTeRPhone"
+    state_topic: "owntracks/syter/galaxys8"
+    name: "Battery SyTeR GalaxyS8"
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
     device_class: battery
 
   - platform: mqtt
     state_topic: "owntracks/shyva/galaxys6"
-    name: "Battery Silvia"
+    name: "Battery Shyva GalaxyS6"
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
     device_class: battery
