@@ -35,3 +35,13 @@
   - data:
       entity_id: light.sala
     service: light.turn_on
+
+- alias: Turn off light
+  trigger:
+  - at: 00:30:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: light.sala
+    service: light.turn_off
