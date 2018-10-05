@@ -1,0 +1,6 @@
+  - platform: mqtt_json
+    devices:
+     s8: zanzito/s8/location
+    track_new_devices: false
+    interval_seconds: 10
+    consider_home: 20

@@ -7,7 +7,7 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: device_tracker.syter_galaxys8
+        entity_id: device_tracker.s8
         state: home
       - condition: state
         entity_id: device_tracker.shyva_galaxys6
@@ -19,7 +19,7 @@
 
 - alias: Turn On Light when arrive home
   trigger:
-  - entity_id: device_tracker.syter_galaxys8
+  - entity_id: device_tracker.s8
     event: enter
     platform: zone
     zone: zone.home
