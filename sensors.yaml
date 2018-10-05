@@ -22,3 +22,9 @@
     unit_of_measurement: '%'
     retain: true
     device_class: battery
+
+  - platform: mqtt
+    state_topic: "zanzito/s8/device_info"
+    name: "s8currentwifi"
+    value_template: '{{ value_json.current_wifi }}'
+    retain: true
