@@ -25,6 +25,34 @@
 
   - platform: mqtt
     state_topic: "zanzito/s8/device_info"
-    name: "s8currentwifi"
-    value_template: '{{ value_json.current_wifi }}'
+    name: "s8deviceinfo"
+    value_template: '{{ value_json.device_info }}'
     retain: true
+    json_attributes:
+      - charge_type
+      - battery_charging
+      - current_foreground_app
+      - screen_on
+      - screen_locked
+      - screen_orientation
+      - current_wifi
+      - current_operator
+
+  - platform: template
+    sensors:
+      s8charge_type:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.charge_type }}'
+      s8battery_charging:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.battery_charging }}'
+      s8current_foreground_app:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.current_foreground_app }}'
+      s8screen_on:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.screen_on }}'
+      s8screen_locked:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.screen_locked }}'
+      s8screen_orientation:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.screen_orientation }}'
+      s8currentwifi:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.current_wifi }}'
+      s8current_operator:
+        value_template: '{{ states.sensor.s8deviceinfo.attributes.current_operator }}'

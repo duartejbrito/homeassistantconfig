@@ -20,5 +20,13 @@
   Phone Status:
     - device_tracker.s8
     - sensor.s8batterylevel
+    - sensor.s8charge_type
+    - sensor.s8battery_charging
+    - sensor.s8current_foreground_app
+    - sensor.s8screen_on
+    - sensor.s8screen_locked
+    - sensor.s8screen_orientation
+    - sensor.s8currentwifi
+    - sensor.s8current_operator
     - device_tracker.shyva_galaxys6
     - sensor.battery_shyva_galaxys6
