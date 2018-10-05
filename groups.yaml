@@ -28,5 +28,6 @@
     - sensor.s8screen_orientation
     - sensor.s8currentwifi
     - sensor.s8current_operator
+    - camera.s8_cam
     - device_tracker.shyva_galaxys6
     - sensor.battery_shyva_galaxys6
