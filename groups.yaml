@@ -6,6 +6,7 @@
      - group.network
      - group.duarte_phone_status
      - group.silvia_phone_status
+     - group.beatriz_phone_status
 
   Devices:
     - binary_sensor.sytergaming
@@ -43,3 +44,16 @@
     - sensor.s6currentwifi
     - sensor.s6current_operator
     - camera.s6_cam
+
+  Beatriz Phone Status:
+    - device_tracker.j5
+    - sensor.j5batterylevel
+    - sensor.j5charge_type
+    - sensor.j5battery_charging
+    - sensor.j5current_foreground_app
+    - sensor.j5screen_on
+    - sensor.j5screen_locked
+    - sensor.j5screen_orientation
+    - sensor.j5currentwifi
+    - sensor.j5current_operator
+    - camera.j5_cam

@@ -17,5 +17,11 @@ device_tracker.s6:
 sensor.s6batterylevel:
   friendly_name: Silvia Phone Battery
 
+device_tracker.j5:
+  friendly_name: Beatriz Phone
+
+sensor.j5batterylevel:
+  friendly_name: Beatriz Phone Battery
+
 group.devices:
   friendly_name: Devices

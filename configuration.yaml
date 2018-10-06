@@ -97,6 +97,10 @@ camera:
     platform: generic
     still_image_url: https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-s-marker+285A98({{ states.device_tracker.s6.attributes.longitude }},{{ states.device_tracker.s6.attributes.latitude }})/{{ states.device_tracker.s6.attributes.longitude }},{{ states.device_tracker.s6.attributes.latitude }},16,0/500x500@2x?access_token=pk.eyJ1IjoiZHVhcnRlamJyaXRvIiwiYSI6ImNqbXZ0eXdqbDE0ZDgzd3F5YnozaTgxc3IifQ.ryTc2GBJkAhlyxnc7n4yWA&logo=false
     limit_refetch_to_url_change: true
+  - name: j5_cam
+    platform: generic
+    still_image_url: https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-s-marker+285A98({{ states.device_tracker.j5.attributes.longitude }},{{ states.device_tracker.j5.attributes.latitude }})/{{ states.device_tracker.j5.attributes.longitude }},{{ states.device_tracker.j5.attributes.latitude }},16,0/500x500@2x?access_token=pk.eyJ1IjoiZHVhcnRlamJyaXRvIiwiYSI6ImNqbXZ0eXdqbDE0ZDgzd3F5YnozaTgxc3IifQ.ryTc2GBJkAhlyxnc7n4yWA&logo=false
+    limit_refetch_to_url_change: true
 
 panel_iframe:
   configurator:

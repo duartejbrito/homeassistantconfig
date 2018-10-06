@@ -24,6 +24,13 @@
     device_class: battery
 
   - platform: mqtt
+    state_topic: "zanzito/j5/battery_level"
+    name: "j5batterylevel"
+    unit_of_measurement: '%'
+    retain: true
+    device_class: battery
+
+  - platform: mqtt
     state_topic: "zanzito/s8/device_info"
     name: "s8deviceinfo"
     value_template: '{{ value_json.device_info }}'
@@ -41,6 +48,21 @@
   - platform: mqtt
     state_topic: "zanzito/s6/device_info"
     name: "s6deviceinfo"
+    value_template: '{{ value_json.device_info }}'
+    retain: true
+    json_attributes:
+      - charge_type
+      - battery_charging
+      - current_foreground_app
+      - screen_on
+      - screen_locked
+      - screen_orientation
+      - current_wifi
+      - current_operator
+
+  - platform: mqtt
+    state_topic: "zanzito/j5/device_info"
+    name: "j5deviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
     json_attributes:
@@ -87,3 +109,19 @@
         value_template: '{{ states.sensor.s6deviceinfo.attributes.current_wifi }}'
       s6current_operator:
         value_template: '{{ states.sensor.s6deviceinfo.attributes.current_operator }}'
+      j5charge_type:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.charge_type }}'
+      j5battery_charging:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.battery_charging }}'
+      j5current_foreground_app:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.current_foreground_app }}'
+      j5screen_on:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.screen_on }}'
+      j5screen_locked:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.screen_locked }}'
+      j5screen_orientation:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.screen_orientation }}'
+      j5currentwifi:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.current_wifi }}'
+      j5current_operator:
+        value_template: '{{ states.sensor.j5deviceinfo.attributes.current_operator }}'
