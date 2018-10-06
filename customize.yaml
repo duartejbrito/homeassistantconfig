@@ -7,21 +7,72 @@ binary_sensor.NAS:
 
 device_tracker.s8:
   friendly_name: Duarte Phone
-
 sensor.s8batterylevel:
-  friendly_name: Duarte Phone Battery
+  friendly_name: Battery
+sensor.s8charge_type:
+  friendly_name: Charge Type
+sensor.s8battery_charging:
+  friendly_name: Charging
+sensor.s8current_foreground_app:
+  friendly_name: App
+sensor.s8screen_on:
+  friendly_name: Screen On
+sensor.s8screen_locked:
+  friendly_name: Locked
+sensor.s8screen_orientation:
+  friendly_name: Orientation
+sensor.s8currentwifi:
+  friendly_name: Wifi
+sensor.s8current_operator:
+  friendly_name: Operator
+camera.s8_cam:
+  friendly_name: Location
 
 device_tracker.s6:
   friendly_name: Silvia Phone
-
 sensor.s6batterylevel:
-  friendly_name: Silvia Phone Battery
+  friendly_name: Battery
+sensor.s6charge_type:
+  friendly_name: Charge Type
+sensor.s6battery_charging:
+  friendly_name: Charging
+sensor.s6current_foreground_app:
+  friendly_name: App
+sensor.s6screen_on:
+  friendly_name: Screen On
+sensor.s6screen_locked:
+  friendly_name: Locked
+sensor.s6screen_orientation:
+  friendly_name: Orientation
+sensor.s6currentwifi:
+  friendly_name: Wifi
+sensor.s6current_operator:
+  friendly_name: Operator
+camera.s6_cam:
+  friendly_name: Location
 
 device_tracker.j5:
   friendly_name: Beatriz Phone
-
 sensor.j5batterylevel:
-  friendly_name: Beatriz Phone Battery
+  friendly_name: Battery
+sensor.j5charge_type:
+  friendly_name: Charge Type
+sensor.j5battery_charging:
+  friendly_name: Charging
+sensor.j5current_foreground_app:
+  friendly_name: App
+sensor.j5screen_on:
+  friendly_name: Screen On
+sensor.j5screen_locked:
+  friendly_name: Locked
+sensor.j5screen_orientation:
+  friendly_name: Orientation
+sensor.j5currentwifi:
+  friendly_name: Wifi
+sensor.j5current_operator:
+  friendly_name: Operator
+camera.j5_cam:
+  friendly_name: Location
 
 group.devices:
   friendly_name: Devices
