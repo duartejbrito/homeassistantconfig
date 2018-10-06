@@ -4,6 +4,11 @@
    entities:
      - group.devices
      - group.network
+
+  Phones Status:
+   view: yes
+   icon: mdi:cellphone-android
+   entities:
      - group.duarte_phone_status
      - group.silvia_phone_status
      - group.beatriz_phone_status
