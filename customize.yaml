@@ -11,10 +11,10 @@ device_tracker.s8:
 sensor.s8batterylevel:
   friendly_name: Duarte Phone Battery
 
-device_tracker.shyva_galaxys6:
+device_tracker.s6:
   friendly_name: Silvia Phone
 
-sensor.battery_shyva_galaxys6:
+sensor.s6batterylevel:
   friendly_name: Silvia Phone Battery
 
 group.devices:
