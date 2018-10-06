@@ -4,7 +4,8 @@
    entities:
      - group.devices
      - group.network
-     - group.phone_status
+     - group.duarte_phone_status
+     - group.silvia_phone_status
 
   Devices:
     - binary_sensor.sytergaming
@@ -17,7 +18,7 @@
       - sensor.speedtest_download
       - sensor.speedtest_upload
 
-  Phone Status:
+  Duarte Phone Status:
     - device_tracker.s8
     - sensor.s8batterylevel
     - sensor.s8charge_type
@@ -29,5 +30,16 @@
     - sensor.s8currentwifi
     - sensor.s8current_operator
     - camera.s8_cam
-    - device_tracker.shyva_galaxys6
-    - sensor.battery_shyva_galaxys6
+
+  Silvia Phone Status:
+    - device_tracker.s6
+    - sensor.s6batterylevel
+    - sensor.s6charge_type
+    - sensor.s6battery_charging
+    - sensor.s6current_foreground_app
+    - sensor.s6screen_on
+    - sensor.s6screen_locked
+    - sensor.s6screen_orientation
+    - sensor.s6currentwifi
+    - sensor.s6current_operator
+    - camera.s6_cam

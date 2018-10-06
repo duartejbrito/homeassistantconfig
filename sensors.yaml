@@ -10,13 +10,6 @@
       - upload
 
   - platform: mqtt
-    state_topic: "owntracks/shyva/galaxys6"
-    name: "Battery Shyva GalaxyS6"
-    unit_of_measurement: "%"
-    value_template: '{{ value_json.batt }}'
-    device_class: battery
-
-  - platform: mqtt
     state_topic: "zanzito/s8/battery_level"
     name: "s8batterylevel"
     unit_of_measurement: '%'
@@ -24,8 +17,30 @@
     device_class: battery
 
   - platform: mqtt
+    state_topic: "zanzito/s6/battery_level"
+    name: "s6batterylevel"
+    unit_of_measurement: '%'
+    retain: true
+    device_class: battery
+
+  - platform: mqtt
     state_topic: "zanzito/s8/device_info"
     name: "s8deviceinfo"
+    value_template: '{{ value_json.device_info }}'
+    retain: true
+    json_attributes:
+      - charge_type
+      - battery_charging
+      - current_foreground_app
+      - screen_on
+      - screen_locked
+      - screen_orientation
+      - current_wifi
+      - current_operator
+
+  - platform: mqtt
+    state_topic: "zanzito/s6/device_info"
+    name: "s6deviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
     json_attributes:
@@ -56,3 +71,19 @@
         value_template: '{{ states.sensor.s8deviceinfo.attributes.current_wifi }}'
       s8current_operator:
         value_template: '{{ states.sensor.s8deviceinfo.attributes.current_operator }}'
+      s6charge_type:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.charge_type }}'
+      s6battery_charging:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.battery_charging }}'
+      s6current_foreground_app:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.current_foreground_app }}'
+      s6screen_on:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.screen_on }}'
+      s6screen_locked:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.screen_locked }}'
+      s6screen_orientation:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.screen_orientation }}'
+      s6currentwifi:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.current_wifi }}'
+      s6current_operator:
+        value_template: '{{ states.sensor.s6deviceinfo.attributes.current_operator }}'
