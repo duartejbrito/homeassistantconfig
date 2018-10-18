@@ -51,3 +51,28 @@
         - light.sala
         - light.yeelight_color_bulb
     service: light.turn_off
+
+- alias: Leave home
+  trigger:
+  - entity_id: device_tracker.s8
+    event: leave
+    platform: zone
+    zone: zone.home
+  - entity_id: device_tracker.s6
+    event: leave
+    platform: zone
+    zone: zone.home
+  condition:
+  - condition: state
+    entity_id: device_tracker.s8
+    state: not_home
+  - condition: state
+    entity_id: device_tracker.s6
+    state: not_home
+  action:
+  - data:
+      entity_id: 
+        - light.sala
+        - light.yeelight_color_bulb
+        - light.yeelight_color_bulb_2
+    service: light.turn_off
