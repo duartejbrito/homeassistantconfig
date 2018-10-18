@@ -1,4 +1,4 @@
-- alias: Turn On Light when Sun below horizon
+- alias: Sun below horizon
   trigger:
   - entity_id: sun.sun
     platform: state
@@ -10,20 +10,22 @@
         entity_id: device_tracker.s8
         state: home
       - condition: state
-        entity_id: device_tracker.shyva_galaxys6
+        entity_id: device_tracker.s6
         state: home  
   action:
   - data:
-      entity_id: light.sala
+      entity_id:
+        - light.sala
+        - light.yeelight_color_bulb
     service: light.turn_on
 
-- alias: Turn On Light when arrive home
+- alias: Arrive home below horizon
   trigger:
   - entity_id: device_tracker.s8
     event: enter
     platform: zone
     zone: zone.home
-  - entity_id: device_tracker.shyva_galaxys6
+  - entity_id: device_tracker.s6
     event: enter
     platform: zone
     zone: zone.home
@@ -33,12 +35,14 @@
     state: below_horizon
   action:
   - data:
-      entity_id: light.sala
+      entity_id:
+        - light.sala
+        - light.yeelight_color_bulb
     service: light.turn_on
 
-- alias: Turn off light
+- alias: Turn off lights
   trigger:
-  - at: 00:30:00
+  - at: 00:00:00
     platform: time
   condition: []
   action:

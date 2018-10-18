@@ -4,6 +4,7 @@
    entities:
      - group.devices
      - group.network
+     - group.all_lights
 
   Phones Status:
    view: yes
