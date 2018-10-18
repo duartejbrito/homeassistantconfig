@@ -1,4 +1,5 @@
-- alias: Movie Time
+movie_time:
+  alias: Movie Time
   sequence:
   - alias: ''
     data:
@@ -8,7 +9,8 @@
       - light.sala
     service: light.turn_on
 
-- alias: Turn on Lights Living Room
+turn_on_lights_living_room:
+  alias: Turn on Lights Living Room
   sequence:
   - alias: ''
     data:
@@ -18,7 +20,8 @@
       - light.sala
     service: light.turn_on
 
-- alias: Turn off all Lights
+turn_off_all_lights:
+  alias: Turn off all Lights
   sequence:
   - alias: ''
     data:
