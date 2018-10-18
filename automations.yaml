@@ -17,6 +17,7 @@
       entity_id:
         - light.sala
         - light.yeelight_color_bulb
+      brightness_pct: 100
     service: light.turn_on
 
 - alias: Arrive home below horizon
@@ -38,6 +39,7 @@
       entity_id:
         - light.sala
         - light.yeelight_color_bulb
+      brightness_pct: 100
     service: light.turn_on
 
 - alias: Turn off lights
