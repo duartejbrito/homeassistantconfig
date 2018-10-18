@@ -1,0 +1,9 @@
+- alias: MovieTime
+  sequence:
+  - alias: ''
+    data:
+      brightness_pct: 20
+      entity_id:
+      - light.yeelight_color_bulb
+      - light.sala
+    service: light.turn_on
