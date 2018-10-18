@@ -113,5 +113,7 @@ light:
     devices:
       192.168.1.156:
         name: Yeelight Color Bulb
+        save_on_change: True
       192.168.1.157:
         name: Yeelight Color Bulb 2
+        save_on_change: True
