@@ -107,3 +107,9 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://hassio-config.duartebrito.pw/
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.1.156:
+        name: Living Room
