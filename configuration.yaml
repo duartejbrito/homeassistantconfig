@@ -112,4 +112,6 @@ light:
   - platform: yeelight
     devices:
       192.168.1.156:
-        name: Living Room
+        name: Yeelight Color Bulb
+      192.168.1.157:
+        name: Yeelight Color Bulb 2
