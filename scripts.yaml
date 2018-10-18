@@ -1,4 +1,4 @@
-- alias: MovieTime
+- alias: Movie Time
   sequence:
   - alias: ''
     data:
@@ -7,3 +7,23 @@
       - light.yeelight_color_bulb
       - light.sala
     service: light.turn_on
+
+- alias: Turn on Lights Living Room
+  sequence:
+  - alias: ''
+    data:
+      brightness_pct: 100
+      entity_id:
+      - light.yeelight_color_bulb
+      - light.sala
+    service: light.turn_on
+
+- alias: Turn off all Lights
+  sequence:
+  - alias: ''
+    data:
+      entity_id:
+      - light.yeelight_color_bulb
+      - light.yeelight_color_bulb_2
+      - light.sala
+    service: light.turn_off
