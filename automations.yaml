@@ -44,4 +44,5 @@
   action:
   - data:
       entity_id: light.sala
+      entity_id: light.yeelight_color_bulb
     service: light.turn_off
