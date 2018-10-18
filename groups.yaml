@@ -1,11 +1,12 @@
-  Device Status:
+  default_view:
    view: yes
    icon: mdi:home
    entities:
+     - weather.lisboa
      - group.devices
      - group.network
-     - group.lights
-     - weather.lisboa
+     - group.all_lights
+     - group.all_automations
      - media_player.samsung_tv_remote
 
   Phones Status:
@@ -65,8 +66,3 @@
     - sensor.j5currentwifi
     - sensor.j5current_operator
     - camera.j5_cam
-
-  Lights:
-    - light.sala
-    - light.yeelight_color_bulb
-    - light.yeelight_color_bulb_2
