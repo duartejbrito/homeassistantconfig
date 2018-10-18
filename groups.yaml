@@ -4,7 +4,8 @@
    entities:
      - group.devices
      - group.network
-     - group.all_lights
+     - group.lights
+     - weather.lisboa
 
   Phones Status:
    view: yes
@@ -63,3 +64,8 @@
     - sensor.j5currentwifi
     - sensor.j5current_operator
     - camera.j5_cam
+
+  Lights:
+    - light.sala
+    - light.yeelight_color_bulb
+    - light.yeelight_color_bulb_2
