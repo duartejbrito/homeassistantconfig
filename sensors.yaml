@@ -131,3 +131,15 @@
     api_key: !secret google_travel_api
     origin: device_tracker.s8
     destination: zone.duarte_work
+
+  - platform: google_travel_time
+    name: s8tocarolina_school
+    api_key: !secret google_travel_api
+    origin: device_tracker.s8
+    destination: zone.carolina_school
+
+  - platform: google_travel_time
+    name: s8torita_school
+    api_key: !secret google_travel_api
+    origin: device_tracker.s8
+    destination: zone.rita_school

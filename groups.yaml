@@ -9,6 +9,7 @@
      - group.all_automations
      - group.all_scripts
      - media_player.samsung_tv_remote
+     - group.traffic
 
   Phones Status:
    view: yes
@@ -67,3 +68,8 @@
     - sensor.j5currentwifi
     - sensor.j5current_operator
     - camera.j5_cam
+
+  Traffic:
+    - sensor.s8towork
+    - sensor.s8tocarolina_school
+    - sensor.s8torita_school
