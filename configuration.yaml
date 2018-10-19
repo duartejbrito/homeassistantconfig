@@ -91,7 +91,7 @@ mqtt:
 camera:
   - name: s8_cam
     platform: generic
-    still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.s8.attributes.latitude }},{{ states.device_tracker.s8.attributes.longitude }}&zoom=16&size=500x500&maptype=roadmap&format=png&visual_refresh=true&markers=size:small%7Ccolor:blue%7Clabel:%7CAS+MINHAS+CENAS&key=AIzaSyASLDNzi8IF6zG_4h1D1poLjMs30EpgC4k
+    still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.s8.attributes.latitude }},{{ states.device_tracker.s8.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=label:P%7C{{ states.device_tracker.s8.attributes.latitude }},{{ states.device_tracker.s8.attributes.longitude }}&key=AIzaSyASLDNzi8IF6zG_4h1D1poLjMs30EpgC4k
     limit_refetch_to_url_change: true
   - name: s6_cam
     platform: generic
