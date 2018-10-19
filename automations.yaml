@@ -1,80 +1,80 @@
-- alias: 'Sun below horizon'
-  trigger:
-  - entity_id: sun.sun
-    platform: state
-    to: below_horizon
-  condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: device_tracker.s8
-        state: home
-      - condition: state
-        entity_id: device_tracker.s6
-        state: home  
-  action:
-  - data:
-      entity_id:
-        - light.sala
-        - light.yeelight_color_bulb
-      brightness_pct: 100
-    service: light.turn_on
-
-- alias: Arrive home below horizon
-  trigger:
-  - entity_id: device_tracker.s8
-    event: enter
-    platform: zone
-    zone: zone.home
-  - entity_id: device_tracker.s6
-    event: enter
-    platform: zone
-    zone: zone.home
-  condition:
-  - condition: state
-    entity_id: sun.sun
-    state: below_horizon
-  action:
-  - data:
-      entity_id:
-        - light.sala
-        - light.yeelight_color_bulb
-      brightness_pct: 100
-    service: light.turn_on
-
-- alias: Turn off lights
-  trigger:
-  - at: 00:00:00
-    platform: time
-  condition: []
-  action:
-  - data:
-      entity_id: 
-        - light.sala
-        - light.yeelight_color_bulb
-    service: light.turn_off
-
-- alias: Leave home
-  trigger:
-  - entity_id: device_tracker.s8
-    event: leave
-    platform: zone
-    zone: zone.home
-  - entity_id: device_tracker.s6
-    event: leave
-    platform: zone
-    zone: zone.home
-  condition:
-  - condition: state
-    entity_id: device_tracker.s8
-    state: not_home
-  - condition: state
-    entity_id: device_tracker.s6
-    state: not_home
-  action:
-  - data:
-      entity_id: 
-        - light.sala
-        - light.yeelight_color_bulb
-        - light.yeelight_color_bulb_2
-    service: light.turn_off
+  - alias: 'Sun below horizon'
+    trigger:
+    - entity_id: sun.sun
+      platform: state
+      to: below_horizon
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: device_tracker.s8
+          state: home
+        - condition: state
+          entity_id: device_tracker.s6
+          state: home  
+    action:
+    - data:
+        entity_id:
+          - light.sala
+          - light.yeelight_color_bulb
+        brightness_pct: 100
+      service: light.turn_on
+  
+  - alias: Arrive home below horizon
+    trigger:
+    - entity_id: device_tracker.s8
+      event: enter
+      platform: zone
+      zone: zone.home
+    - entity_id: device_tracker.s6
+      event: enter
+      platform: zone
+      zone: zone.home
+    condition:
+    - condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    action:
+    - data:
+        entity_id:
+          - light.sala
+          - light.yeelight_color_bulb
+        brightness_pct: 100
+      service: light.turn_on
+  
+  - alias: Turn off lights
+    trigger:
+    - at: 00:00:00
+      platform: time
+    condition: []
+    action:
+    - data:
+        entity_id: 
+          - light.sala
+          - light.yeelight_color_bulb
+      service: light.turn_off
+  
+  - alias: Leave home
+    trigger:
+    - entity_id: device_tracker.s8
+      event: leave
+      platform: zone
+      zone: zone.home
+    - entity_id: device_tracker.s6
+      event: leave
+      platform: zone
+      zone: zone.home
+    condition:
+    - condition: state
+      entity_id: device_tracker.s8
+      state: not_home
+    - condition: state
+      entity_id: device_tracker.s6
+      state: not_home
+    action:
+    - data:
+        entity_id: 
+          - light.sala
+          - light.yeelight_color_bulb
+          - light.yeelight_color_bulb_2
+      service: light.turn_off
