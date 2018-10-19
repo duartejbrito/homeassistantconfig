@@ -1,5 +1,4 @@
-sun_below_horizon:
-  alias: Sun below horizon
+- alias: 'Sun below horizon'
   trigger:
   - entity_id: sun.sun
     platform: state
@@ -21,8 +20,7 @@ sun_below_horizon:
       brightness_pct: 100
     service: light.turn_on
 
-arrive_home_below_horizon:
-  alias: Arrive home below horizon
+- alias: Arrive home below horizon
   trigger:
   - entity_id: device_tracker.s8
     event: enter
@@ -44,8 +42,7 @@ arrive_home_below_horizon:
       brightness_pct: 100
     service: light.turn_on
 
-turn_off_lights:
-  alias: Turn off lights
+- alias: Turn off lights
   trigger:
   - at: 00:00:00
     platform: time
@@ -57,8 +54,7 @@ turn_off_lights:
         - light.yeelight_color_bulb
     service: light.turn_off
 
-leave_home:
-  alias: Leave home
+- alias: Leave home
   trigger:
   - entity_id: device_tracker.s8
     event: leave
