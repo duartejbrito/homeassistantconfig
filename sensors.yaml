@@ -129,5 +129,5 @@
   - platform: google_travel_time
     name: s8tohome
     api_key: !secret google_travel_api
-    origin: device_tracker.s8
-    destination: zone.duarte_work
+    origin: Estremoz
+    destination: Lisboa
