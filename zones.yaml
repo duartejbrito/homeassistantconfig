@@ -2,19 +2,28 @@
     latitude: !secret latitude
     longitude: !secret longitude
     radius: 100
+    icon: mdi:home
+
   - name: Silvia Work
     latitude: !secret latitudeSilviaWork
     longitude: !secret longitudeSilviaWork
     radius: 100
+    icon: mdi:domain
+
   - name: Duarte Work
     latitude: !secret latitudeDuarteWork
     longitude: !secret longitudeDuarteWork
     radius: 100
+    icon: mdi:domain
+
   - name: Rita School
     latitude: !secret latitudeRitaSchool
     longitude: !secret longitudeRitaSchool
     radius: 100
+    icon: mdi:school
+
   - name: Carolina School
     latitude: !secret latitudeCarolinaSchool
     longitude: !secret longitudeCarolinaSchool
     radius: 100
+    icon: mdi:school
