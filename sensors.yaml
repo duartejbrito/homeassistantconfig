@@ -127,7 +127,7 @@
         value_template: '{{ states.sensor.j5deviceinfo.attributes.current_operator }}'
 
   - platform: google_travel_time
-    name: s8tohome
+    name: s8towork
     api_key: !secret google_travel_api
-    origin: Estremoz
-    destination: Lisboa
+    origin: device_tracker.s8
+    destination: zone.duarte_work
