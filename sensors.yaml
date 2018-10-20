@@ -4,10 +4,10 @@
     host: 192.168.1.20
     port: 32400
 
-  - platform: speedtest
-    monitored_conditions:
-      - download
-      - upload
+#  - platform: speedtest
+#    monitored_conditions:
+#      - download
+#      - upload
 
   - platform: mqtt
     state_topic: "zanzito/s8/battery_level"
@@ -126,20 +126,26 @@
       j5current_operator:
         value_template: '{{ states.sensor.j5deviceinfo.attributes.current_operator }}'
 
-  - platform: google_travel_time
-    name: s8towork
-    api_key: !secret google_travel_api
-    origin: device_tracker.s8
-    destination: zone.duarte_work
+#  - platform: google_travel_time
+#    name: s8towork
+#    api_key: !secret google_travel_api
+#    origin: device_tracker.s8
+#    destination: zone.duarte_work
+#    options: 
+#      arrival_time: 09:00:00
 
-  - platform: google_travel_time
-    name: s8tocarolina_school
-    api_key: !secret google_travel_api
-    origin: device_tracker.s8
-    destination: zone.carolina_school
+#  - platform: google_travel_time
+#    name: s8tocarolina_school_morning
+#    api_key: !secret google_travel_api
+#    origin: device_tracker.s8
+#    destination: zone.carolina_school
+#    options: 
+#      arrival_time: 09:30:00
 
-  - platform: google_travel_time
-    name: s8torita_school
-    api_key: !secret google_travel_api
-    origin: device_tracker.s8
-    destination: zone.rita_school
+#  - platform: google_travel_time
+#    name: s8torita_school_morning
+#    api_key: !secret google_travel_api
+#    origin: device_tracker.s8
+#    destination: zone.rita_school
+#    options: 
+#      arrival_time: 09:00:00

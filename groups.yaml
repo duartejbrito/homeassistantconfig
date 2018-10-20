@@ -4,12 +4,12 @@
    entities:
      - weather.lisboa
      - group.devices
-     - group.network
+#     - group.network
      - group.all_lights
      - group.all_automations
      - group.all_scripts
      - media_player.samsung_tv_remote
-     - group.traffic
+#     - group.traffic
 
   Phones Status:
    view: yes
@@ -25,10 +25,10 @@
     - binary_sensor.nas
     - binary_sensor.duarte_phone
 
-  Network:
-    entities:
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
+#  Network:
+#    entities:
+#      - sensor.speedtest_download
+#      - sensor.speedtest_upload
 
   Duarte Phone Status:
     - device_tracker.s8
@@ -69,7 +69,7 @@
     - sensor.j5current_operator
     - camera.j5_cam
 
-  Traffic:
-    - sensor.s8towork
-    - sensor.s8tocarolina_school
-    - sensor.s8torita_school
+#  Traffic:
+#    - sensor.s8towork
+#    - sensor.s8tocarolina_school
+#    - sensor.s8torita_school
