@@ -117,3 +117,6 @@ light:
       192.168.1.157:
         name: Yeelight Color Bulb 2
         save_on_change: True
+
+xiaomi_aqara:
+  interface: '192.168.1.248'
