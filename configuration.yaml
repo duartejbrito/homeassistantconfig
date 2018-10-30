@@ -121,4 +121,5 @@ light:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - key: 53kvq9nyp80glbcz
+    - host: 192.168.1.248
+      key: 53kvq9nyp80glbcz
