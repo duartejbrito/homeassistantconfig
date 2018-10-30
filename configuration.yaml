@@ -121,4 +121,4 @@ light:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - key: 7oddnr6892dtrqzh
+    - key: 53kvq9nyp80glbcz
