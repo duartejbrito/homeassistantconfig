@@ -120,5 +120,8 @@ light:
 
 xiaomi_aqara:
   discovery_retry: 10
+  interface: '192.168.1.30'
   gateways:
-    - key: 53kvq9nyp80glbcz
+    - mac: '7C:49:EB:19:35:81'
+      host: '192.168.1.248'
+      key: '53kvq9nyp80glbcz'

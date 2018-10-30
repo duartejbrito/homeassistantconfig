@@ -33,40 +33,40 @@
   Duarte Phone Status:
     - device_tracker.s8
     - sensor.s8batterylevel
-    - sensor.s8charge_type
-    - sensor.s8battery_charging
-    - sensor.s8current_foreground_app
-    - sensor.s8screen_on
-    - sensor.s8screen_locked
-    - sensor.s8screen_orientation
-    - sensor.s8currentwifi
-    - sensor.s8current_operator
+#    - sensor.s8charge_type
+#    - sensor.s8battery_charging
+#    - sensor.s8current_foreground_app
+#    - sensor.s8screen_on
+#    - sensor.s8screen_locked
+#    - sensor.s8screen_orientation
+#    - sensor.s8currentwifi
+#    - sensor.s8current_operator
     - camera.s8_cam
 
   Silvia Phone Status:
     - device_tracker.s6
     - sensor.s6batterylevel
-    - sensor.s6charge_type
-    - sensor.s6battery_charging
-    - sensor.s6current_foreground_app
-    - sensor.s6screen_on
-    - sensor.s6screen_locked
-    - sensor.s6screen_orientation
-    - sensor.s6currentwifi
-    - sensor.s6current_operator
+#    - sensor.s6charge_type
+#    - sensor.s6battery_charging
+#    - sensor.s6current_foreground_app
+#    - sensor.s6screen_on
+#    - sensor.s6screen_locked
+#    - sensor.s6screen_orientation
+#    - sensor.s6currentwifi
+#    - sensor.s6current_operator
     - camera.s6_cam
 
   Beatriz Phone Status:
     - device_tracker.j5
     - sensor.j5batterylevel
-    - sensor.j5charge_type
-    - sensor.j5battery_charging
-    - sensor.j5current_foreground_app
-    - sensor.j5screen_on
-    - sensor.j5screen_locked
-    - sensor.j5screen_orientation
-    - sensor.j5currentwifi
-    - sensor.j5current_operator
+#    - sensor.j5charge_type
+#    - sensor.j5battery_charging
+#    - sensor.j5current_foreground_app
+#    - sensor.j5screen_on
+#    - sensor.j5screen_locked
+#    - sensor.j5screen_orientation
+#    - sensor.j5currentwifi
+#    - sensor.j5current_operator
     - camera.j5_cam
 
 #  Traffic:
