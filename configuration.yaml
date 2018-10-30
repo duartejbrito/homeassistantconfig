@@ -119,4 +119,6 @@ light:
         save_on_change: True
 
 xiaomi_aqara:
-  interface: '192.168.1.248'
+  discovery_retry: 5
+  gateways:
+    - key: 7oddnr6892dtrqzh
