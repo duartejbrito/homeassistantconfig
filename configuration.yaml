@@ -119,6 +119,6 @@ light:
         save_on_change: True
 
 xiaomi_aqara:
+  discovery_retry: 5
   gateways:
-    - mac: "7C:49:EB:19:35:81"
-      key: "53kvq9nyp80glbcz"
+    - key: 53kvq9nyp80glbcz
