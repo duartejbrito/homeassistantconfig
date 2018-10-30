@@ -1,8 +1,8 @@
   - platform: yeelight
     devices:
-      192.168.1.156:
+      !secret yeelight_device_1:
         name: Yeelight Color Bulb
         save_on_change: True
-      192.168.1.157:
+      !secret yeelight_device_2:
         name: Yeelight Color Bulb 2
         save_on_change: True
