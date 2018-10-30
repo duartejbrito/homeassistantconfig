@@ -37,6 +37,12 @@ sun:
 map:
 hassio:
 
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio-config.duartebrito.pw/
+
 ###################################### ##############
 #                                                  #
 #      LINKS TO INDIVUAL CONFIGURATION FILES       #
@@ -51,6 +57,8 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zones.yaml
 device_tracker: !include device_tracker.yaml
+light: !include light.yaml
+camera: !include camera.yaml
 
 ####################################################
 #                                                  #
@@ -68,7 +76,7 @@ weather:
 ####################################################
 
 tradfri:
-  host: 192.168.1.96
+  host: !secret tradfriHost
   allow_tradfri_groups: false
 
 ####################################################
@@ -78,50 +86,26 @@ tradfri:
 ####################################################
 
 mqtt:
-  broker: 192.168.1.20
-  port: 1883
+  broker: !secret mqttBroker
+  port: !secret mqttPort
   client_id: home-assistant-1
+
+####################################################
+#                                                  #
+#                   XIAOMI                         #
+#                                                  #
+####################################################
+
+xiaomi_aqara:
+  discovery_retry: 10
+  interface: !secret xiaomi_aqara_interface
+  gateways:
+    - mac: !secret xiaomi_aqara_gateways_1_mac
+      host: !secret xiaomi_aqara_gateways_1_host
+      key: !secret xiaomi_aqara_gateways_1_key
 
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #
 #                                                  #
 ####################################################
-
-camera:
-  - name: s8_cam
-    platform: generic
-    still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.s8.attributes.latitude }},{{ states.device_tracker.s8.attributes.longitude }}&zoom=17&size=500x500&maptype=roadmap&markers=label:s8%7C{{ states.device_tracker.s8.attributes.latitude }},{{ states.device_tracker.s8.attributes.longitude }}&key=AIzaSyASLDNzi8IF6zG_4h1D1poLjMs30EpgC4k
-    limit_refetch_to_url_change: true
-  - name: s6_cam
-    platform: generic
-    still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.s6.attributes.latitude }},{{ states.device_tracker.s6.attributes.longitude }}&zoom=17&size=500x500&maptype=roadmap&markers=label:s6%7C{{ states.device_tracker.s6.attributes.latitude }},{{ states.device_tracker.s6.attributes.longitude }}&key=AIzaSyASLDNzi8IF6zG_4h1D1poLjMs30EpgC4k
-    limit_refetch_to_url_change: true
-  - name: j5_cam
-    platform: generic
-    still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.j5.attributes.latitude }},{{ states.device_tracker.j5.attributes.longitude }}&zoom=17&size=500x500&maptype=roadmap&markers=label:j5%7C{{ states.device_tracker.j5.attributes.latitude }},{{ states.device_tracker.j5.attributes.longitude }}&key=AIzaSyASLDNzi8IF6zG_4h1D1poLjMs30EpgC4k
-    limit_refetch_to_url_change: true
-
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://hassio-config.duartebrito.pw/
-
-light:
-  - platform: yeelight
-    devices:
-      192.168.1.156:
-        name: Yeelight Color Bulb
-        save_on_change: True
-      192.168.1.157:
-        name: Yeelight Color Bulb 2
-        save_on_change: True
-
-xiaomi_aqara:
-  discovery_retry: 10
-  interface: '192.168.1.30'
-  gateways:
-    - mac: '7C:49:EB:19:35:81'
-      host: '192.168.1.248'
-      key: '53kvq9nyp80glbcz'
