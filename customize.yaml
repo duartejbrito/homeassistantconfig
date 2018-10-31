@@ -28,14 +28,3 @@ camera.j5_cam:
 
 group.devices:
   friendly_name: Devices
-
-group.all_switches:
-  hidden: false
-group.all_lights:
-  hidden: false
-group.all_devices:
-  hidden: false
-group.all_scripts:
-  hidden: false
-group.all_automations:
-  hidden: false
