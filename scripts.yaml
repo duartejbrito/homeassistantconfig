@@ -8,9 +8,8 @@ movie_time:
       - light.yeelight_color_bulb
       - light.sala
     service: light.turn_on
-
 turn_on_lights_living_room:
-  alias: Turn on Lights Living Room
+  alias: Turn On Lights Living Room
   sequence:
   - alias: ''
     data:
@@ -19,9 +18,8 @@ turn_on_lights_living_room:
       - light.yeelight_color_bulb
       - light.sala
     service: light.turn_on
-
 turn_off_all_lights:
-  alias: Turn off all Lights
+  alias: Turn Off All Lights
   sequence:
   - alias: ''
     data:
@@ -29,4 +27,43 @@ turn_off_all_lights:
       - light.yeelight_color_bulb
       - light.yeelight_color_bulb_2
       - light.sala
+      - light.gateway_light_7c49eb193581
+    service: light.turn_off
+turn_on_presence_lights:
+  alias: Turn On Presence Lights
+  sequence:
+  - data:
+      entity_id: light.gateway_light_7c49eb193581
+    service: light.turn_on
+turn_off_presence_lights:
+  alias: Turn Off Presence Lights
+  sequence:
+  - data:
+      entity_id: light.gateway_light_7c49eb193581
+    service: light.turn_on
+arrive_home:
+  alias: Arrive Home
+  sequence:
+  - data: {}
+    service: script.turn_on_lights_living_room
+  - service: script.turn_on_presence_lights
+turn_off_all_media:
+  alias: Turn Off All Media
+  sequence:
+  - data:
+      entity_id: media_player.samsung_tv_remote
+    service: media_player.turn_off
+leave_home:
+  alias: Leave Home
+  sequence:
+  - data: {}
+    service: script.turn_off_all_lights
+  - service: script.turn_off_all_media
+turn_off_lights_living_room:
+  alias: Turn Off Lights Living Room
+  sequence:
+  - data:
+      entity_id:
+      - light.sala
+      - light.yeelight_color_bulb
     service: light.turn_off

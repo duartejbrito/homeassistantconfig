@@ -1,96 +1,84 @@
-  - id: sun_below_horizon
-    alias: Sun below horizon
-    trigger:
-    - entity_id: sun.sun
-      platform: state
-      to: below_horizon
-    condition:
-      condition: or
-      conditions:
-        - condition: state
-          entity_id: device_tracker.s8
-          state: home
-        - condition: state
-          entity_id: device_tracker.s6
-          state: home  
-    action:
-    - data:
-        entity_id:
-          - light.sala
-          - light.yeelight_color_bulb
-        brightness_pct: 100
-      service: light.turn_on
-  
-  - id: arrive_home_below_horizon
-    alias: Arrive home below horizon
-    trigger:
-    - entity_id: device_tracker.s8
-      event: enter
-      platform: zone
-      zone: zone.home
-    - entity_id: device_tracker.s6
-      event: enter
-      platform: zone
-      zone: zone.home
-    condition:
-    - condition: state
-      entity_id: sun.sun
-      state: below_horizon
-    action:
-    - data:
-        entity_id:
-          - light.sala
-          - light.yeelight_color_bulb
-        brightness_pct: 100
-      service: light.turn_on
-  
-  - id: turn_off_lights
-    alias: Turn off lights
-    trigger:
-    - at: 00:00:00
-      platform: time
-    condition: []
-    action:
-    - data:
-        entity_id: 
-          - light.sala
-          - light.yeelight_color_bulb
-      service: light.turn_off
-  
-  - id: leave_home_s8
-    alias: Leave home s8
-    trigger:
-    - entity_id: device_tracker.s8
-      event: leave
-      platform: zone
-      zone: zone.home
-    condition:
-    - condition: state
-      entity_id: device_tracker.s6
-      state: not_home
-    action:
-    - data:
-        entity_id: 
-          - light.sala
-          - light.yeelight_color_bulb
-          - light.yeelight_color_bulb_2
-      service: light.turn_off
-  
-  - id: leave_home_s6
-    alias: Leave home s6
-    trigger:
-    - entity_id: device_tracker.s6
-      event: leave
-      platform: zone
-      zone: zone.home
-    condition:
+- id: sun_below_horizon
+  alias: Sun Below Horizon
+  trigger:
+  - entity_id: sun.sun
+    platform: state
+    to: below_horizon
+  condition:
+  - condition: or
+    conditions:
     - condition: state
       entity_id: device_tracker.s8
-      state: not_home
-    action:
-    - data:
-        entity_id: 
-          - light.sala
-          - light.yeelight_color_bulb
-          - light.yeelight_color_bulb_2
-      service: light.turn_off
+      state: home
+    - condition: state
+      entity_id: device_tracker.s6
+      state: home
+  action:
+  - data: {}
+    service: script.turn_on_lights_living_room
+  - data: {}
+    service: script.turn_on_presence_lights
+- id: arrive_home_below_horizon
+  alias: Arrive Home Below Horizon
+  trigger:
+  - entity_id: device_tracker.s8
+    event: enter
+    platform: zone
+    zone: zone.home
+  - entity_id: device_tracker.s6
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - data: {}
+    service: script.arrive_home
+- id: turn_off_lights
+  alias: Turn Off Lights
+  trigger:
+  - at: 00:00:00
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: script.turn_off_lights_living_room
+- id: leave_home_s8
+  alias: Leave Home Duarte
+  trigger:
+  - entity_id: device_tracker.s8
+    event: leave
+    platform: zone
+    zone: zone.home
+  condition:
+  - condition: state
+    entity_id: device_tracker.s6
+    state: not_home
+  action:
+  - data: {}
+    service: script.leave_home
+- id: leave_home_s6
+  alias: Leave Home Silvia
+  trigger:
+  - entity_id: device_tracker.s6
+    event: leave
+    platform: zone
+    zone: zone.home
+  condition:
+  - condition: state
+    entity_id: device_tracker.s8
+    state: not_home
+  action:
+  - data: {}
+    service: script.leave_home
+- id: above_horizon
+  alias: Above Horizon
+  trigger:
+  - entity_id: sun.sun
+    platform: state
+    to: above_horizon
+  condition: []
+  action:
+  - service: script.turn_off_presence_lights
