@@ -84,4 +84,4 @@
      - group.automations
 
   Automations:
-    - group.all_automations
+    - group.all_automations.attributes.entity_id
