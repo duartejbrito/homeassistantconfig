@@ -8,12 +8,18 @@
    view: yes
    icon: mdi:home-assistant
    entities:
-     - weather.lisboa
+     - group.weather
      - group.living_room_lights
      - group.kids_room_lights
      - group.hall_lights
-     - media_player.samsung_tv_remote
+     - group.media_players
      - group.plex
+
+  Weather:
+    - weather.lisboa
+
+  Media Players:
+    - media_player.samsung_tv_remote
 
   Plex:
     - sensor.plex
