@@ -68,3 +68,9 @@ turn_off_lights_living_room:
       - light.sala
       - light.yeelight_color_bulb
     service: light.turn_off
+notify_automation_triggered:
+  alias: Notify Automation
+  sequence:
+  - service: notify.hassiobot
+    data_template:
+      message: {{ autoName }} triggered
