@@ -11,6 +11,7 @@
      - weather.lisboa
      - group.devices
      - media_player.samsung_tv_remote
+     - sensor.plex
 
   Devices:
     - binary_sensor.sytergaming
