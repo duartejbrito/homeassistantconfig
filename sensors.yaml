@@ -77,4 +77,4 @@
         unit_of_measurement: '%'
         device_class: battery
         value_template: >
-          {{ states.binary_sensor.motion_sensor_158d00029a9d0e.attributes.battery_level }}
+          {{ states.binary_sensor.motion_sensor_158d00029a9d0e.attributes.battery_level | int }}
