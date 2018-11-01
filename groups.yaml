@@ -9,9 +9,6 @@
    icon: mdi:home-assistant
    entities:
      - group.weather
-     - group.living_room_lights
-     - group.kids_room_lights
-     - group.hall_lights
      - group.media_players
      - group.plex
 
