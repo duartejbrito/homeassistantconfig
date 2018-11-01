@@ -124,3 +124,4 @@ notify:
     platform: slack
     api_key: !secret slack_oauth_access_token
     default_channel: '#general'
+    username: hassiobot
