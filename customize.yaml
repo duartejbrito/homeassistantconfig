@@ -64,7 +64,14 @@ sensor.tradfri_remote_control:
   device_class: battery
 
 weather.lisboa:
-  order: 10
-
+  order: 1
+group.living_room_lights:
+  order: 2
+group.kids_room_lights:
+  order: 3
+group.hall_lights:
+  order: 4
 media_player.samsung_tv_remote:
-  order: 30
+  order: 5
+group.plex:
+  order: 6

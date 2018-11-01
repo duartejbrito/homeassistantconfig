@@ -16,10 +16,7 @@
      - group.plex
 
   Plex:
-    view: no
-    order: 40
-    entities:
-      - sensor.plex
+    - sensor.plex
 
 ####################################################
 #                                                  #
@@ -36,26 +33,17 @@
      - group.hall_lights
     
   Living Room Lights:
-    view: no
-    order: 21
-    entities:
-      - light.sala
-      - light.yeelight_color_bulb
+    - light.sala
+    - light.yeelight_color_bulb
 
   Kids Room Lights:
-    view: no
-    order: 22
-    entities:
-      - light.yeelight_color_bulb_2
-      - binary_sensor.motion_sensor_158d00029a9d0e
-      - sensor.illumination_158d00029a9d0e
+    - light.yeelight_color_bulb_2
+    - binary_sensor.motion_sensor_158d00029a9d0e
+    - sensor.illumination_158d00029a9d0e
 
   Hall Lights:
-    view: no
-    order: 23
-    entities:
-      - light.gateway_light_7c49eb193581
-      - sensor.illumination_7c49eb193581
+    - light.gateway_light_7c49eb193581
+    - sensor.illumination_7c49eb193581
 
 ####################################################
 #                                                  #
