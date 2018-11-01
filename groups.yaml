@@ -90,3 +90,8 @@
    entities:
      - group.all_automations
      - group.all_scripts
+     - group.Batteries
+
+  Batteries:
+    - sensor.tradfri_remote_control
+    - sensor.motion_sensor_158d00029a9d0e_battery

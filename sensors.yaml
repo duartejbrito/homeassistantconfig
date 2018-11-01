@@ -73,7 +73,7 @@
   - platform: template
     sensors:
       motion_sensor_158d00029a9d0e_battery:
-        friendly_name: Kids Motion Sensor Battery
+        friendly_name: Motion Sensor
         unit_of_measurement: '%'
         device_class: battery
         value_template: >
