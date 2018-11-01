@@ -6,7 +6,6 @@
 
   Home:
    view: yes
-   index: 1
    icon: mdi:home-assistant
    entities:
      - weather.lisboa
@@ -30,7 +29,6 @@
 
   Lights:
    view: yes
-   index: 2
    icon: mdi:lamp
    entities:
      - group.living_room_lights
@@ -67,7 +65,6 @@
 
   Phones Status:
    view: yes
-   index: 3
    icon: mdi:cellphone-android
    entities:
      - group.duarte_phone_status
@@ -97,7 +94,6 @@
 
   Automation:
    view: yes
-   index: 4
    icon: mdi:home-automation
    entities:
      - group.all_automations
