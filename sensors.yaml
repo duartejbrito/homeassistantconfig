@@ -69,3 +69,12 @@
       - screen_orientation
       - current_wifi
       - current_operator
+
+  - platform: template
+    sensors:
+      motion_sensor_158d00029a9d0e_battery:
+        friendly_name: Kids Motion Sensor Battery
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: >
+          {{ states.binary_sensor.motion_sensor_158d00029a9d0e.attributes.battery_level }}
