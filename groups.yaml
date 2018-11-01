@@ -6,6 +6,7 @@
 
   Home:
    view: yes
+   index: 1
    icon: mdi:home-assistant
    entities:
      - weather.lisboa
@@ -16,7 +17,10 @@
      - group.plex
 
   Plex:
-    - sensor.plex
+    view: no
+    order: 40
+    entities:
+      - sensor.plex
 
 ####################################################
 #                                                  #
@@ -26,6 +30,7 @@
 
   Lights:
    view: yes
+   index: 2
    icon: mdi:lamp
    entities:
      - group.living_room_lights
@@ -33,17 +38,26 @@
      - group.hall_lights
     
   Living Room Lights:
-    - light.sala
-    - light.yeelight_color_bulb
+    view: no
+    order: 21
+    entities:
+      - light.sala
+      - light.yeelight_color_bulb
 
   Kids Room Lights:
-    - light.yeelight_color_bulb_2
-    - binary_sensor.motion_sensor_158d00029a9d0e
-    - sensor.illumination_158d00029a9d0e
+    view: no
+    order: 22
+    entities:
+      - light.yeelight_color_bulb_2
+      - binary_sensor.motion_sensor_158d00029a9d0e
+      - sensor.illumination_158d00029a9d0e
 
   Hall Lights:
-    - light.gateway_light_7c49eb193581
-    - sensor.illumination_7c49eb193581
+    view: no
+    order: 23
+    entities:
+      - light.gateway_light_7c49eb193581
+      - sensor.illumination_7c49eb193581
 
 ####################################################
 #                                                  #
@@ -53,6 +67,7 @@
 
   Phones Status:
    view: yes
+   index: 3
    icon: mdi:cellphone-android
    entities:
      - group.duarte_phone_status
@@ -82,6 +97,7 @@
 
   Automation:
    view: yes
+   index: 4
    icon: mdi:home-automation
    entities:
      - group.all_automations

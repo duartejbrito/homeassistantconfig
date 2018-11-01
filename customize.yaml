@@ -62,3 +62,9 @@ sensor.illumination_158d00029a9d0e:
 
 sensor.tradfri_remote_control:
   device_class: battery
+
+weather.lisboa:
+  order: 10
+
+media_player.samsung_tv_remote:
+  order: 30
