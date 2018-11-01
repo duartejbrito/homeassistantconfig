@@ -81,7 +81,4 @@
    view: yes
    icon: mdi:home-automation
    entities:
-     - group.automations
-
-  Automations:
-    entities: group.all_automations.attributes.entity_id
+     - group.all_automations
