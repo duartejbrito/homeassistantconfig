@@ -29,10 +29,18 @@
    icon: mdi:lightbulb
    entities:
      - group.living_room_lights
+     - group.kids_room_lights
+     - group.hall_lights
     
   Living Room Lights:
     - light.sala
     - light.yeelight_color_bulb
+
+  Kids Room Lights:
+    - light.yeelight_color_bulb_2
+
+  Hall Lights:
+    - light.gateway_light_7c49eb193581
 
 ####################################################
 #                                                  #
