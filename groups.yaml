@@ -1,3 +1,9 @@
+####################################################
+#                                                  #
+#                     Home                         #
+#                                                  #
+####################################################
+
   Home:
    view: yes
    icon: mdi:home
@@ -6,6 +12,34 @@
      - group.devices
      - media_player.samsung_tv_remote
 
+  Devices:
+    - binary_sensor.sytergaming
+    - binary_sensor.router
+    - binary_sensor.nas
+    - binary_sensor.duarte_phone
+
+####################################################
+#                                                  #
+#                   Lights                         #
+#                                                  #
+####################################################
+
+  Lights:
+   view: yes
+   icon: mdi:lightbulb
+   entities:
+     - group.living_room_lights
+    
+  Living Room Lights:
+    - light.sala
+    - light.yeelight_color_bulb
+
+####################################################
+#                                                  #
+#                Phones Status                     #
+#                                                  #
+####################################################
+
   Phones Status:
    view: yes
    icon: mdi:cellphone-android
@@ -13,12 +47,6 @@
      - group.duarte_phone_status
      - group.silvia_phone_status
      - group.beatriz_phone_status
-
-  Devices:
-    - binary_sensor.sytergaming
-    - binary_sensor.router
-    - binary_sensor.nas
-    - binary_sensor.duarte_phone
 
   Duarte Phone Status:
     - device_tracker.s8
