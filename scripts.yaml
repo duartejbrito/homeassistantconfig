@@ -40,7 +40,7 @@ turn_off_presence_lights:
   sequence:
   - data:
       entity_id: light.gateway_light_7c49eb193581
-    service: light.turn_on
+    service: light.turn_off
 arrive_home:
   alias: Arrive Home
   sequence:
