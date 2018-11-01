@@ -73,4 +73,4 @@ notify_automation_triggered:
   sequence:
   - service: notify.hassiobot
     data_template:
-      message: {{ autoName }} triggered
+      message: "{{ autoName }} triggered"
