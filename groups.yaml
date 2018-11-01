@@ -6,7 +6,7 @@
 
   Home:
    view: yes
-   icon: mdi:home
+   icon: mdi:home-assistant
    entities:
      - weather.lisboa
      - group.devices
@@ -26,7 +26,7 @@
 
   Lights:
    view: yes
-   icon: mdi:lightbulb
+   icon: mdi:lamp
    entities:
      - group.living_room_lights
      - group.kids_room_lights

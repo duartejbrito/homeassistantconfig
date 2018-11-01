@@ -28,3 +28,6 @@ camera.j5_cam:
 
 group.devices:
   friendly_name: Devices
+
+light.gateway_light_7c49eb193581:
+  friendly_name: Gateway Light
