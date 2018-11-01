@@ -43,6 +43,7 @@
 
   Hall Lights:
     - light.gateway_light_7c49eb193581
+    - sensor.illumination_7c49eb193581
 
 ####################################################
 #                                                  #

@@ -32,6 +32,9 @@ group.devices:
 light.gateway_light_7c49eb193581:
   friendly_name: Gateway Light
 
+sensor.illumination_7c49eb193581:
+  friendly_name: Illumination
+
 group.all_automations:
   hidden: false
   friendly_name: Automations
@@ -41,3 +44,18 @@ group.all_scripts:
   hidden: false
   friendly_name: Scripts
   control: hidden
+
+light.sala:
+  friendly_name: Floor Lamp 1
+
+light.yeelight_color_bulb:
+  friendly_name: Floor Lamp 2
+
+light.yeelight_color_bulb_2:
+  friendly_name: Ceiling
+
+binary_sensor.motion_sensor_158d00029a9d0e:
+  friendly_name: Movement
+
+sensor.illumination_158d00029a9d0e:
+  friendly_name: Illumination
