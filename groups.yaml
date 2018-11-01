@@ -70,3 +70,18 @@
     - device_tracker.j5
     - sensor.j5batterylevel
     - camera.j5_cam
+
+####################################################
+#                                                  #
+#                  Automation                      #
+#                                                  #
+####################################################
+
+  Automation:
+   view: yes
+   icon: mdi:home-automation
+   entities:
+     - group.automations
+
+  Automations:
+    - group.all_automations
