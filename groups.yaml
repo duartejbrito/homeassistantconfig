@@ -9,15 +9,11 @@
    icon: mdi:home-assistant
    entities:
      - weather.lisboa
-     - group.devices
+     - group.living_room_lights
+     - group.kids_room_lights
+     - group.hall_lights
      - media_player.samsung_tv_remote
      - group.plex
-
-  Devices:
-    - binary_sensor.sytergaming
-    - binary_sensor.router
-    - binary_sensor.nas
-    - binary_sensor.duarte_phone
 
   Plex:
     - sensor.plex
@@ -90,7 +86,14 @@
    entities:
      - group.all_automations
      - group.all_scripts
+     - group.devices
      - group.Batteries
+
+  Devices:
+    - binary_sensor.sytergaming
+    - binary_sensor.router
+    - binary_sensor.nas
+    - binary_sensor.duarte_phone
 
   Batteries:
     - sensor.tradfri_remote_control
