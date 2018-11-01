@@ -38,6 +38,8 @@
 
   Kids Room Lights:
     - light.yeelight_color_bulb_2
+    - binary_sensor.motion_sensor_158d00029a9d0e
+    - sensor.illumination_158d00029a9d0e
 
   Hall Lights:
     - light.gateway_light_7c49eb193581
