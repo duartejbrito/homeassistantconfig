@@ -84,4 +84,5 @@
      - group.automations
 
   Automations:
-    entities: group.all_automations.attributes.entities
+    auto: true
+    entities: group.all_automations.attributes.entity_id
