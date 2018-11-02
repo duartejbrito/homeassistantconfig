@@ -50,6 +50,12 @@ views:
         entities:
           - light.gateway_light_7c49eb193581
           - sensor.illumination_7c49eb193581
+      - type: "custom:mini-graph-card"
+        entity: sensor.illumination_7c49eb193581
+        height: 100
+        line_width: 4
+        font_size: 75
+        color: '#3498db'
   - title: Phones Status
     id: phonesstatus
     icon: mdi:cellphone-android
