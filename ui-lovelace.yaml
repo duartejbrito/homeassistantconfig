@@ -11,6 +11,7 @@ resources:
 title: Home
 views:
   - title: default_view
+    id: home
     icon: mdi:home-assistant
     cards:
       - type: weather-forecast
