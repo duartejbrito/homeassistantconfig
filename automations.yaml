@@ -65,6 +65,9 @@
   - condition: state
     entity_id: device_tracker.s6
     state: not_home
+  - condition: template
+    value_template: >
+      {{ not is_state('device_tracker.s6', 'home') }}
   action:
   - data: {}
     service: script.leave_home
