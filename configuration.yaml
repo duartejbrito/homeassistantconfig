@@ -18,6 +18,7 @@ homeassistant:
 #                                                  #
 ####################################################
 
+cloud:
 config:
 
 frontend:
