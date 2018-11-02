@@ -53,10 +53,10 @@ views:
       - type: "custom:mini-graph-card"
         entity: sensor.illumination_7c49eb193581
         height: 100
-        line_width: 4
-        font_size: 75
+        line_width: 1
+        font_size: 50
         color: '#3498db'
-        hours_to_show: 168
+        hours_to_show: 24
   - title: Phones Status
     id: phonesstatus
     icon: mdi:cellphone-android
