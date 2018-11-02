@@ -44,11 +44,13 @@ views:
           - light.yeelight_color_bulb_2
           - entity: binary_sensor.motion_sensor_158d00029a9d0e
           - sensor.illumination_158d00029a9d0e
-      - type: entities
-        title: Hall Lights
-        show_header_toggle: false
-        entities:
-          - light.gateway_light_7c49eb193581
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Hall Lights
+            show_header_toggle: false
+            entities:
+              - light.gateway_light_7c49eb193581
           - type: "custom:mini-graph-card"
             entity: sensor.illumination_7c49eb193581
             height: 100
@@ -57,7 +59,7 @@ views:
             color: '#3498db'
             more_info: true
             accuracy: 25
-            hours_to_show: 24 
+            hours_to_show: 24
   - title: Phones Status
     id: phonesstatus
     icon: mdi:cellphone-android
