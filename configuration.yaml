@@ -11,6 +11,9 @@ homeassistant:
   unit_system: metric
   time_zone: !secret time_zone
   customize: !include customize.yaml
+  customize_glob:
+    light.*:
+      custom_ui_state_card: custom-ui
 
 ####################################################
 #                                                  #
@@ -23,6 +26,10 @@ config:
 
 frontend:
   javascript_version: latest
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 
 http:
   api_password: !secret api_password
@@ -138,3 +145,6 @@ notify:
     api_key: !secret slack_oauth_access_token
     default_channel: '#general'
     username: hassiobot
+
+customizer:
+  custom_ui: local
