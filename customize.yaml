@@ -47,6 +47,7 @@ group.all_scripts:
 
 light.sala:
   friendly_name: Floor Lamp 1
+  state_card_mode: single-line
 
 light.yeelight_color_bulb:
   friendly_name: Floor Lamp 2
