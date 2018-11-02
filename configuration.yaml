@@ -13,7 +13,7 @@ homeassistant:
   customize: !include customize.yaml
   customize_glob:
     light.*:
-      custom_ui_state_card: custom-ui
+      custom_ui_state_card: state-card-custom-ui
 
 ####################################################
 #                                                  #
