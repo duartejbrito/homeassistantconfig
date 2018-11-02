@@ -117,9 +117,9 @@
   - data:
       entity_id: light.yeelight_color_bulb_2
     service: light.turn_on
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Movement Kids Room
+#  - service: script.notify_automation_triggered
+#    data:
+#        autoName: Movement Kids Room
 - id: no_movement_kids_room
   alias: No Movement Kids Room
   trigger:
@@ -132,6 +132,6 @@
   - service: light.turn_off
     data:
       entity_id: light.yeelight_color_bulb_2
-  - service: script.notify_automation_triggered
-    data:
-        autoName: No Movement Kids Room
+#  - service: script.notify_automation_triggered
+#    data:
+#        autoName: No Movement Kids Room
