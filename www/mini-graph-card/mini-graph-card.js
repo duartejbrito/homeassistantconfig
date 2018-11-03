@@ -21,12 +21,10 @@ class MiniGraphCard extends LitElement {
 
   set hass(hass) {
     this._hass = hass;
-    if (hass) {
-      const entity = hass.states[this.config.entity];
-      if (entity && this.entity !== entity) {
-        this.entity = entity;
-        this.getHistory();
-      }
+    const entity = hass.states[this.config.entity];
+    if (entity && this.entity !== entity) {
+      this.entity = entity;
+      this.getHistory();
     }
   }
 
