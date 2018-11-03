@@ -82,5 +82,5 @@
   - platform: tautulli
     api_key: !secret tautulli_api_key
     host: !secret tautulli_host
-    monitored_variables:
+    monitored_conditions:
       - magic_title
