@@ -109,8 +109,8 @@ class TautulliSensor(Entity):
         else:
             self._attributes['Top User'] = self.home[7]['rows'][0]['user']
         for key in self.sessions:
-            if 'sessions' not in key:
-                self._attributes[key] = self.sessions[key]
+            #if 'sessions' not in key:
+            self._attributes[key] = self.sessions[key]
         for user in self.tautulli.api.users:
             if user in self.users or not self.users:
                 userdata = self.tautulli.api.user_data
