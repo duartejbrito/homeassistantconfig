@@ -84,3 +84,4 @@
     host: !secret tautulli_host
     monitored_conditions:
       - magic_title
+      - title
