@@ -18,7 +18,7 @@
     service: script.turn_on_lights_living_room
   - data: {}
     service: script.turn_on_presence_lights
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
@@ -41,7 +41,7 @@
   action:
   - data: {}
     service: script.arrive_home
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
@@ -55,7 +55,7 @@
   action:
   - data: {}
     service: script.turn_off_lights_living_room
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
@@ -74,7 +74,7 @@
   action:
   - data: {}
     service: script.leave_home
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
@@ -93,7 +93,7 @@
   action:
   - data: {}
     service: script.leave_home
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
@@ -107,7 +107,7 @@
   condition: []
   action:
   - service: script.turn_off_presence_lights
-  - service: notify_zanzito
+  - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
       message: >
