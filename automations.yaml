@@ -18,9 +18,11 @@
     service: script.turn_on_lights_living_room
   - data: {}
     service: script.turn_on_presence_lights
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Sun Below Horizon
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        Automation based on {{ trigger.event }} was triggered.
 - id: arrive_home_below_horizon
   alias: Arrive Home Below Horizon
   trigger:
@@ -39,9 +41,11 @@
   action:
   - data: {}
     service: script.arrive_home
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Arrive Home Below Horizon
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }} below horizon.
 - id: turn_off_lights
   alias: Turn Off Lights
   trigger:
@@ -51,9 +55,11 @@
   action:
   - data: {}
     service: script.turn_off_lights_living_room
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Turn Off Lights
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        Lights turned of at {{ trigger.now }}
 - id: leave_home_s8
   alias: Leave Home Duarte
   trigger:
@@ -68,9 +74,11 @@
   action:
   - data: {}
     service: script.leave_home
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Leave Home Duarte
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
 - id: leave_home_s6
   alias: Leave Home Silvia
   trigger:
@@ -85,9 +93,11 @@
   action:
   - data: {}
     service: script.leave_home
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Leave Home Silvia
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
 - id: above_horizon
   alias: Above Horizon
   trigger:
@@ -97,9 +107,11 @@
   condition: []
   action:
   - service: script.turn_off_presence_lights
-  - service: script.notify_automation_triggered
-    data:
-        autoName: Above Horizon
+  - service: notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        Automation based on {{ trigger.event }} was triggered.
 - id: movement_kids_room
   alias: Movement Kids Room
   trigger:
@@ -117,9 +129,6 @@
   - data:
       entity_id: light.yeelight_color_bulb_2
     service: light.turn_on
-#  - service: script.notify_automation_triggered
-#    data:
-#        autoName: Movement Kids Room
 - id: no_movement_kids_room
   alias: No Movement Kids Room
   trigger:
@@ -132,6 +141,3 @@
   - service: light.turn_off
     data:
       entity_id: light.yeelight_color_bulb_2
-#  - service: script.notify_automation_triggered
-#    data:
-#        autoName: No Movement Kids Room

@@ -79,7 +79,7 @@ notify_zanzito:
   sequence:
   - service: mqtt.publish
     data_template:
-      topic: "zanzito/{{ entity_id.split('.')[1] }}/notification"
+      topic: "zanzito/{{ entity_id.split('.')[-1] }}/notification"
       payload: '{{ message }}'
       qos: 1
       retain: 0
