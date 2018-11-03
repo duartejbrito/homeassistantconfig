@@ -97,20 +97,22 @@ class TautulliSensor(Entity):
         self.home = self.tautulli.api.home_data
         self.sessions = self.tautulli.api.session_data
         if len(self.home[0]['rows']) == 0:
-            self._attributes['Top Movie'] = ''
+            self._attributes['top_movie'] = {}
         else:
-            self._attributes['Top Movie'] = self.home[0]['rows'][0]['title']
+            self._attributes['top_movie'] = self.home[0]['rows'][0]['title']
         if len(self.home[3]['rows']) == 0:
-            self._attributes['Top TV Show'] = ''
+            self._attributes['top_tv_show'] = {}
         else:
-            self._attributes['Top TV Show'] = self.home[3]['rows'][0]['title']
+            self._attributes['top_tv_show'] = self.home[3]['rows'][0]['title']
         if len(self.home[7]['rows']) == 0:
-            self._attributes['Top User'] = ''
+            self._attributes['top_user'] = {}
         else:
-            self._attributes['Top User'] = self.home[7]['rows'][0]['user']
+            self._attributes['top_user'] = self.home[7]['rows'][0]['user']
+        for index, item in enumerate(self.sessions['sessions']):
+            self._attributes['session' + index] = item
         for key in self.sessions:
-            #if 'sessions' not in key:
-            self._attributes[key] = self.sessions[key]
+            if 'sessions' not in key:
+                self._attributes[key] = self.sessions[key]
         for user in self.tautulli.api.users:
             if user in self.users or not self.users:
                 userdata = self.tautulli.api.user_data
