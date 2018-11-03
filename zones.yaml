@@ -32,4 +32,4 @@
     latitude: !secret latitudeMomHome
     longitude: !secret longitudeMomHome
     radius: 100
-    icon: mdi:school
+    icon: mdi:home
