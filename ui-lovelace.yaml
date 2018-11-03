@@ -111,15 +111,16 @@ views:
             entities:
               - light.yeelight_color_bulb_2
               - entity: binary_sensor.motion_sensor_158d00029a9d0e
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_158d00029a9d0e
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
+              - entity: sensor.illumination_158d00029a9d0e
+#          - type: "custom:mini-graph-card"
+#            entity: sensor.illumination_158d00029a9d0e
+#            height: 100
+#            line_width: 4
+#            font_size: 50
+#            color: '#3498db'
+#            more_info: true
+#            accuracy: 25
+#            hours_to_show: 24
       - type: vertical-stack
         cards:
           - type: entities
@@ -129,15 +130,16 @@ views:
               - entity: light.gateway_light_7c49eb193581
                 type: custom:slider-entity-row
                 hide_when_off: true
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_7c49eb193581
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
+              - entity: sensor.illumination_7c49eb193581
+#          - type: "custom:mini-graph-card"
+#            entity: sensor.illumination_7c49eb193581
+#            height: 100
+#            line_width: 4
+#            font_size: 50
+#            color: '#3498db'
+#            more_info: true
+#            accuracy: 25
+#            hours_to_show: 24
   - title: Phones Status
     id: phonesstatus
     icon: mdi:cellphone-android
