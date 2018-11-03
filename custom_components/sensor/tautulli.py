@@ -97,15 +97,15 @@ class TautulliSensor(Entity):
         self.home = self.tautulli.api.home_data
         self.sessions = self.tautulli.api.session_data
         if len(self.home[0]['rows']) == 0:
-            self._attributes['top_movie'] = null
+            self._attributes['top_movie'] = None
         else:
             self._attributes['top_movie'] = self.home[0]['rows'][0]['title']
         if len(self.home[3]['rows']) == 0:
-            self._attributes['top_tv_show'] = null
+            self._attributes['top_tv_show'] = None
         else:
             self._attributes['top_tv_show'] = self.home[3]['rows'][0]['title']
         if len(self.home[7]['rows']) == 0:
-            self._attributes['top_user'] = null
+            self._attributes['top_user'] = None
         else:
             self._attributes['top_user'] = self.home[7]['rows'][0]['user']
         for item in self.sessions['sessions']:
