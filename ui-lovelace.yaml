@@ -39,8 +39,10 @@ views:
         entities:
           - entity: light.sala
             type: custom:slider-entity-row
+            hide_when_off: true
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
+            hide_when_off: true
       - type: entities
         title: Kids Room Lights
         show_header_toggle: true
