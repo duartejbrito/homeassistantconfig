@@ -29,10 +29,6 @@ views:
         show_header_toggle: true
         entities:
           - sensor.plex
-      - type: entities
-        entities:
-          - entity: media_player.samsung_tv_remote
-            name: SamgungTV
       - type: picture-elements
         image: /local/plex.jpg
         elements:
