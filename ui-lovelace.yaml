@@ -35,7 +35,8 @@ views:
         title: Living Room Lights
         show_header_toggle: true
         entities:
-          - light.sala
+          - entity: light.sala
+            state_card_mode: single-line
           - light.yeelight_color_bulb
       - type: entities
         title: Kids Room Lights
