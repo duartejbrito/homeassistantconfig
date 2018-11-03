@@ -145,9 +145,13 @@ views:
           - device_tracker.s8
           - sensor.s8batterylevel
       - type: map
-        default_zoom: 18
+        #default_zoom: 18
         entities:
           - device_tracker.s8
+          - zone.home
+          - zone.duarte_work
+          - zone.rita_school
+          - zone.carolina_school
       - type: entities
         title: Silvia Phone Status
         show_header_toggle: true

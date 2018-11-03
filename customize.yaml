@@ -62,3 +62,18 @@ sensor.illumination_158d00029a9d0e:
 
 sensor.tradfri_remote_control:
   device_class: battery
+
+zone.silvia_work:
+  friendly_name: Silvia Work
+
+zone.duarte_work:
+  friendly_name: Duarte Work
+
+zone.rita_school:
+  friendly_name: Rita School
+
+zone.carolina_school:
+  friendly_name: Carolina School
+
+zone.mom_home:
+  friendly_name: Mom Home

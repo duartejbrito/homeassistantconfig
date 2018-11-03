@@ -1,29 +1,35 @@
-  - name: Home
+  - name: home
     latitude: !secret latitude
     longitude: !secret longitude
-    radius: 100
+    radius: 50
     icon: mdi:home
 
-  - name: Silvia Work
+  - name: silvia_work
     latitude: !secret latitudeSilviaWork
     longitude: !secret longitudeSilviaWork
     radius: 100
     icon: mdi:domain
 
-  - name: Duarte Work
+  - name: duarte_work
     latitude: !secret latitudeDuarteWork
     longitude: !secret longitudeDuarteWork
     radius: 100
     icon: mdi:domain
 
-  - name: Rita School
+  - name: rita_school
     latitude: !secret latitudeRitaSchool
     longitude: !secret longitudeRitaSchool
     radius: 100
     icon: mdi:school
 
-  - name: Carolina School
+  - name: carolina_school
     latitude: !secret latitudeCarolinaSchool
     longitude: !secret longitudeCarolinaSchool
+    radius: 100
+    icon: mdi:school
+
+  - name: mom_home
+    latitude: !secret latitudeMomHome
+    longitude: !secret longitudeMomHome
     radius: 100
     icon: mdi:school
