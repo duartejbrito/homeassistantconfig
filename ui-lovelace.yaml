@@ -7,6 +7,8 @@ resources:
     type: module
   - url: /local/mini-graph-card/mini-graph-card.js?v=0.0.6
     type: module
+  - url: /local/slider-entity-row/slider-entity-row.js
+    type: js
 
 title: Home
 views:
@@ -35,8 +37,10 @@ views:
         title: Living Room Lights
         show_header_toggle: true
         entities:
-          - light.sala
-          - light.yeelight_color_bulb
+          - entity: light.sala
+            type: custom:slider-entity-row
+          - entity: light.yeelight_color_bulb
+            type: custom:slider-entity-row
       - type: entities
         title: Kids Room Lights
         show_header_toggle: true
