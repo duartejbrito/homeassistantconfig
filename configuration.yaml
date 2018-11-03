@@ -11,10 +11,12 @@ homeassistant:
   unit_system: metric
   time_zone: !secret time_zone
   customize: !include customize.yaml
+  ################### CUSTOM UI ###################
   customize_glob:
     light.*:
       custom_ui_state_card: state-card-custom-ui
       state_card_mode: single-line
+  #################################################
 
 ####################################################
 #                                                  #
@@ -27,10 +29,12 @@ config:
 
 frontend:
   javascript_version: latest
+  ################### CUSTOM UI ###################
   extra_html_url:
     - /local/custom_ui/state-card-custom-ui.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-custom-ui-es5.html
+  #################################################
 
 http:
   api_password: !secret api_password
@@ -121,11 +125,11 @@ xiaomi_aqara:
 ####################################################
 
 tts:
-  - platform: google  
+  - platform: google
 
 ####################################################
 #                                                  #
-#            END OF CONFIGURATION FILE             #
+#                 Custom Updater                   #
 #                                                  #
 ####################################################
 
@@ -140,6 +144,12 @@ custom_updater:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
     - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
 
+####################################################
+#                                                  #
+#                    Notify                        #
+#                                                  #
+####################################################
+
 notify:
   - name: hassiobot
     platform: slack
@@ -147,5 +157,17 @@ notify:
     default_channel: '#general'
     username: hassiobot
 
+####################################################
+#                                                  #
+#                  Custom UI                       #
+#                                                  #
+####################################################
+
 customizer:
   custom_ui: local
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
