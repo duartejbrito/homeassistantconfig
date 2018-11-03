@@ -158,9 +158,12 @@ views:
           - device_tracker.s6
           - sensor.s6batterylevel
       - type: map
-        default_zoom: 18
+        #default_zoom: 18
         entities:
           - device_tracker.s6
+          - zone.home
+          - zone.rita_school
+          - zone.carolina_school
       - type: entities
         title: Beatriz Phone Status
         show_header_toggle: true
@@ -168,9 +171,10 @@ views:
           - device_tracker.j5
           - sensor.j5batterylevel
       - type: map
-        default_zoom: 18
+        #default_zoom: 18
         entities:
           - device_tracker.j5
+          - zone.mom_home
   - title: Automation
     id: automation
     icon: mdi:home-automation
