@@ -56,7 +56,9 @@ views:
             title: Hall Lights
             show_header_toggle: false
             entities:
-              - light.gateway_light_7c49eb193581
+              - entity: light.gateway_light_7c49eb193581
+                type: custom:slider-entity-row
+                hide_when_off: true
           - type: "custom:mini-graph-card"
             entity: sensor.illumination_7c49eb193581
             height: 100
