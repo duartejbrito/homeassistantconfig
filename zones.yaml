@@ -31,5 +31,5 @@
   - name: mom_home
     latitude: !secret latitudeMomHome
     longitude: !secret longitudeMomHome
-    radius: 100
+    radius: 50
     icon: mdi:home
