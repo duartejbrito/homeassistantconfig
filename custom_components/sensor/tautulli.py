@@ -96,6 +96,7 @@ class TautulliSensor(Entity):
         await self.tautulli.async_update()
         self.home = self.tautulli.api.home_data
         self.sessions = self.tautulli.api.session_data
+        print("CENAS")
         self._attributes['Top Movie'] = self.home[0]['rows'][0]['title']
         self._attributes['Top TV Show'] = self.home[3]['rows'][0]['title']
         self._attributes['Top User'] = self.home[7]['rows'][0]['user']
