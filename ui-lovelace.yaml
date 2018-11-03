@@ -44,7 +44,7 @@ views:
               transform: none
           - type: custom:state-attribute-element
             entity: sensor.tautulli
-            attribute: 'Ludeeus'
+            attribute: 'SyTeRPlex'
             sub_attribute: 'magic_title'
             show_empty: false
             style:
