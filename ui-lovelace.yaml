@@ -45,7 +45,7 @@ views:
             hide_when_off: true
       - type: entities
         title: Kids Room Lights
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - light.yeelight_color_bulb_2
           - entity: binary_sensor.motion_sensor_158d00029a9d0e
