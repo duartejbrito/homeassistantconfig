@@ -146,7 +146,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.illumination_7c49eb193581
-    below: 200
+    below: 100
   condition:
   - condition: or
     conditions:
@@ -169,7 +169,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.illumination_7c49eb193581
-    above: 200
+    above: 100
   condition: []
   action:
   - service: script.turn_off_presence_lights
