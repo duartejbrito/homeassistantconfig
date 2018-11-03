@@ -74,3 +74,12 @@ notify_automation_triggered:
   - service: notify.hassiobot
     data_template:
       message: "{{ autoName }} triggered"
+notify_zanzito:
+  alias: Notify Zanzito
+  sequence:
+  - service: mqtt.publish
+    data_template:
+      topic: 'zanzito/{{ dest_id }}/notification'
+      payload: '{{ message }}'
+      qos: 1
+      retain: 0
