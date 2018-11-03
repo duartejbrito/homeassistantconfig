@@ -149,7 +149,6 @@ views:
         entities:
           - device_tracker.s8
           - zone.home
-          - zone.duarte_work
           - zone.rita_school
           - zone.carolina_school
       - type: entities
