@@ -86,6 +86,13 @@ views:
               left: 15px
               color: white
               transform: none
+      - type: custom:mini-media-player
+        entity: media_player.spotify
+        name: Spotify Player
+        artwork: cover
+        power_color: true
+        hide_volume: true
+        show_progress: true
   - title: Lights
     id: lights
     icon: mdi:lamp
