@@ -83,5 +83,3 @@
     api_key: !secret tautulli_api_key
     host: !secret tautulli_host
     monitored_conditions:
-      - magic_title
-      - title
