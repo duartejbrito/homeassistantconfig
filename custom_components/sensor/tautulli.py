@@ -111,7 +111,8 @@ class TautulliSensor(Entity):
         index = 0
         self._attributes['sessions'] = []
         for item in self.sessions['sessions']:
-            self._attributes['sessions'].append(item.json())
+            for itemItem in item:
+                self._attributes['sessions'].append(item[itemItem])
         """self._attributes['sessions'] = self.sessions['sessions'].json()"""
         for key in self.sessions:
             if 'sessions' not in key:
