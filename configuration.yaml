@@ -40,6 +40,7 @@ http:
   api_password: !secret api_password
   ip_ban_enabled: true
   login_attempts_threshold: 2
+  base_url: hassio.duartebrito.pw
 
 logger:
   default: error
@@ -91,6 +92,7 @@ weather:
 
 tradfri:
   host: !secret tradfriHost
+  api_key: !secret tradfri_api_key
   allow_tradfri_groups: false
 
 ####################################################
