@@ -90,4 +90,5 @@ lovelace_player_test:
     entity_id: media_player.lovelace_player_pc
     data_template:
       message: '{{ message }}'
-      language: 'pt'
+      language: '{{ language|default("pt") }}'
+      cache: false

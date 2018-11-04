@@ -1,6 +1,10 @@
   - platform: samsungtv
-    host: 192.168.1.72
-    port: 8001
+    host: !secret samgungtv_host
+    port: !secret samgungtv_port
 
   - platform: floorplan_speaker
     name: lovelace_player_pc
+
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
