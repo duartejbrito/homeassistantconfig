@@ -16,7 +16,7 @@ class StateAttributeElement extends HTMLElement {
         this.innerHTML = `${prefix_string}${this.state}${suffix_string}`
       } else if ((this.state.length != 0 || show_empty === true) && isMulti) {
         for (var i = 0; i < this.state.length; i++) {
-          this.innerHTML = `${prefix_string}${this.state[i][sub_attribute]}${suffix_string}`
+          this.innerHTML += `${prefix_string}${this.state[i][sub_attribute]}${suffix_string}`
         }
       }
     }
