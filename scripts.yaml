@@ -83,3 +83,10 @@ notify_zanzito:
       payload: '{{ message }}'
       qos: 1
       retain: 0
+lovelace_player_test:
+  alias: Lovelace Player Test
+  sequence:
+  - service: tts.google_say
+    entity_id: media_player.lovelace_player_pc
+    data:
+      message: 'May the Force be with you.'
