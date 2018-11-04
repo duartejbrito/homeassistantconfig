@@ -109,7 +109,7 @@ class TautulliSensor(Entity):
         else:
             self._attributes['top_user'] = self.home[7]['rows'][0]['user']
         index = 0
-        self._attributes['sessions'] = []
+        self._attributes['sessions'] = {}
         for item in self.sessions['sessions']:
             self._attributes['sessions'][index] = item
             index += 1
