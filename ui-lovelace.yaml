@@ -40,8 +40,8 @@ views:
               transform: none
           - type: custom:state-attribute-element
             entity: sensor.tautulli
-            attribute: 'syter'
-            sub_attribute: 'magic_title'
+            attribute: 'sessions'
+            sub_attribute: '0'
             show_empty: false
             style:
               top: 20%
@@ -57,7 +57,7 @@ views:
               transform: none
           - type: custom:state-attribute-element
             entity: sensor.tautulli
-            attribute: "Top Movie"
+            attribute: "top_movie"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 5px'>Most played movie: </b>"
             style:
@@ -67,7 +67,7 @@ views:
               transform: none
           - type: custom:state-attribute-element
             entity: sensor.tautulli
-            attribute: "Top TV Show"
+            attribute: "top_tv_show"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 11px'>Most played show: </b>"
             style:
@@ -77,7 +77,7 @@ views:
               transform: none
           - type: custom:state-attribute-element
             entity: sensor.tautulli
-            attribute: "Top User"
+            attribute: "top_user"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 20px'>Most active user: </b>"
             style:
