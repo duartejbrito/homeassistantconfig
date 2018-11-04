@@ -3,4 +3,4 @@
     port: 8001
 
   - platform: floorplan_speaker
-    name: lovelace_player
+    name: lovelace_player_pc
