@@ -94,7 +94,6 @@ views:
         hide_volume: true
         show_progress: true
         show_source: true
-        show_progress: true
   - title: Lights
     id: lights
     icon: mdi:lamp
