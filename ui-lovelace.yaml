@@ -13,6 +13,10 @@ resources:
     type: js
   - url: /local/state-attribute-element/state-attribute-element.js?v=0
     type: js
+  - url: /local/lovelace-player/lovelace-player.js
+    type: js
+  - url: /local/lovelace-player/lovelace-player-config.js
+    type: js
 
 title: Home
 views:
