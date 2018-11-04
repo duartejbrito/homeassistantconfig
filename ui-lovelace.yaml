@@ -24,11 +24,6 @@ views:
         entity: weather.lisboa
       - type: media-control
         entity: media_player.samsung_tv_remote
-      - type: entities
-        title: Plex
-        show_header_toggle: true
-        entities:
-          - sensor.plex
       - type: picture-elements
         image: /local/plex.jpg
         elements:
@@ -42,6 +37,7 @@ views:
             entity: sensor.tautulli
             attribute: 'sessions'
             sub_attribute: 'title'
+            suffix: ', '
             isMulti: true
             show_empty: false
             style:
