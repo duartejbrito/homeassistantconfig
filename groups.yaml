@@ -17,6 +17,8 @@
 
   Media Players:
     - media_player.samsung_tv_remote
+    - media_player.lovelace_player_pc
+    - media_player.spotify
 
   Plex:
     - sensor.plex
