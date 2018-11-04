@@ -109,9 +109,9 @@ class TautulliSensor(Entity):
         else:
             self._attributes['top_user'] = self.home[7]['rows'][0]['user']
         index = 0
-        self._attributes['sessions'] = {}
+        self._attributes['sessions'] = []
         for item in self.sessions['sessions']:
-            self._attributes['sessions'] += [dict({"asd":"asd"})]
+            self._attributes['sessions'][].append(item)
             index += 1
         for key in self.sessions:
             if 'sessions' not in key:
