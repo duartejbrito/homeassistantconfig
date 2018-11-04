@@ -112,12 +112,9 @@ class TautulliSensor(Entity):
         self._attributes['sessions'] = []
         for item in self.sessions['sessions']:
             self._attributes['sessions'][].append(item)"""
+        self._attributes['sessions'] = [self.sessions['sessions']]
         for key in self.sessions:
-            """if 'sessions' not in key:"""
-            if isinstance(self.sessions[key], list):
-                self._attributes[key] = []
-                self._attributes[key].append(self.sessions[key])
-            elif isinstance(self.sessions[key], dict):
+            if 'sessions' not in key:
                 self._attributes[key] = self.sessions[key]
         for user in self.tautulli.api.users:
             if user in self.users or not self.users:
