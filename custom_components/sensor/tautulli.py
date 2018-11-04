@@ -116,17 +116,18 @@ class TautulliSensor(Entity):
         for key in self.sessions:
             if 'sessions' not in key:
                 self._attributes[key] = self.sessions[key]
+        self._attributes['users'] = {}
         for user in self.tautulli.api.users:
             if user in self.users or not self.users:
                 userdata = self.tautulli.api.user_data
-                self._attributes[user] = {}
-                self._attributes[user]['Activity'] = userdata[user]['Activity']
+                self._attributes['users'][user] = {}
+                self._attributes['users'][user]['Activity'] = userdata[user]['Activity']
                 for key in self.monitored_conditions:
                     if key != 'None':
                         try:
-                            self._attributes[user][key] = userdata[user][key]
+                            self._attributes['users'][user][key] = userdata[user][key]
                         except (KeyError, TypeError):
-                            self._attributes[user][key] = ''
+                            self._attributes['users'][user][key] = ''
 
     @property
     def name(self):
