@@ -41,6 +41,9 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 2
   base_url: hassio.duartebrito.pw
+  cors_allowed_origins:
+    - https://reformedreality.com
+    - http://reformedreality.com
 
 logger:
   default: error
