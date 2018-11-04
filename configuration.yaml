@@ -92,7 +92,7 @@ weather:
 
 tradfri:
   host: !secret tradfriHost
-  api_key: !secret tradfri_api_key
+  #api_key: !secret tradfri_api_key
   allow_tradfri_groups: false
 
 ####################################################
