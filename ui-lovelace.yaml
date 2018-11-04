@@ -41,7 +41,8 @@ views:
           - type: custom:state-attribute-element
             entity: sensor.tautulli
             attribute: 'sessions'
-            sub_attribute: '0'
+            sub_attribute: 'title'
+            isMulti: true
             show_empty: false
             style:
               top: 20%

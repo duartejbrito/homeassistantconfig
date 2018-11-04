@@ -135,7 +135,7 @@ tts:
 
 custom_updater:
   show_installable: true
-  hide_sensor: true
+  hide_sensor: false
   track:
     - components
     - cards

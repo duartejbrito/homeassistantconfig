@@ -6,13 +6,18 @@ class StateAttributeElement extends HTMLElement {
       const show_empty = this.config.show_empty
       const attr = this.config.attribute
       const sub_attribute = this.config.sub_attribute || ''
+      const isMulti = this.config.isMulti || false
       this.state = hass.states[entityId].attributes[attr]
-      if (this.config.sub_attribute) {
+      if (this.config.sub_attribute && !isMulti) {
         this.state = hass.states[entityId].attributes[attr][sub_attribute]
       }
       const card = document.createElement('state-attribute-element');
-      if (this.state.length != 0 || show_empty === true) {
+      if ((this.state.length != 0 || show_empty === true) && !isMulti) {
         this.innerHTML = `${prefix_string}${this.state}${suffix_string}`
+      } else if ((this.state.length != 0 || show_empty === true) && isMulti) {
+        for (item in this.state) {
+          this.innerHTML = `${prefix_string}${this.item[sub_attribute]}${suffix_string}`
+        }
       }
     }
     setConfig(config) {
