@@ -90,7 +90,7 @@ views:
         entity: media_player.spotify
         name: Spotify Player
         artwork: cover
-        toggle_power: true
+        toggle_power: false
         power_color: true
         hide_volume: true
         show_progress: true
