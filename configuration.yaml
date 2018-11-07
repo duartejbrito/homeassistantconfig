@@ -57,10 +57,6 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://hassio-config.duartebrito.pw/
-  windy:
-    title: Windy
-    icon: mdi:weather-cloudy
-    url: https://embed.windy.com/embed2.html
 
 ####################################################
 #                                                  #
