@@ -224,10 +224,7 @@ views:
         title: Devices
         show_header_toggle: true
         entities:
-          - binary_sensor.sytergaming
-          - binary_sensor.router
-          - binary_sensor.nas
-          - binary_sensor.duarte_phone
+          - switch.sytergaming
       - type: entities
         title: Batteries
         show_header_toggle: true

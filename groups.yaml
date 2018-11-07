@@ -95,10 +95,7 @@
      - group.Batteries
 
   Devices:
-    - binary_sensor.sytergaming
-    - binary_sensor.router
-    - binary_sensor.nas
-    - binary_sensor.duarte_phone
+    - switch.sytergaming
 
   Batteries:
     - sensor.tradfri_remote_control
