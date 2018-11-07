@@ -224,7 +224,7 @@ views:
         title: Devices
         show_header_toggle: true
         entities:
-          - switch.sytergaming
+          - switch.sytergamming
       - type: entities
         title: Batteries
         show_header_toggle: true
