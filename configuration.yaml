@@ -71,6 +71,7 @@ panel_iframe:
 group: !include groups.yaml
 binary_sensor: !include binary_sensor.yaml
 sensor: !include sensors.yaml
+switch: !include switch.yaml
 media_player: !include media_players.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
