@@ -95,7 +95,7 @@
      - group.Batteries
 
   Devices:
-    - switch.sytergaming
+    - switch.sytergamming
 
   Batteries:
     - sensor.tradfri_remote_control
