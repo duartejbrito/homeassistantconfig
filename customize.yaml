@@ -1,9 +1,9 @@
-binary_sensor.SyTeRGaming:
-  icon: mdi:laptop
-binary_sensor.Router:
-  icon: mdi:server-network
-binary_sensor.NAS:
-  icon: mdi:nas
+#binary_sensor.SyTeRGaming:
+#  icon: mdi:laptop
+#binary_sensor.Router:
+#  icon: mdi:server-network
+#binary_sensor.NAS:
+#  icon: mdi:nas
 
 device_tracker.s8:
   friendly_name: Duarte Phone
