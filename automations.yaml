@@ -22,7 +22,7 @@
     data_template:
       entity_id: device_tracker.s8
       message: >
-        Automation based on {{ trigger.event }} was triggered.
+        Sun Below Horizon
 - id: arrive_home_below_horizon
   alias: Arrive Home Below Horizon
   trigger:

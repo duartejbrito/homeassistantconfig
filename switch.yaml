@@ -1,4 +1,9 @@
   - platform: wake_on_lan
     mac_address: !secret pc_mac
     host: !secret pc_ip
-    name: SyTeRGamming
+    name: SyTeRGamming~
+
+  - platform: dlink
+    host: !secret dlink_host
+    username: !secret dlink_username
+    password: !secret dlink_password
