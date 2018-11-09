@@ -2,9 +2,9 @@
 - id: sun_below_horizon
   alias: Sun Below Horizon
   trigger:
-  - entity_id: sun.sun
-    platform: state
-    to: below_horizon
+  - event: sunset
+    platform: sun
+    offset: -01:00:00
   condition:
   - condition: or
     conditions:
@@ -15,10 +15,11 @@
       entity_id: device_tracker.s6
       state: home
   action:
-  - data: {}
-    service: script.turn_on_lights_living_room
-  - data: {}
-    service: script.turn_on_presence_lights
+  - service: script.turn_on_lights_living_room
+    data:
+      transition: 3600
+  - service: script.turn_on_presence_lights
+    data: {}
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.s8
@@ -27,9 +28,8 @@
 - id: above_horizon
   alias: Above Horizon
   trigger:
-  - entity_id: sun.sun
-    platform: state
-    to: above_horizon
+  - event: sunrise
+    platform: sun
   condition: []
   action:
   - service: script.turn_off_presence_lights
