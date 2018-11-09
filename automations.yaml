@@ -1,3 +1,4 @@
+### SUN ###
 - id: sun_below_horizon
   alias: Sun Below Horizon
   trigger:
@@ -23,6 +24,38 @@
       entity_id: device_tracker.s8
       message: >
         Sun Below Horizon
+- id: above_horizon
+  alias: Above Horizon
+  trigger:
+  - entity_id: sun.sun
+    platform: state
+    to: above_horizon
+  condition: []
+  action:
+  - service: script.turn_off_presence_lights
+  - service: script.notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        Automation based on {{ trigger.event }} was triggered.
+
+### TIME ###
+- id: turn_off_lights
+  alias: Turn Off Lights
+  trigger:
+  - at: 00:00:00
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: script.turn_off_lights_living_room
+  - service: script.notify_zanzito
+    data_template:
+      entity_id: device_tracker.s8
+      message: >
+        Lights turned off at {{ trigger.now }}
+
+### DEVICE TRACK ###
 - id: arrive_home_below_horizon
   alias: Arrive Home Below Horizon
   trigger:
@@ -46,20 +79,6 @@
       entity_id: device_tracker.s8
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }} below horizon.
-- id: turn_off_lights
-  alias: Turn Off Lights
-  trigger:
-  - at: 00:00:00
-    platform: time
-  condition: []
-  action:
-  - data: {}
-    service: script.turn_off_lights_living_room
-  - service: script.notify_zanzito
-    data_template:
-      entity_id: device_tracker.s8
-      message: >
-        Lights turned off at {{ trigger.now }}
 - id: leave_home_s8
   alias: Leave Home Duarte
   trigger:
@@ -98,20 +117,8 @@
       entity_id: device_tracker.s8
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
-- id: above_horizon
-  alias: Above Horizon
-  trigger:
-  - entity_id: sun.sun
-    platform: state
-    to: above_horizon
-  condition: []
-  action:
-  - service: script.turn_off_presence_lights
-  - service: script.notify_zanzito
-    data_template:
-      entity_id: device_tracker.s8
-      message: >
-        Automation based on {{ trigger.event }} was triggered.
+
+### MOTION SENSORS ###
 - id: movement_kids_room
   alias: Movement Kids Room
   trigger:
