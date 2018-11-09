@@ -26,22 +26,12 @@ turn_off_all_lights:
     service: light.turn_off
 
 ### Living Room Lights ###
-movie_time:
-  alias: Movie Time
-  sequence:
-  - alias: ''
-    data:
-      brightness_pct: 20
-      entity_id:
-      - light.yeelight_color_bulb
-      - light.sala
-    service: light.turn_on
 turn_on_lights_living_room:
   alias: Turn On Lights Living Room
   sequence:
   - alias: 'Tradfri'
     data_template:
-      brightness_pct: 100
+      brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
       hs_color:
       - 29.812
@@ -51,7 +41,7 @@ turn_on_lights_living_room:
     service: light.turn_on
   - alias: 'Yeelight'
     data_template:
-      brightness_pct: 100
+      brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
       color_temp: 357
       entity_id:
@@ -60,11 +50,19 @@ turn_on_lights_living_room:
 turn_off_lights_living_room:
   alias: Turn Off Lights Living Room
   sequence:
-  - data:
+  - data_template:
+      transition: '{{ transition|default(1) }}'
       entity_id:
       - light.sala
       - light.yeelight_color_bulb
     service: light.turn_off
+movie_time:
+  alias: Movie Time
+  sequence:
+  - alias: ''
+    data:
+      brightness_pct: 20
+    service: script.turn_on_lights_living_room
 
 ### Presence Lights ###
 turn_on_presence_lights:
