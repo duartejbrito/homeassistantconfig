@@ -53,9 +53,7 @@ turn_on_lights_living_room:
     data_template:
       brightness_pct: 100
       transition: '{{ transition|default(1) }}'
-      hs_color:
-      - 28.077
-      - 60.925
+      color_temp: 357
       entity_id:
       - light.yeelight_color_bulb
     service: light.turn_on
