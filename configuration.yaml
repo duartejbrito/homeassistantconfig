@@ -11,12 +11,6 @@ homeassistant:
   unit_system: metric
   time_zone: !secret time_zone
   customize: !include customize.yaml
-  ################### CUSTOM UI ###################
-  #customize_glob:
-  #  light.*:
-  #    custom_ui_state_card: state-card-custom-ui
-  #    state_card_mode: single-line
-  #################################################
 
 ####################################################
 #                                                  #
@@ -29,12 +23,6 @@ config:
 
 frontend:
   javascript_version: latest
-  ################### CUSTOM UI ###################
-  #extra_html_url:
-  #  - /local/custom_ui/state-card-custom-ui.html
-  #extra_html_url_es5:
-  #  - /local/custom_ui/state-card-custom-ui-es5.html
-  #################################################
 
 http:
   api_password: !secret api_password
@@ -136,16 +124,16 @@ tts:
 #                                                  #
 ####################################################
 
-#custom_updater:
-#  show_installable: true
-#  hide_sensor: false
-#  track:
-#    - components
-#    - cards
-#    - python_scripts
-#  card_urls:
-#    #- https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-#    #- https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
+custom_updater:
+  show_installable: true
+  hide_sensor: true
+  track:
+    - components
+    - cards
+    - python_scripts
+  card_urls:
+    #- https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+    #- https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
 
 ####################################################
 #                                                  #
