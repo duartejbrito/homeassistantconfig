@@ -26,8 +26,9 @@ views:
     cards:
       - type: weather-forecast
         entity: weather.lisboa
-      - type: media-control
-        entity: media_player.samsung_tv_remote
+      - type: iframe
+        url: https://embed.windy.com/embed2.html
+        aspect_ratio: 80%
       - type: picture-elements
         image: /local/plex.jpg
         elements:
@@ -86,6 +87,8 @@ views:
               left: 15px
               color: white
               transform: none
+      - type: media-control
+        entity: media_player.samsung_tv_remote
       - type: custom:mini-media-player
         entity: media_player.spotify
         name: Spotify Player
@@ -97,9 +100,6 @@ views:
         show_source: true
       - type: custom:mini-media-player
         entity: media_player.chromecast_bedroom
-      - type: iframe
-        url: https://embed.windy.com/embed2.html
-        aspect_ratio: 80%
   - title: Lights
     id: lights
     icon: mdi:lamp
