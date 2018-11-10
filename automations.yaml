@@ -4,7 +4,7 @@
   trigger:
   - event: sunset
     platform: sun
-    offset: -01:00:00
+    offset: -00:30:00
   condition:
   - condition: or
     conditions:
@@ -17,7 +17,7 @@
   action:
   - service: script.turn_on_lights_living_room
     data:
-      transition: 3600
+      transition: 1
   - service: script.turn_on_presence_lights
     data: {}
   - service: script.notify_zanzito
