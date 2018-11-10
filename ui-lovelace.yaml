@@ -95,13 +95,8 @@ views:
         hide_volume: true
         show_progress: true
         show_source: true
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.sytercc_quarto
-        name: ChromeCast
-        artwork: cover
-        toggle_power: false
-        power_color: true
-        show_progress: true
       - type: iframe
         url: https://embed.windy.com/embed2.html
         aspect_ratio: 80%
