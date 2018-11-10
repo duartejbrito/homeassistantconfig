@@ -95,7 +95,7 @@ views:
         hide_volume: true
         show_progress: true
         show_source: true
-      - type: media-control
+      - type: custom:mini-media-player
         entity: media_player.chromecast_bedroom
       - type: iframe
         url: https://embed.windy.com/embed2.html
