@@ -105,6 +105,7 @@ views:
     icon: mdi:lamp
     cards:
       - type: entities
+        id: living_room_lights
         title: Living Room Lights
         show_header_toggle: true
         entities:
