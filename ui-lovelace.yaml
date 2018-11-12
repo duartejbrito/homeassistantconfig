@@ -103,6 +103,7 @@ views:
       - type: entities
         entities:
           - entity: switch.dlink_smart_plug_w215
+            secondary_info: temperature
   - title: Lights
     id: lights
     icon: mdi:lamp
