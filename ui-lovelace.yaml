@@ -110,6 +110,7 @@ views:
             show_header_toggle: false
             entities:
               - entity: switch.dlink_smart_plug_w215
+              - entity: sensor.dlink_smart_plug_w215_temperature
   - title: Lights
     id: lights
     icon: mdi:lamp
