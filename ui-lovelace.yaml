@@ -119,6 +119,12 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
+          - type: gauge
+            entity: sensor.dlink_smart_plug_w215_temperature
+            severity:
+              green: 0
+              yellow: 60
+              red: 70
   - title: Lights
     id: lights
     icon: mdi:lamp
