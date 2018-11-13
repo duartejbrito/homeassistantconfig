@@ -110,16 +110,8 @@ views:
             show_header_toggle: false
             entities:
               - entity: switch.dlink_smart_plug_w215
-          - type: "custom:mini-graph-card"
-            entity: sensor.dlink_smart_plug_w215_temperature
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
           - type: gauge
+            title: Temperature
             entity: sensor.dlink_smart_plug_w215_temperature
             severity:
               green: 0
