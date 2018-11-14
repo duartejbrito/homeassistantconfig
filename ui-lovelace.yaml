@@ -100,9 +100,6 @@ views:
         show_source: true
       - type: custom:mini-media-player
         entity: media_player.chromecast_bedroom
-      - type: entities
-        entities:
-          - entity: switch.dlink_smart_plug_w215
       - type: vertical-stack
         cards:
           - type: entities
