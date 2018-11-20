@@ -155,7 +155,7 @@
   trigger:
   - platform: event
     event_type: state_changed
-    data:
+    event_data:
       entity_id: input_boolean.living_room_heating_system
   action:
   - service: check_living_room_heating_system
