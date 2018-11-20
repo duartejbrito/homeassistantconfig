@@ -158,4 +158,4 @@
     event_data:
       entity_id: input_boolean.living_room_heating_system
   action:
-  - service: check_living_room_heating_system
+  - service: script.check_living_room_heating_system
