@@ -157,5 +157,13 @@
     event_type: state_changed
     event_data:
       entity_id: input_boolean.living_room_heating_system
+  - platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: sensor.temperature_158d0002786e71
+  - platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: input_number.living_room_heating_system_temperature
   action:
   - service: script.check_living_room_heating_system
