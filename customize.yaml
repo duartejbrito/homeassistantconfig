@@ -15,6 +15,12 @@ light.gateway_light_7c49eb193581:
 light.sala:
   friendly_name: Floor Lamp 1
 
+light.yeelight_color_bulb:
+  friendly_name: Floor Lamp 2
+  
+light.yeelight_color_bulb_2:
+  friendly_name: Ceiling
+
 ### SENSORS ###
 sensor.illumination_7c49eb193581:
   friendly_name: Illumination

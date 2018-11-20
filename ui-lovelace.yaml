@@ -98,8 +98,8 @@ views:
                 type: custom:slider-entity-row
                 hide_when_off: true
               - entity: binary_sensor.motion_sensor_158d00029a9d0e
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_158d00029a9d0e
+          - entity: sensor.illumination_158d00029a9d0e
+            type: "custom:mini-graph-card"
             height: 100
             line_width: 4
             font_size: 50
