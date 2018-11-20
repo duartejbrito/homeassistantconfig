@@ -78,6 +78,7 @@ views:
               yellow: 60
               red: 70
       - type: vertical-stack
+        title: Sensors
         cards:
           - type: markdown
             content: >
