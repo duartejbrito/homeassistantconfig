@@ -81,6 +81,9 @@ zone.mom_home:
 binary_sensor.door_window_sensor_158d00028de42c:
   friendly_name: Front door
 
+switch.dlink_smart_plug_w215:
+  friendly_name: Heater
+
 sensor.temperature_158d0002786e71:
   friendly_name: Temperature
 
