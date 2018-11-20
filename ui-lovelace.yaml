@@ -70,6 +70,7 @@ views:
         show_header_toggle: false
         entities:
           - input_boolean.living_room_heating_system
+          - input_number.living_room_heating_system_temperature
       - type: vertical-stack
         cards:
           - title: Switchs

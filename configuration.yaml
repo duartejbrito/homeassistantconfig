@@ -164,6 +164,15 @@ input_boolean:
     initial: off
     icon: mdi:radiator
 
+input_number:
+  living_room_heating_system_temperature:
+    name: Heating system temperature
+    initial: 25
+    min: 20
+    max: 30
+    step: 1
+    mode: box
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #
