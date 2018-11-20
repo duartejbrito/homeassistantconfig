@@ -80,7 +80,7 @@ views:
       - type: vertical-stack
         cards:
           - type: markdown
-            entities: >
+            content: >
               # Sensors
           - entity: sensor.temperature_158d0002786e71
             type: "custom:mini-graph-card"
