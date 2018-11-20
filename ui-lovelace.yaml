@@ -52,9 +52,9 @@ views:
   - title: Living Room
     id: living-room
     cards:
-      - type: entities
+      - title: Lights
+        type: entities
         id: living_room_lights
-        title: Lights
         show_header_toggle: true
         entities:
           - entity: light.sala
@@ -65,13 +65,13 @@ views:
             hide_when_off: true
       - type: vertical-stack
         cards:
-          - type: entities
-            title: Dlink Smart Plug
+          - title: Plugs
+            type: entities
             show_header_toggle: false
             entities:
               - entity: switch.dlink_smart_plug_w215
-          - type: gauge
-            title: Temperature
+          - title: Temperature
+            type: gauge
             entity: sensor.dlink_smart_plug_w215_temperature
             severity:
               green: 0
