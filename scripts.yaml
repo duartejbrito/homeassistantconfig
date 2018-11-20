@@ -87,6 +87,21 @@ turn_off_all_media:
       entity_id: media_player.samsung_tv_remote
     service: media_player.turn_off
 
+### Living room heating system ###
+check_living_room_heating_system:
+  alias: Check Living Room Heating System
+  sequence:
+  - condition: state
+    entity_id: input_boolean.living_room_heating_system
+    state: 'on'
+  - service_template: >
+    {% if sensor.temperature_158d0002786e71 < input_number.living_room_heating_system_temperature %}
+      switch.turn_on
+    {% else %}
+      switch.turn_off
+    {% endif %}
+    entity_id: switch.dlink_smart_plug_w215
+
 ### Notifies ###
 notify_slack:
   alias: Notify Slack

@@ -148,3 +148,14 @@
   - service: light.turn_off
     data:
       entity_id: light.yeelight_color_bulb_2
+
+### HEATING SYSTEM ###
+- id: living_room_heating_system
+  alias: Living Room Heating System
+  trigger:
+  - platform: event
+    event_type: state_changed
+    data:
+      entity_id: input_boolean.living_room_heating_system
+  action:
+  - service: check_living_room_heating_system
