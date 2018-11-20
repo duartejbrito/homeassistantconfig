@@ -158,6 +158,12 @@ cast:
   media_player:
   - host: !secret chromecast_host
 
+input_boolean:
+  living_room_heating_system:
+    name: Heating system
+    initial: off
+    icon: mdi:radiator
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #

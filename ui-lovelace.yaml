@@ -65,9 +65,13 @@ views:
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
             hide_when_off: true
+      - title: Controls
+        type: entities
+        entities:
+          - input_boolean.living_room_heating_system
       - type: vertical-stack
         cards:
-          - title: Plugs
+          - title: Switchs
             type: entities
             show_header_toggle: false
             entities:
