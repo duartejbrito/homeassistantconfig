@@ -80,3 +80,12 @@ zone.mom_home:
 
 binary_sensor.door_window_sensor_158d00028de42c:
   friendly_name: Front door
+
+sensor.temperature_158d0002786e71:
+  friendly_name: Temperature
+
+sensor.humidity_158d0002786e71:
+  friendly_name: Humidity
+
+sensor.pressure_158d0002786e71:
+  friendly_name: Pressure
