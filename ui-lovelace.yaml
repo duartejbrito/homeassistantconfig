@@ -77,6 +77,12 @@ views:
               green: 0
               yellow: 60
               red: 70
+          - title: Sensors
+            type: entities
+            entities:
+              - sensor.humidity_158d0002786e71
+              - sensor.pressure_158d0002786e71
+              - sensor.temperature_158d0002786e71
   - title: Kids Room
     id: kids-room
     cards:
