@@ -260,3 +260,5 @@ views:
         entities:
           - sensor.tradfri_remote_control
           - sensor.motion_sensor_158d00029a9d0e_battery
+          - sensor.door_window_sensor_158d00028de42c_battery
+          - sensor.temperature_158d0002786e71_battery

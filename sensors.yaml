@@ -70,6 +70,11 @@
       - current_wifi
       - current_operator
 
+  - platform: tautulli
+    api_key: !secret tautulli_api_key
+    host: !secret tautulli_host
+    monitored_conditions:
+
   - platform: template
     sensors:
       motion_sensor_158d00029a9d0e_battery:
@@ -78,14 +83,18 @@
         device_class: battery
         value_template: >
           {{ states.binary_sensor.motion_sensor_158d00029a9d0e.attributes.battery_level | int }}
-
-  - platform: tautulli
-    api_key: !secret tautulli_api_key
-    host: !secret tautulli_host
-    monitored_conditions:
-
-  - platform: template
-    sensors:
+      door_window_sensor_158d00028de42c_battery:
+        friendly_name: Door Sensor
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: >
+          {{ states.binary_sensor.door_window_sensor_158d00028de42c.attributes.battery_level | int }}
+      temperature_158d0002786e71_battery:
+        friendly_name: Temperature Sensor
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: >
+          {{ states.sensor.temperature_158d0002786e71.attributes.battery_level | int }}
       dlink_smart_plug_w215_temperature:
         unit_of_measurement: '°C'
         device_class: temperature
