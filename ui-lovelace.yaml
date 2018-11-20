@@ -62,6 +62,20 @@ views:
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
             hide_when_off: true
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Dlink Smart Plug
+            show_header_toggle: false
+            entities:
+              - entity: switch.dlink_smart_plug_w215
+          - type: gauge
+            title: Temperature
+            entity: sensor.dlink_smart_plug_w215_temperature
+            severity:
+              green: 0
+              yellow: 60
+              red: 70
   - title: Kids Room
     id: kids-room
     cards:
@@ -83,8 +97,7 @@ views:
             color: '#3498db'
             more_info: true
             accuracy: 25
-            hours_to_show: 24
-      
+            hours_to_show: 24    
   - title: Master bedroom
     id: master-bedroom
     cards:
