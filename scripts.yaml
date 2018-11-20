@@ -95,11 +95,11 @@ check_living_room_heating_system:
     entity_id: input_boolean.living_room_heating_system
     state: 'on'
   - service_template: >
-    {%- if sensor.temperature_158d0002786e71 < input_number.living_room_heating_system_temperature -%}
-      switch.turn_on
-    {%- else -%}
-      switch.turn_off
-    {%- endif %}
+      {% if sensor.temperature_158d0002786e71 < input_number.living_room_heating_system_temperature %}
+        switch.turn_on
+      {% else %}
+        switch.turn_off
+      {% endif %}
     entity_id: switch.dlink_smart_plug_w215
 
 ### Notifies ###
