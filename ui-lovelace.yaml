@@ -29,15 +29,15 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: entities
-            title: Lights
+          - title: Lights
+            type: entities
             show_header_toggle: false
             entities:
               - entity: light.gateway_light_7c49eb193581
                 type: custom:slider-entity-row
                 hide_when_off: true
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_7c49eb193581
+          - entity: sensor.illumination_7c49eb193581
+            type: "custom:mini-graph-card"
             height: 100
             line_width: 4
             font_size: 50
@@ -45,7 +45,8 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
-      - type: entities
+      - title: Sensors
+        type: entities
         entities:
           - binary_sensor.door_window_sensor_158d00028de42c
   - title: Living Room
