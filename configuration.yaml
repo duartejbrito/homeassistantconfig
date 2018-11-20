@@ -172,6 +172,8 @@ input_number:
     max: 30
     step: 1
     mode: box
+    unit_of_measurement: '°C'
+    icon: mdi:thermometer
 
 ####################################################
 #                                                  #
