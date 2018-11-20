@@ -1,51 +1,50 @@
+### DEVICES ###
 device_tracker.s8:
   friendly_name: Duarte Phone
-sensor.s8batterylevel:
-  friendly_name: Battery
-camera.s8_cam:
-  friendly_name: Location
 
 device_tracker.s6:
   friendly_name: Silvia Phone
-sensor.s6batterylevel:
-  friendly_name: Battery
-camera.s6_cam:
-  friendly_name: Location
 
 device_tracker.j5:
   friendly_name: Beatriz Phone
-sensor.j5batterylevel:
-  friendly_name: Battery
-camera.j5_cam:
-  friendly_name: Location
 
-group.devices:
-  friendly_name: Devices
-
+### LIGTHS ###
 light.gateway_light_7c49eb193581:
   friendly_name: Gateway Light
-
-sensor.illumination_7c49eb193581:
-  friendly_name: Illumination
 
 light.sala:
   friendly_name: Floor Lamp 1
 
-light.yeelight_color_bulb:
-  friendly_name: Floor Lamp 2
-
-light.yeelight_color_bulb_2:
-  friendly_name: Ceiling
-
-binary_sensor.motion_sensor_158d00029a9d0e:
-  friendly_name: Movement
+### SENSORS ###
+sensor.illumination_7c49eb193581:
+  friendly_name: Illumination
 
 sensor.illumination_158d00029a9d0e:
   friendly_name: Illumination
 
+binary_sensor.motion_sensor_158d00029a9d0e:
+  friendly_name: Movement
+
+sensor.temperature_158d0002786e71:
+  friendly_name: Temperature
+
+sensor.humidity_158d0002786e71:
+  friendly_name: Humidity
+
+sensor.pressure_158d0002786e71:
+  friendly_name: Pressure
+
+binary_sensor.door_window_sensor_158d00028de42c:
+  friendly_name: Front door
+
 sensor.tradfri_remote_control:
   device_class: battery
 
+### SWITCHS ###
+switch.dlink_smart_plug_w215:
+  friendly_name: Heater
+
+### ZONES ###
 zone.silvia_work:
   friendly_name: Silvia Work
 
@@ -60,18 +59,3 @@ zone.carolina_school:
 
 zone.mom_home:
   friendly_name: Mom Home
-
-binary_sensor.door_window_sensor_158d00028de42c:
-  friendly_name: Front door
-
-switch.dlink_smart_plug_w215:
-  friendly_name: Heater
-
-sensor.temperature_158d0002786e71:
-  friendly_name: Temperature
-
-sensor.humidity_158d0002786e71:
-  friendly_name: Humidity
-
-sensor.pressure_158d0002786e71:
-  friendly_name: Pressure

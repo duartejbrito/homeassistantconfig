@@ -3,6 +3,8 @@
       !secret yeelight_device_1:
         name: Yeelight Color Bulb
         save_on_change: True
+        friendly_name: Floor Lamp 2
       !secret yeelight_device_2:
         name: Yeelight Color Bulb 2
         save_on_change: True
+        friendly_name: Ceiling

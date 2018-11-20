@@ -9,6 +9,7 @@
     name: "s8batterylevel"
     unit_of_measurement: '%'
     retain: true
+    friendly_name: Battery
     device_class: battery
 
   - platform: mqtt
@@ -16,6 +17,7 @@
     name: "s6batterylevel"
     unit_of_measurement: '%'
     retain: true
+    friendly_name: Battery
     device_class: battery
 
   - platform: mqtt
@@ -23,6 +25,7 @@
     name: "j5batterylevel"
     unit_of_measurement: '%'
     retain: true
+    friendly_name: Battery
     device_class: battery
 
   - platform: mqtt
