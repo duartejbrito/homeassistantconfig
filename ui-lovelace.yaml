@@ -52,6 +52,8 @@ views:
   - title: Living Room
     id: living-room
     cards:
+      - type: media-control
+        entity: media_player.samsung_tv_remote
       - title: Lights
         type: entities
         id: living_room_lights
@@ -170,8 +172,6 @@ views:
               left: 15px
               color: white
               transform: none
-      - type: media-control
-        entity: media_player.samsung_tv_remote
       - type: custom:mini-media-player
         entity: media_player.spotify
         name: Spotify Player
@@ -183,76 +183,6 @@ views:
         show_source: true
       - type: custom:mini-media-player
         entity: media_player.chromecast_bedroom
-  - title: Switchs
-    id: switchs
-    icon: mdi:switch
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: Dlink Smart Plug
-            show_header_toggle: false
-            entities:
-              - entity: switch.dlink_smart_plug_w215
-          - type: gauge
-            title: Temperature
-            entity: sensor.dlink_smart_plug_w215_temperature
-            severity:
-              green: 0
-              yellow: 60
-              red: 70
-  - title: Lights
-    id: lights
-    icon: mdi:lamp
-    cards:
-      - type: entities
-        id: living_room_lights
-        title: Living Room Lights
-        show_header_toggle: true
-        entities:
-          - entity: light.sala
-            type: custom:slider-entity-row
-            hide_when_off: true
-          - entity: light.yeelight_color_bulb
-            type: custom:slider-entity-row
-            hide_when_off: true
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: Kids Room Lights
-            show_header_toggle: false
-            entities:
-              - entity: light.yeelight_color_bulb_2
-                type: custom:slider-entity-row
-                hide_when_off: true
-              - entity: binary_sensor.motion_sensor_158d00029a9d0e
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_158d00029a9d0e
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: Hall Lights
-            show_header_toggle: false
-            entities:
-              - entity: light.gateway_light_7c49eb193581
-                type: custom:slider-entity-row
-                hide_when_off: true
-          - type: "custom:mini-graph-card"
-            entity: sensor.illumination_7c49eb193581
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
   - title: Weather
     id: weather
     icon: mdi:weather-cloudy
