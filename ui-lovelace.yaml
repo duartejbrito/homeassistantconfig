@@ -24,8 +24,8 @@ views:
     id: home
     icon: mdi:home-assistant
     cards:
-  - title: Kids Room
-    id: kids-room
+  - title: Hall
+    id: hall
     cards:
       - type: vertical-stack
         cards:
@@ -33,12 +33,11 @@ views:
             title: Lights
             show_header_toggle: false
             entities:
-              - entity: light.yeelight_color_bulb_2
+              - entity: light.gateway_light_7c49eb193581
                 type: custom:slider-entity-row
                 hide_when_off: true
-              - entity: binary_sensor.motion_sensor_158d00029a9d0e
           - type: "custom:mini-graph-card"
-            entity: sensor.illumination_158d00029a9d0e
+            entity: sensor.illumination_7c49eb193581
             height: 100
             line_width: 4
             font_size: 50
@@ -63,8 +62,8 @@ views:
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
             hide_when_off: true
-  - title: Hall
-    id: hall
+  - title: Kids Room
+    id: kids-room
     cards:
       - type: vertical-stack
         cards:
@@ -72,11 +71,12 @@ views:
             title: Lights
             show_header_toggle: false
             entities:
-              - entity: light.gateway_light_7c49eb193581
+              - entity: light.yeelight_color_bulb_2
                 type: custom:slider-entity-row
                 hide_when_off: true
+              - entity: binary_sensor.motion_sensor_158d00029a9d0e
           - type: "custom:mini-graph-card"
-            entity: sensor.illumination_7c49eb193581
+            entity: sensor.illumination_158d00029a9d0e
             height: 100
             line_width: 4
             font_size: 50
@@ -84,6 +84,7 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
+      
   - title: Master bedroom
     id: master-bedroom
     cards:

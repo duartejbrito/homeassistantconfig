@@ -77,3 +77,6 @@ zone.carolina_school:
 
 zone.mom_home:
   friendly_name: Mom Home
+
+binary_sensor.door_window_sensor_158d00028de42c:
+  friendly_name: Front door
