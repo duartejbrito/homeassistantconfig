@@ -24,15 +24,20 @@ views:
     id: home
     icon: mdi:home-assistant
     cards:
-  - title: Weather
-    id: weather
-    icon: mdi:weather-cloudy
+  - title: Living Room
+    id: living-room
     cards:
-      - type: weather-forecast
-        entity: weather.lisboa
-      - type: iframe
-        url: https://embed.windy.com/embed2.html
-        aspect_ratio: 80%
+      - type: entities
+        id: living_room_lights
+        title: Lights
+        show_header_toggle: true
+        entities:
+          - entity: light.sala
+            type: custom:slider-entity-row
+            hide_when_off: true
+          - entity: light.yeelight_color_bulb
+            type: custom:slider-entity-row
+            hide_when_off: true
   - title: Media
     id: media
     icon: mdi:play-network
@@ -178,6 +183,15 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
+  - title: Weather
+    id: weather
+    icon: mdi:weather-cloudy
+    cards:
+      - type: weather-forecast
+        entity: weather.lisboa
+      - type: iframe
+        url: https://embed.windy.com/embed2.html
+        aspect_ratio: 80%
   - title: Phones Status
     id: phonesstatus
     icon: mdi:cellphone-android
@@ -242,18 +256,12 @@ views:
           - script.arrive_home
           - script.leave_home
           - script.movie_time
-          - script.notify_automation_triggered
           - script.turn_off_all_lights
           - script.turn_off_all_media
           - script.turn_off_lights_living_room
           - script.turn_off_presence_lights
           - script.turn_on_lights_living_room
           - script.turn_on_presence_lights
-      - type: entities
-        title: Devices
-        show_header_toggle: true
-        entities:
-          - switch.sytergamming
       - type: entities
         title: Batteries
         show_header_toggle: true
