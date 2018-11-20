@@ -78,11 +78,7 @@ views:
               yellow: 60
               red: 70
       - type: vertical-stack
-        title: Sensors
         cards:
-          - type: markdown
-            content: >
-              # Sensors
           - entity: sensor.temperature_158d0002786e71
             type: "custom:mini-graph-card"
             height: 100
