@@ -155,9 +155,7 @@
   trigger:
   - platform: event
     event_type: state_changed
-  condition:
-  - condition: template
-    value_template: >
-      {{ trigger.entity_id is 'input_boolean.living_room_heating_system' }}
+    event_data:
+      entity_id: input_boolean.living_room_heating_system'
   action:
   - service: script.check_living_room_heating_system
