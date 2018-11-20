@@ -67,6 +67,7 @@ views:
             hide_when_off: true
       - title: Controls
         type: entities
+        show_header_toggle: false
         entities:
           - input_boolean.living_room_heating_system
       - type: vertical-stack
