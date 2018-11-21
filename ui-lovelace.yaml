@@ -20,24 +20,15 @@ resources:
 
 title: Home
 views:
-  - title: Header
-    icon: mdi:car
-    panel: true
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: glance
-            entities:
-              - sun.sun
-
-  - title: default_view
-    id: home
+  - id: home
+    title: Home
     icon: mdi:home-assistant
     cards:
-  - title: Hall
-    id: hall
+  - id: hall
+    title: Hall
     cards:
-      - type: vertical-stack
+      - id: hall-lights
+        type: vertical-stack
         cards:
           - title: Lights
             type: entities
@@ -55,18 +46,20 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
-      - title: Sensors
+      - id: hall-sensors
+        title: Sensors
         type: entities
         entities:
           - binary_sensor.door_window_sensor_158d00028de42c
-  - title: Living Room
-    id: living-room
+  - id: living-room
+    title: Living Room
     cards:
-      - type: media-control
+      - id: living-room-tv
+        type: media-control
         entity: media_player.samsung_tv_remote
-      - title: Lights
+      - id: living-room-lights
+        title: Lights
         type: entities
-        id: living_room_lights
         show_header_toggle: true
         entities:
           - entity: light.sala
@@ -75,13 +68,15 @@ views:
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
             hide_when_off: true
-      - title: Controls
+      - id: living-room-controls
+        title: Controls
         type: entities
         show_header_toggle: false
         entities:
           - input_boolean.living_room_heating_system
           - input_number.living_room_heating_system_temperature
-      - type: vertical-stack
+      - id: living-room-switchs
+        type: vertical-stack
         cards:
           - title: Switchs
             type: entities
@@ -95,16 +90,18 @@ views:
               green: 0
               yellow: 60
               red: 70
-      - title: Sensors
+      - id: living-room-sensors
+        title: Sensors
         type: entities
         entities:
           - sensor.temperature_158d0002786e71
           - sensor.humidity_158d0002786e71
           - sensor.pressure_158d0002786e71
-  - title: Kids Room
-    id: kids-room
+  - id: kids-room
+    title: Kids Room
     cards:
-      - type: vertical-stack
+      - id: kids-room-lights
+        type: vertical-stack
         cards:
           - type: entities
             title: Lights
@@ -123,11 +120,12 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
-  - title: Media
-    id: media
+  - id: media
+    title: Media
     icon: mdi:play-network
     cards:
-      - type: picture-elements
+      - id: media-plex
+        type: picture-elements
         image: /local/plex.jpg
         elements:
           - type: custom:text-element
@@ -185,7 +183,8 @@ views:
               left: 15px
               color: white
               transform: none
-      - type: custom:mini-media-player
+      - id: media-spotify
+        type: custom:mini-media-player
         entity: media_player.spotify
         name: Spotify Player
         artwork: cover
@@ -194,63 +193,73 @@ views:
         hide_volume: true
         show_progress: true
         show_source: true
-      - type: custom:mini-media-player
+      - id: media-chromecast
+        type: custom:mini-media-player
         entity: media_player.chromecast_bedroom
-  - title: Weather
-    id: weather
+  - id: weather
+    title: Weather
     icon: mdi:weather-cloudy
     cards:
-      - type: weather-forecast
+      - id: weather-ipma
+        type: weather-forecast
         entity: weather.lisboa
-      - type: iframe
+      - id: weather-windy
+        type: iframe
         url: https://embed.windy.com/embed2.html
         aspect_ratio: 80%
-  - title: Phones Status
-    id: phonesstatus
+  - id: phones-status
+    title: Phones Status
     icon: mdi:cellphone-android
     cards:
-      - type: entities
-        title: Duarte Phone Status
-        show_header_toggle: true
-        entities:
-          - device_tracker.s8
-          - sensor.s8batterylevel
-      - type: map
-        #default_zoom: 18
-        entities:
-          - device_tracker.s8
-          - zone.home
-          - zone.rita_school
-          - zone.carolina_school
-      - type: entities
-        title: Silvia Phone Status
-        show_header_toggle: true
-        entities:
-          - device_tracker.s6
-          - sensor.s6batterylevel
-      - type: map
-        #default_zoom: 18
-        entities:
-          - device_tracker.s6
-          - zone.home
-          - zone.rita_school
-          - zone.carolina_school
-      - type: entities
-        title: Beatriz Phone Status
-        show_header_toggle: true
-        entities:
-          - device_tracker.j5
-          - sensor.j5batterylevel
-      - type: map
-        #default_zoom: 18
-        entities:
-          - device_tracker.j5
-          - zone.mom_home
-  - title: Automation
-    id: automation
+      - id: phones-status-s8
+        type: vertical-stack
+        cards:
+          - type: entities
+            title: Duarte Phone Status
+            show_header_toggle: true
+            entities:
+              - device_tracker.s8
+              - sensor.s8batterylevel
+          - type: map
+            entities:
+              - device_tracker.s8
+              - zone.home
+              - zone.rita_school
+              - zone.carolina_school
+      - id: phones-status-s6
+        type: vertical-stack
+        cards:
+          - type: entities
+            title: Silvia Phone Status
+            show_header_toggle: true
+            entities:
+              - device_tracker.s6
+              - sensor.s6batterylevel
+          - type: map
+            entities:
+              - device_tracker.s6
+              - zone.home
+              - zone.rita_school
+              - zone.carolina_school
+      - id: phones-status-j5
+        type: vertical-stack
+        cards:
+          - type: entities
+            title: Beatriz Phone Status
+            show_header_toggle: true
+            entities:
+              - device_tracker.j5
+              - sensor.j5batterylevel
+          - type: map
+            entities:
+              - device_tracker.j5
+              - zone.mom_home
+  - id: automation
+    title: Automation
     icon: mdi:home-automation
     cards:
-      - type: entities
+      - id: automation-automations
+        type: entities
         title: Automations
         show_header_toggle: false
         entities:
@@ -262,7 +271,8 @@ views:
           - automation.no_movement_kids_room
           - automation.sun_below_horizon
           - automation.turn_off_lights
-      - type: entities
+      - id: automation-scripts
+        type: entities
         title: Scripts
         show_header_toggle: false
         entities:
@@ -275,7 +285,8 @@ views:
           - script.turn_off_presence_lights
           - script.turn_on_lights_living_room
           - script.turn_on_presence_lights
-      - type: entities
+      - id: automation-batteries
+        type: entities
         title: Batteries
         show_header_toggle: true
         entities:
