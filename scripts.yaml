@@ -35,20 +35,19 @@ turn_on_tradfri_light:
       hs_color:
       - 29.812
       - 65.252
-      entity_id:
-      # {% for item in entity_id %}
-        - "{{ item }}"
-      # {% endfor %}
 
 ### Living Room Lights ###
 turn_on_lights_living_room:
   alias: Turn On Lights Living Room
   sequence:
   - alias: 'Tradfri'
-    service: script.turn_on_tradfri_light
+    service: light.turn_on
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
+      hs_color:
+      - 29.812
+      - 65.252
       entity_id:
       - light.sala
   - alias: 'Yeelight'
