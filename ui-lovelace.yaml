@@ -28,15 +28,16 @@ views:
     title: Hall
     cards:
       - id: hall-lights
-        type: vertical-stack
-        cards:
-          - title: Lights
-            type: entities
-            show_header_toggle: false
-            entities:
-              - entity: light.gateway_light_7c49eb193581
-                type: custom:slider-entity-row
-                hide_when_off: true
+#        type: vertical-stack
+#        cards:
+#          - title: Lights
+        title: Lights
+        type: entities
+        show_header_toggle: false
+        entities:
+          - entity: light.gateway_light_7c49eb193581
+            type: custom:slider-entity-row
+            hide_when_off: true
           - entity: sensor.illumination_7c49eb193581
             type: "custom:mini-graph-card"
             height: 100
