@@ -42,6 +42,7 @@ turn_on_lights_living_room:
   alias: Turn On Lights Living Room
   sequence:
   - alias: 'Tradfri'
+    service: script.turn_on_tradfri_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
