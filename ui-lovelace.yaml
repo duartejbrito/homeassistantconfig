@@ -20,6 +20,16 @@ resources:
 
 title: Home
 views:
+  - title: Header
+    icon: mdi:car
+    panel: true
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: glance
+            entities:
+              - sun.sun
+
   - title: default_view
     id: home
     icon: mdi:home-assistant

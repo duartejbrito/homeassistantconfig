@@ -158,6 +158,12 @@ cast:
   media_player:
   - host: !secret chromecast_host
 
+####################################################
+#                                                  #
+#                    Inputs                        #
+#                                                  #
+####################################################
+
 input_boolean:
   living_room_heating_system:
     name: Heating system
