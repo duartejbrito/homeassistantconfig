@@ -46,6 +46,15 @@ binary_sensor.door_window_sensor_158d00028de42c:
 sensor.tradfri_remote_control:
   device_class: battery
 
+sensor.s8batterylevel:
+  friendly_name: Battery
+
+sensor.s6batterylevel:
+  friendly_name: Battery
+
+sensor.j5batterylevel:
+  friendly_name: Battery
+
 ### SWITCHS ###
 switch.dlink_smart_plug_w215:
   friendly_name: Heater
