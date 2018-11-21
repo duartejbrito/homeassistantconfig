@@ -36,9 +36,9 @@ turn_on_tradfri_light:
       - 29.812
       - 65.252
       entity_id:
-      {% for item in entity_id %}
+      # {% for item in entity_id %}
         - {{ item }}
-      {% endfor %}
+      # {% endfor %}
 
 ### Living Room Lights ###
 turn_on_lights_living_room:
