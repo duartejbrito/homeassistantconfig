@@ -24,6 +24,18 @@ turn_off_all_lights:
       - light.sala
       - light.gateway_light_7c49eb193581
     service: light.turn_off
+turn_on_tradfri_light:
+  alias: Turn On Tradfri Light
+  sequence:
+  - alias: 'Tradfri'
+    service: light.turn_on
+    data_template:
+      brightness_pct: '{{ brightness_pct|default(100) }}'
+      transition: '{{ transition|default(1) }}'
+      hs_color:
+      - 29.812
+      - 65.252
+      entity_id: '{{ entity_id }}'
 
 ### Living Room Lights ###
 turn_on_lights_living_room:
@@ -33,12 +45,8 @@ turn_on_lights_living_room:
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
-      hs_color:
-      - 29.812
-      - 65.252
       entity_id:
       - light.sala
-    service: light.turn_on
   - alias: 'Yeelight'
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
