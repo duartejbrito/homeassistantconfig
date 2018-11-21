@@ -112,10 +112,7 @@ views:
             color: '#3498db'
             more_info: true
             accuracy: 25
-            hours_to_show: 24    
-  - title: Master bedroom
-    id: master-bedroom
-    cards:
+            hours_to_show: 24
   - title: Media
     id: media
     icon: mdi:play-network
