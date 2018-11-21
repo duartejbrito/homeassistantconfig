@@ -27,7 +27,7 @@ views:
   - id: hall
     title: Hall
     cards:
-      - id: hall-lights
+      - id: hall_lights
         type: vertical-stack
         cards:
           - title: Lights
