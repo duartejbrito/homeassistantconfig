@@ -64,6 +64,7 @@ zone: !include zones.yaml
 device_tracker: !include device_tracker.yaml
 light: !include light.yaml
 camera: !include camera.yaml
+scene: !include scene.yaml
 
 ####################################################
 #                                                  #

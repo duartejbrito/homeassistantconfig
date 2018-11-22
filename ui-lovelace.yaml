@@ -72,6 +72,7 @@ views:
         entities:
           - input_boolean.living_room_heating_system
           - input_number.living_room_heating_system_temperature
+          - scene.living_room_small_lights
       - id: living-room-switchs
         type: vertical-stack
         cards:
