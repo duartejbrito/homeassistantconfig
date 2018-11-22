@@ -2,9 +2,9 @@
     entities:
       light.sala: true
       light.yeelight_color_bulb: false
-  - name: Living Room Medium Lights
-    entities:
-  - name: Living Room All Lights
-    entities:
-  - name: Living Room Movie Time
-    entities:
+#  - name: Living Room Medium Lights
+#    entities:
+#  - name: Living Room All Lights
+#    entities:
+#  - name: Living Room Movie Time
+#    entities:
