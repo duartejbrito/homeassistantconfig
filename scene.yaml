@@ -16,7 +16,7 @@
         - 29.812
         - 65.252
       light.yeelight_color_bulb:
-        state: false
+        state: true
         brightness_pct: 100
         color_temp: 357
 #  - name: Living Room All Lights
