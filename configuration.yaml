@@ -44,7 +44,8 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: http://hassio-config.duartebrito.pw/
+    url: http://192.168.1.30:3218/
+#    url: http://hassio-config.duartebrito.pw/
 
 ####################################################
 #                                                  #
