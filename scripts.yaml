@@ -35,10 +35,7 @@ turn_on_tradfri_light:
       hs_color:
       - 29.812
       - 65.252
-      entity_id: >-
-        {% for item in entity_id %}
-          {{ item }}
-        {% endfor %}
+      entity_id: {{ entity_id }}
 
 ### Living Room Lights ###
 turn_on_lights_living_room:

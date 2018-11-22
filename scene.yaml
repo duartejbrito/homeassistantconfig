@@ -19,7 +19,17 @@
         state: true
         brightness_pct: 100
         color_temp: 357
-#  - name: Living Room All Lights
-#    entities:
+  - name: Living Room All Lights
+    entities:
+      light.sala: 
+        state: true
+        brightness_pct: 100
+        hs_color:
+        - 29.812
+        - 65.252
+      light.yeelight_color_bulb:
+        state: true
+        brightness_pct: 100
+        color_temp: 357
 #  - name: Living Room Movie Time
 #    entities:
