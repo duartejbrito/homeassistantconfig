@@ -72,7 +72,9 @@ views:
         entities:
           - input_boolean.living_room_heating_system
           - input_number.living_room_heating_system_temperature
+          - type: divider
           - scene.living_room_small_lights
+          - scene.living_room_medium_lights
       - id: living-room-switchs
         type: vertical-stack
         cards:
