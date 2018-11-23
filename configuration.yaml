@@ -183,6 +183,11 @@ input_number:
     unit_of_measurement: '°C'
     icon: mdi:thermometer
 
+wemo:
+  discovery: false
+  static:
+    - 192.168.1.78
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #
