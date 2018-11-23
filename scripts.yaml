@@ -2,14 +2,12 @@
 arrive_home:
   alias: Arrive Home
   sequence:
-  - data: {}
-    service: script.turn_on_lights_living_room
+  - service: script.turn_on_lights_living_room
   - service: script.turn_on_presence_lights
 leave_home:
   alias: Leave Home
   sequence:
-  - data: {}
-    service: script.turn_off_all_lights
+  - service: script.turn_off_all_lights
   - service: script.turn_off_all_media
 
 ### Lights ###
@@ -20,7 +18,6 @@ turn_off_all_lights:
     data_template:
       entity_id: >
         {% for item in dict(states.light|groupby("state"))["on"] -%}{{ item.entity_id | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
-    
 turn_on_tradfri_light:
   alias: Turn On Tradfri Light
   sequence:
@@ -31,6 +28,16 @@ turn_on_tradfri_light:
       hs_color:
       - 29.812
       - 65.252
+      entity_id: >
+        {% for item in entity_id -%}{{ item | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
+turn_on_yeelight_light:
+  alias: Turn On Yeelight Light
+  sequence:
+  - service: light.turn_on
+    data_template:
+      brightness_pct: '{{ brightness_pct|default(100) }}'
+      transition: '{{ transition|default(1) }}'
+      color_temp: 357
       entity_id: >
         {% for item in entity_id -%}{{ item | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
 
@@ -46,29 +53,27 @@ turn_on_lights_living_room:
       entity_id:
       - light.sala
   - alias: 'Yeelight'
+    service: script.turn_on_yeelight_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
-      color_temp: 357
       entity_id:
       - light.yeelight_color_bulb
-    service: light.turn_on
 turn_off_lights_living_room:
   alias: Turn Off Lights Living Room
   sequence:
-  - data_template:
+  - service: light.turn_off
+    data_template:
       transition: '{{ transition|default(1) }}'
       entity_id:
       - light.sala
       - light.yeelight_color_bulb
-    service: light.turn_off
 movie_time:
   alias: Movie Time
   sequence:
-  - alias: ''
+  - service: script.turn_on_lights_living_room
     data:
       brightness_pct: 20
-    service: script.turn_on_lights_living_room
 
 ### Presence Lights ###
 turn_on_presence_lights:
