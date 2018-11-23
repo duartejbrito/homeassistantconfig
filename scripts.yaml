@@ -17,7 +17,7 @@ turn_off_all_lights:
   alias: Turn Off All Lights
   sequence:
   - service: light.turn_off
-    data:
+    data_template:
       entity_id: >
         {% for item in dict(states.light|groupby("state"))["on"] -%}{{ item.entity_id | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
     
