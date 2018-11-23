@@ -184,6 +184,9 @@ input_number:
     icon: mdi:thermometer
 
 wemo:
+  discovery: false
+  static:
+    - 192.168.1.78
 
 ####################################################
 #                                                  #
