@@ -43,13 +43,10 @@ turn_on_lights_living_room:
   alias: Turn On Lights Living Room
   sequence:
   - alias: 'Tradfri'
-    service: light.turn_on
+    service: script.turn_on_tradfri_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
-      hs_color:
-      - 29.812
-      - 65.252
       entity_id:
       - light.sala
   - alias: 'Yeelight'
