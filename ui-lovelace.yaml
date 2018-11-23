@@ -65,6 +65,9 @@ views:
           - entity: light.yeelight_color_bulb
             type: custom:slider-entity-row
             hide_when_off: true
+          - entity: light.lightbulb_01
+          - entity: light.lightbulb_02
+          - entity: light.lightbulb_03
       - id: living-room-controls
         title: Controls
         type: entities
