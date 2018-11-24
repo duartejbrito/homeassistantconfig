@@ -14,6 +14,8 @@ resources:
     type: js
   - url: /local/lovelace-player/lovelace-player-config.js
     type: js
+  - url: /local/monster-card/monster-card.js
+    type: js
 
 title: Home
 views:
@@ -21,6 +23,15 @@ views:
     title: Home
     icon: mdi:home-assistant
     cards:
+      - type: custom:monster-card
+        show_empty: false
+        card:
+          type: entities
+          title: Lights On
+        filter:
+          include:
+            - domain: light
+              state: 'on'
   - id: hall
     title: Hall
     cards:
