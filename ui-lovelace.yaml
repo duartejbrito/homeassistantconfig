@@ -310,7 +310,7 @@ views:
   - id: blueprint
     title: Blueprint
     icon: mdi:wrench
-    panel: true
+    panel: false
     cards:
       - type: vertical-stack
         cards: 
@@ -322,5 +322,5 @@ views:
                 entity: light.sala
                 tap_action: toggle
                 style:
-                  top: 60%
-                  left: 67%
+                  top: 95%
+                  left: 96%
