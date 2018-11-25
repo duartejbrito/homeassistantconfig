@@ -320,6 +320,17 @@ views:
             elements:
             - type: image
               tap_action: toggle
+              entity: light.yeelight_color_bulb_2
+              image: /local/floorplan/living-room-celling-overlay.png
+              state_filter:
+                "off": opacity(50%)
+                "on": opacity(1%)
+              style:
+                width: 112%
+                left: 54%
+                top: 51%
+            - type: image
+              tap_action: toggle
               entity: light.sala
               image: /local/floorplan/living-room-floorlamp1-overlay.png
               state_filter:
@@ -328,7 +339,7 @@ views:
               style:
                 width: 50%
                 left: 84%
-                top: 39%
+                top: 62%
             - type: image
               tap_action: toggle
               entity: light.yeelight_color_bulb
@@ -338,16 +349,5 @@ views:
                 "on": opacity(1%)
               style:
                 width: 50%
-                left: 1%
-                top: 1%
-            - type: image
-              tap_action: toggle
-              entity: light.yeelight_color_bulb_2
-              image: /local/floorplan/living-room-celling-overlay.png
-              state_filter:
-                "off": opacity(50%)
-                "on": opacity(1%)
-              style:
-                width: 50%
-                left: 1%
-                top: 1%
+                left: 25%
+                top: 62%
