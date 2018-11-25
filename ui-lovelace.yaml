@@ -320,7 +320,7 @@ views:
             elements:
             - type: image
               tap_action: toggle
-              entity: light.yeelight_color_bulb_2
+              entity: light.gateway_light_7c49eb193581
               image: /local/floorplan/living-room-celling-overlay.png
               state_filter:
                 "off": opacity(50%)
