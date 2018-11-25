@@ -316,23 +316,4 @@ views:
         cards: 
           - type: custom:plan-coordinates                    
           - type: picture-elements
-            image: /local/floorplan/blueprint.jpg
-            elements:
-              - type: state-icon
-                entity: light.sala
-                tap_action: toggle
-                style:
-                  top: 94%
-                  left: 93%
-              - type: state-icon
-                entity: light.yeelight_color_bulb
-                tap_action: toggle
-                style:
-                  top: 94%
-                  left: 63%
-              - type: state-icon
-                entity: light.yeelight_color_bulb_2
-                tap_action: toggle
-                style:
-                  top: 23%
-                  left: 23%
+            image: /local/floorplan/living-room.png
