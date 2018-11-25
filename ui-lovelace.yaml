@@ -86,8 +86,11 @@ views:
           - input_boolean.living_room_heating_system
           - input_number.living_room_heating_system_temperature
           - type: divider
-          - scene.living_room_small_lights
-          - scene.living_room_medium_lights
+          - script.turn_on_low_lights_living_room
+          - script.turn_on_medium_lights_living_room
+          - script.turn_on_lights_living_room
+          - script.turn_on_movie_time_lights_living_room
+          - script.turn_off_lights_living_room
       - id: living-room-switchs
         type: vertical-stack
         cards:
