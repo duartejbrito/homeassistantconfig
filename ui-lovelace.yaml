@@ -325,9 +325,9 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 112%
-                left: 54%
-                top: 51%
+                width: 100%
+                left: 50%
+                top: 50%
             - type: image
               tap_action: toggle
               entity: light.sala
@@ -336,9 +336,9 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 50%
-                left: 84%
-                top: 62%
+                width: 46%
+                left: 78%
+                top: 66.5%
             - type: image
               tap_action: toggle
               entity: light.yeelight_color_bulb
@@ -347,6 +347,6 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 50%
-                left: 25%
-                top: 62%
+                width: 45%
+                left: 22%
+                top: 66%
