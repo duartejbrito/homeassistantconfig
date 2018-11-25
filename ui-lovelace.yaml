@@ -313,8 +313,7 @@ views:
     panel: true
     cards:
       - type: vertical-stack
-        cards: 
-          - type: custom:plan-coordinates                    
+        cards:                  
           - type: picture-elements
             image: /local/floorplan/living-room-blueprint.png
             elements:
