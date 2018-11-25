@@ -271,33 +271,53 @@ views:
     title: Automation
     icon: mdi:home-automation
     cards:
-      - id: automation-automations
-        type: entities
-        title: Automations
-        show_header_toggle: false
-        entities:
-          - automation.above_horizon
-          - automation.arrive_home_below_horizon
-          - automation.leave_home_duarte
-          - automation.leave_home_silvia
-          - automation.movement_kids_room
-          - automation.no_movement_kids_room
-          - automation.sun_below_horizon
-          - automation.turn_off_lights
-      - id: automation-scripts
-        type: entities
-        title: Scripts
-        show_header_toggle: false
-        entities:
-          - script.arrive_home
-          - script.leave_home
-          - script.movie_time
-          - script.turn_off_all_lights
-          - script.turn_off_all_media
-          - script.turn_off_lights_living_room
-          - script.turn_off_presence_lights
-          - script.turn_on_lights_living_room
-          - script.turn_on_presence_lights
+      - id: automation-automations-dyn
+        type: custom:monster-card
+        show_empty: true
+        card:
+          type: entities
+          title: Automations
+          show_header_toggle: false
+        filter:
+          include:
+            - domain: automation
+      - id: automation-scripts-dyn
+        type: custom:monster-card
+        show_empty: true
+        card:
+          type: entities
+          title: Scripts
+          show_header_toggle: false
+        filter:
+          include:
+            - domain: script
+#      - id: automation-automations
+#        type: entities
+#        title: Automations
+#        show_header_toggle: false
+#        entities:
+#          - automation.above_horizon
+#          - automation.arrive_home_below_horizon
+#          - automation.leave_home_duarte
+#          - automation.leave_home_silvia
+#          - automation.movement_kids_room
+#          - automation.no_movement_kids_room
+#          - automation.sun_below_horizon
+#          - automation.turn_off_lights
+#      - id: automation-scripts
+#        type: entities
+#        title: Scripts
+#        show_header_toggle: false
+#        entities:
+#          - script.arrive_home
+#          - script.leave_home
+#          - script.movie_time
+#          - script.turn_off_all_lights
+#          - script.turn_off_all_media
+#          - script.turn_off_lights_living_room
+#          - script.turn_off_presence_lights
+#          - script.turn_on_lights_living_room
+#          - script.turn_on_presence_lights
       - id: automation-batteries
         type: entities
         title: Batteries

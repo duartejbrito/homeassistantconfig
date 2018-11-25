@@ -2,7 +2,7 @@
 arrive_home:
   alias: Arrive Home
   sequence:
-  - service: script.turn_on_lights_living_room
+  - service: script.turn_on_low_lights_living_room
   - service: script.turn_on_presence_lights
 leave_home:
   alias: Leave Home
@@ -68,10 +68,36 @@ turn_off_lights_living_room:
       entity_id:
       - light.sala
       - light.yeelight_color_bulb
-movie_time:
-  alias: Movie Time
+turn_on_low_lights_living_room:
+  alias: Turn On Low Lights Living Room
   sequence:
-  - service: script.turn_on_lights_living_room
+    service: script.turn_on_tradfri_light
+    data_template:
+      brightness_pct: '{{ brightness_pct|default(100) }}'
+      transition: '{{ transition|default(1) }}'
+      entity_id:
+      - light.sala
+turn_on_medium_lights_living_room:
+  alias: Turn On Medium Lights Living Room
+  sequence:
+  - alias: 'Tradfri'
+    service: script.turn_on_tradfri_light
+    data_template:
+      brightness_pct: '{{ brightness_pct|default(100) }}'
+      transition: '{{ transition|default(1) }}'
+      entity_id:
+      - light.sala
+  - alias: 'Yeelight'
+    service: script.turn_on_yeelight_light
+    data_template:
+      brightness_pct: '{{ brightness_pct|default(100) }}'
+      transition: '{{ transition|default(1) }}'
+      entity_id:
+      - light.yeelight_color_bulb
+turn_on_movie_time_lights_living_room:
+  alias: Turn On Movie Time Lights Living Room
+  sequence:
+  - service: script.turn_on_medium_lights_living_room
     data:
       brightness_pct: 20
 
