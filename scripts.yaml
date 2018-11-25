@@ -71,7 +71,8 @@ turn_off_lights_living_room:
 turn_on_low_lights_living_room:
   alias: Turn On Low Lights Living Room
   sequence:
-    service: script.turn_on_tradfri_light
+  - service: script.turn_off_lights_living_room
+  - service: script.turn_on_tradfri_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
@@ -80,6 +81,7 @@ turn_on_low_lights_living_room:
 turn_on_medium_lights_living_room:
   alias: Turn On Medium Lights Living Room
   sequence:
+  - service: script.turn_off_lights_living_room
   - alias: 'Tradfri'
     service: script.turn_on_tradfri_light
     data_template:
@@ -97,6 +99,7 @@ turn_on_medium_lights_living_room:
 turn_on_movie_time_lights_living_room:
   alias: Turn On Movie Time Lights Living Room
   sequence:
+  - service: script.turn_off_lights_living_room
   - service: script.turn_on_medium_lights_living_room
     data:
       brightness_pct: 20
