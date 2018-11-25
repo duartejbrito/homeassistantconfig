@@ -310,7 +310,7 @@ views:
   - id: blueprint
     title: Blueprint
     icon: mdi:wrench
-    panel: true
+    panel: false
     cards:
       - type: vertical-stack
         cards:                  
