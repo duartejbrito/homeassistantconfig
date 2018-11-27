@@ -31,17 +31,17 @@ cloud:
         - media_player.lovelace_player_pc
         - media_player.spotify
     entity_config:
-      - light.gateway_light_7c49eb193581
+      light.gateway_light_7c49eb193581:
         room: Hall
-      - light.sala
+      light.sala:
         room: Living Room
-      - light.yeelight_color_bulb
+      light.yeelight_color_bulb:
         room: Living Room
-      - input_boolean.living_room_heating_system
+      input_boolean.living_room_heating_system:
         room: Living Room
-      - switch.dlink_smart_plug_w215
+      switch.dlink_smart_plug_w215:
         room: Living Room
-      - light.yeelight_color_bulb_2
+      light.yeelight_color_bulb_2:
         room: Kids Room
 config:
 
