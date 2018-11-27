@@ -27,6 +27,25 @@ cloud:
         - switch
         - light
         - media_player
+      exclude_entities:
+        - media_player.lovelace_player_pc
+        - media_player.spotify
+    entity_config:
+      ### Hall ###
+      - light.gateway_light_7c49eb193581
+        room: Hall
+      ### Living Room ###
+      - light.sala
+        room: Living Room
+      - light.yeelight_color_bulb
+        room: Living Room
+      - input_boolean.living_room_heating_system
+        room: Living Room
+      - switch.dlink_smart_plug_w215
+        room: Living Room
+      ### Kids Room ###
+      - light.yeelight_color_bulb_2
+        room: Kids Room
 config:
 
 frontend:
