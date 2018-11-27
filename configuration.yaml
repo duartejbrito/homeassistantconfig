@@ -19,6 +19,14 @@ homeassistant:
 ####################################################
 
 cloud:
+  google_actions:
+    filter:
+      include_domains:
+        - input_boolean
+        - script
+        - switch
+        - light
+        - media_player
 config:
 
 frontend:
@@ -182,11 +190,6 @@ input_number:
     mode: box
     unit_of_measurement: '°C'
     icon: mdi:thermometer
-
-wemo:
-  discovery: false
-  static:
-    - 192.168.1.78
 
 ####################################################
 #                                                  #
