@@ -1,6 +1,6 @@
   - platform: mqtt_json
     devices:
-     s8: zanzito/s8/location
+     duarte: zanzito/duarte/location
      silvia: zanzito/silvia/location
      j5: zanzito/j5/location
     track_new_devices: True

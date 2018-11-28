@@ -9,7 +9,7 @@
   - condition: or
     conditions:
     - condition: state
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       state: home
     - condition: state
       entity_id: device_tracker.silvia
@@ -22,7 +22,7 @@
     data: {}
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         Sun Below Horizon
 - id: above_horizon
@@ -35,7 +35,7 @@
   - service: script.turn_off_presence_lights
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         Automation based on {{ trigger.event }} was triggered.
 
@@ -51,7 +51,7 @@
     service: script.turn_off_lights_living_room
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         Lights turned off at {{ trigger.now }}
 
@@ -59,7 +59,7 @@
 - id: arrive_home_below_horizon
   alias: Arrive Home Below Horizon
   trigger:
-  - entity_id: device_tracker.s8
+  - entity_id: device_tracker.duarte
     event: enter
     platform: zone
     zone: zone.home
@@ -76,13 +76,13 @@
     service: script.arrive_home
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }} below horizon.
-- id: leave_home_s8
+- id: leave_home_duarte
   alias: Leave Home Duarte
   trigger:
-  - entity_id: device_tracker.s8
+  - entity_id: device_tracker.duarte
     event: leave
     platform: zone
     zone: zone.home
@@ -95,7 +95,7 @@
     service: script.leave_home
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
 - id: leave_home_silvia
@@ -108,13 +108,13 @@
   condition:
   - condition: template
     value_template: >
-      {{ not is_state('device_tracker.s8', 'home') }}
+      {{ not is_state('device_tracker.duarte', 'home') }}
   action:
   - data: {}
     service: script.leave_home
   - service: script.notify_zanzito
     data_template:
-      entity_id: device_tracker.s8
+      entity_id: device_tracker.duarte
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
 

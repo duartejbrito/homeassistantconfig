@@ -1,5 +1,5 @@
 ### DEVICES ###
-device_tracker.s8:
+device_tracker.duarte:
   friendly_name: Duarte Phone
 
 device_tracker.silvia:
@@ -46,7 +46,7 @@ binary_sensor.door_window_sensor_158d00028de42c:
 sensor.tradfri_remote_control:
   device_class: battery
 
-sensor.s8batterylevel:
+sensor.duartebatterylevel:
   friendly_name: Battery
 
 sensor.silviabatterylevel:

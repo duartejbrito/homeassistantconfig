@@ -227,18 +227,18 @@ views:
     title: Phones Status
     icon: mdi:cellphone-android
     cards:
-      - id: phones-status-s8
+      - id: phones-status-duarte
         type: vertical-stack
         cards:
           - type: entities
             title: Duarte Phone Status
             show_header_toggle: true
             entities:
-              - device_tracker.s8
-              - sensor.s8batterylevel
+              - device_tracker.duarte
+              - sensor.duartebatterylevel
           - type: map
             entities:
-              - device_tracker.s8
+              - device_tracker.duarte
               - zone.home
               - zone.rita_school
               - zone.carolina_school

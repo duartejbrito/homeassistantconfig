@@ -5,8 +5,8 @@
     port: !secret plexserverport
 
   - platform: mqtt
-    state_topic: "zanzito/s8/battery_level"
-    name: "s8batterylevel"
+    state_topic: "zanzito/duarte/battery_level"
+    name: "duartebatterylevel"
     unit_of_measurement: '%'
     retain: true
     device_class: battery
@@ -26,8 +26,8 @@
     device_class: battery
 
   - platform: mqtt
-    state_topic: "zanzito/s8/device_info"
-    name: "s8deviceinfo"
+    state_topic: "zanzito/duarte/device_info"
+    name: "duartedeviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
     json_attributes:
