@@ -12,7 +12,7 @@
       entity_id: device_tracker.s8
       state: home
     - condition: state
-      entity_id: device_tracker.hp
+      entity_id: device_tracker.silvia
       state: home
   action:
   - service: script.turn_on_lights_living_room
@@ -63,7 +63,7 @@
     event: enter
     platform: zone
     zone: zone.home
-  - entity_id: device_tracker.hp
+  - entity_id: device_tracker.silvia
     event: enter
     platform: zone
     zone: zone.home
@@ -89,7 +89,7 @@
   condition:
   - condition: template
     value_template: >
-      {{ not is_state('device_tracker.hp', 'home') }}
+      {{ not is_state('device_tracker.silvia', 'home') }}
   action:
   - data: {}
     service: script.leave_home
@@ -98,10 +98,10 @@
       entity_id: device_tracker.s8
       message: >
         {{ trigger.to_state.name }} {{ trigger.event }} {{ trigger.zone.name }}.
-- id: leave_home_hp
+- id: leave_home_silvia
   alias: Leave Home Silvia
   trigger:
-  - entity_id: device_tracker.hp
+  - entity_id: device_tracker.silvia
     event: leave
     platform: zone
     zone: zone.home

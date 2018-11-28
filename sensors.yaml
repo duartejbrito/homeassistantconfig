@@ -12,8 +12,8 @@
     device_class: battery
 
   - platform: mqtt
-    state_topic: "zanzito/hp/battery_level"
-    name: "hpbatterylevel"
+    state_topic: "zanzito/silvia/battery_level"
+    name: "silviabatterylevel"
     unit_of_measurement: '%'
     retain: true
     device_class: battery
@@ -42,7 +42,7 @@
 
   - platform: mqtt
     state_topic: "zanzito/sp/device_info"
-    name: "hpdeviceinfo"
+    name: "silviadeviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
     json_attributes:
