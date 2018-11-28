@@ -334,7 +334,7 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 45.2%%
+                width: 45.2%
                 left: 78%
                 top: 66.3%
             - type: image
