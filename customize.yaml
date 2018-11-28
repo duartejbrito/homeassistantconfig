@@ -2,7 +2,7 @@
 device_tracker.s8:
   friendly_name: Duarte Phone
 
-device_tracker.s6:
+device_tracker.hp:
   friendly_name: Silvia Phone
 
 device_tracker.j5:
@@ -49,7 +49,7 @@ sensor.tradfri_remote_control:
 sensor.s8batterylevel:
   friendly_name: Battery
 
-sensor.s6batterylevel:
+sensor.hpbatterylevel:
   friendly_name: Battery
 
 sensor.j5batterylevel:

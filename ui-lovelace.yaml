@@ -242,18 +242,18 @@ views:
               - zone.home
               - zone.rita_school
               - zone.carolina_school
-      - id: phones-status-s6
+      - id: phones-status-hp
         type: vertical-stack
         cards:
           - type: entities
             title: Silvia Phone Status
             show_header_toggle: true
             entities:
-              - device_tracker.s6
-              - sensor.s6batterylevel
+              - device_tracker.hp
+              - sensor.hpbatterylevel
           - type: map
             entities:
-              - device_tracker.s6
+              - device_tracker.hp
               - zone.home
               - zone.rita_school
               - zone.carolina_school
