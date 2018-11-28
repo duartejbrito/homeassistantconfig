@@ -199,7 +199,7 @@ input_boolean:
 input_number:
   living_room_heating_system_temperature:
     name: Heating system temperature
-    initial: 23
+    initial: 22
     min: 20
     max: 30
     step: 1
