@@ -9,6 +9,8 @@ leave_home:
   sequence:
   - service: script.turn_off_all_lights
   - service: script.turn_off_all_media
+  - service: script.turn_off_all_input_boolean
+  - service: script.turn_off_all_switchs
 
 ### Lights ###
 turn_off_all_lights:
@@ -137,6 +139,24 @@ check_living_room_heating_system:
   sequence:
   - service_template: "{% if (is_state('input_boolean.living_room_heating_system', 'on')) and (states('sensor.temperature_158d0002786e71') | float < states('input_number.living_room_heating_system_temperature') | float) %}switch.turn_on{% else %}switch.turn_off{% endif %}"
     entity_id: switch.dlink_smart_plug_w215
+
+### INPUT_BOOLEAN ###
+turn_off_all_input_boolean:
+  alias: Turn Off All Input Boolean
+  sequence:
+  - service: input_boolean.turn_off
+    data_template:
+      entity_id: >
+        {% for item in dict(states.input_boolean|groupby("state"))["on"] -%}{{ item.entity_id | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
+
+### SWITCHS ###
+turn_off_all_switchs:
+  alias: Turn Off All Switchs
+  sequence:
+  - service: switch.turn_off
+    data_template:
+      entity_id: >
+        {% for item in dict(states.switch|groupby("state"))["on"] -%}{{ item.entity_id | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
 
 ### Notifies ###
 notify_slack:
