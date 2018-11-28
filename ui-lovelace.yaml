@@ -318,6 +318,7 @@ views:
               entity: light.gateway_light_7c49eb193581
               image: /local/floorplan/living-room-celling-overlay.png
               state_filter:
+                "unavailable": opacity(50%)
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
@@ -329,6 +330,7 @@ views:
               entity: light.sala
               image: /local/floorplan/living-room-floorlamp1-overlay.png
               state_filter:
+                "unavailable": opacity(50%)
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
@@ -340,6 +342,7 @@ views:
               entity: light.yeelight_color_bulb
               image: /local/floorplan/living-room-floorlamp2-overlay.png
               state_filter:
+                "unavailable": opacity(50%)
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
