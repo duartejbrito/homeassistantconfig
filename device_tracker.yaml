@@ -2,7 +2,7 @@
     devices:
      duarte: zanzito/duarte/location
      silvia: zanzito/silvia/location
-     j5: zanzito/j5/location
+     beatriz: zanzito/beatriz/location
     track_new_devices: True
     interval_seconds: 10
     consider_home: 20

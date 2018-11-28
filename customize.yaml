@@ -5,7 +5,7 @@ device_tracker.duarte:
 device_tracker.silvia:
   friendly_name: Silvia Phone
 
-device_tracker.j5:
+device_tracker.beatriz:
   friendly_name: Beatriz Phone
 
 ### LIGTHS ###
@@ -52,7 +52,7 @@ sensor.duartebatterylevel:
 sensor.silviabatterylevel:
   friendly_name: Battery
 
-sensor.j5batterylevel:
+sensor.beatrizbatterylevel:
   friendly_name: Battery
 
 ### SWITCHS ###

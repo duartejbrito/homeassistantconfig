@@ -257,18 +257,18 @@ views:
               - zone.home
               - zone.rita_school
               - zone.carolina_school
-      - id: phones-status-j5
+      - id: phones-status-beatriz
         type: vertical-stack
         cards:
           - type: entities
             title: Beatriz Phone Status
             show_header_toggle: true
             entities:
-              - device_tracker.j5
-              - sensor.j5batterylevel
+              - device_tracker.beatriz
+              - sensor.beatrizbatterylevel
           - type: map
             entities:
-              - device_tracker.j5
+              - device_tracker.beatriz
               - zone.mom_home
   - id: automation
     title: Automation
