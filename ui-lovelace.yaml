@@ -334,9 +334,9 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 46%
+                width: 45.2%%
                 left: 78%
-                top: 66.5%
+                top: 66.3%
             - type: image
               tap_action: toggle
               entity: light.yeelight_color_bulb
@@ -346,6 +346,6 @@ views:
                 "off": opacity(50%)
                 "on": opacity(1%)
               style:
-                width: 45%
+                width: 44.45%
                 left: 22%
                 top: 66%
