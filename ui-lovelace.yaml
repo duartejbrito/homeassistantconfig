@@ -116,6 +116,7 @@ views:
             color: '#3498db'
             more_info: true
             hours_to_show: 24
+            detail: 2
           - type: horizontal-stack
             cards:
               - entity: sensor.humidity_158d0002786e71
