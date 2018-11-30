@@ -117,6 +117,7 @@ views:
             more_info: true
             hours_to_show: 24
             detail: 2
+            labels: true
           - type: horizontal-stack
             cards:
               - entity: sensor.humidity_158d0002786e71
