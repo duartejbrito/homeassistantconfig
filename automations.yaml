@@ -15,11 +15,8 @@
       entity_id: device_tracker.silvia
       state: home
   action:
-  - service: script.turn_on_lights_living_room
-    data:
-      transition: 1
+  - service: script.turn_on_low_lights_living_room
   - service: script.turn_on_presence_lights
-    data: {}
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
