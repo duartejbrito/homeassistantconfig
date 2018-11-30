@@ -118,24 +118,26 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
-          - entity: sensor.humidity_158d0002786e71
-            type: "custom:mini-graph-card"
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
-          - entity: sensor.pressure_158d0002786e71
-            type: "custom:mini-graph-card"
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
+          - type: horizontal-stack
+            cards:
+              - entity: sensor.humidity_158d0002786e71
+                type: "custom:mini-graph-card"
+                height: 100
+                line_width: 4
+                font_size: 50
+                color: '#3498db'
+                more_info: true
+                accuracy: 25
+                hours_to_show: 24
+              - entity: sensor.pressure_158d0002786e71
+                type: "custom:mini-graph-card"
+                height: 100
+                line_width: 4
+                font_size: 50
+                color: '#3498db'
+                more_info: true
+                accuracy: 25
+                hours_to_show: 24
 #      - id: living-room-sensors
 #        title: Sensors
 #        type: entities
