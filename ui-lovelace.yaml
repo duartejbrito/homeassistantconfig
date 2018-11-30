@@ -107,12 +107,42 @@ views:
               yellow: 60
               red: 70
       - id: living-room-sensors
-        title: Sensors
-        type: entities
-        entities:
-          - sensor.temperature_158d0002786e71
-          - sensor.humidity_158d0002786e71
-          - sensor.pressure_158d0002786e71
+        type: vertical-stack
+        cards:
+          - entity: sensor.temperature_158d0002786e71
+            type: "custom:mini-graph-card"
+            height: 100
+            line_width: 4
+            font_size: 50
+            color: '#3498db'
+            more_info: true
+            accuracy: 25
+            hours_to_show: 24
+          - entity: sensor.humidity_158d0002786e71
+            type: "custom:mini-graph-card"
+            height: 100
+            line_width: 4
+            font_size: 50
+            color: '#3498db'
+            more_info: true
+            accuracy: 25
+            hours_to_show: 24
+          - entity: sensor.pressure_158d0002786e71
+            type: "custom:mini-graph-card"
+            height: 100
+            line_width: 4
+            font_size: 50
+            color: '#3498db'
+            more_info: true
+            accuracy: 25
+            hours_to_show: 24
+#      - id: living-room-sensors
+#        title: Sensors
+#        type: entities
+#        entities:
+#          - sensor.temperature_158d0002786e71
+#          - sensor.humidity_158d0002786e71
+#          - sensor.pressure_158d0002786e71
   - id: kids-room
     title: Kids Room
     cards:
