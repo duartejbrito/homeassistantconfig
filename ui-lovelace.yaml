@@ -136,13 +136,6 @@ views:
                 hours_to_show: 24
                 detail: 2
                 icon: mdi:gauge
-      - id: living-room-sensors
-        title: Sensors
-        type: entities
-        entities:
-          - sensor.temperature_158d0002786e71
-          - sensor.humidity_158d0002786e71
-          - sensor.pressure_158d0002786e71
   - id: kids-room
     title: Kids Room
     cards:
