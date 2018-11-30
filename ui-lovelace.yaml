@@ -117,7 +117,6 @@ views:
             more_info: true
             hours_to_show: 24
             detail: 2
-            labels: true
           - type: horizontal-stack
             cards:
               - entity: sensor.humidity_158d0002786e71
@@ -127,6 +126,7 @@ views:
                 color: '#3498db'
                 more_info: true
                 hours_to_show: 24
+                detail: 2
               - entity: sensor.pressure_158d0002786e71
                 type: "custom:mini-graph-card"
                 line_width: 4
@@ -134,6 +134,7 @@ views:
                 color: '#3498db'
                 more_info: true
                 hours_to_show: 24
+                detail: 2
                 icon: mdi:gauge
       - id: living-room-sensors
         title: Sensors
