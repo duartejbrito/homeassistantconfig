@@ -24,7 +24,7 @@ _LOGGER = logging.getLogger(__name__)
 CONF_MONITORED_USERS = 'monitored_users'
 CONF_UPDATE_INTERVAL = 'update_interval'
 
-DEFAULT_NAME = 'Tautulli'
+DEFAULT_NAME = 'TautulliCustom'
 DEFAULT_PORT = '8181'
 DEFAULT_MONITORED_CONDITIONS = 'None'
 DEFAULT_MONITORED_USERS = 'None'
