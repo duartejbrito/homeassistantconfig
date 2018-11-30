@@ -174,7 +174,7 @@ views:
               left: 15px
               transform: none
           - type: custom:state-attribute-element
-            entity: sensor.tautulli
+            entity: sensor.tautullicustom
             attribute: 'sessions'
             sub_attribute: 'title'
             suffix: ', '
@@ -193,7 +193,7 @@ views:
               left: 15px
               transform: none
           - type: custom:state-attribute-element
-            entity: sensor.tautulli
+            entity: sensor.tautullicustom
             attribute: "top_movie"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 5px'>Most played movie: </b>"
@@ -203,7 +203,7 @@ views:
               color: white
               transform: none
           - type: custom:state-attribute-element
-            entity: sensor.tautulli
+            entity: sensor.tautullicustom
             attribute: "top_tv_show"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 11px'>Most played show: </b>"
@@ -213,7 +213,7 @@ views:
               color: white
               transform: none
           - type: custom:state-attribute-element
-            entity: sensor.tautulli
+            entity: sensor.tautullicustom
             attribute: "top_user"
             show_empty: true
             prefix: "<b style='color: orange; margin-right: 20px'>Most active user: </b>"
