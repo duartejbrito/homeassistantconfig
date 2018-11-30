@@ -2,17 +2,16 @@ import { LitElement, html, svg } from 'https://unpkg.com/@polymer/lit-element@^0
 import Graph from './mini-graph-lib.js';
 
 const FONT_SIZE = 14;
+const ICON = {
+  humidity: 'hass:water-percent',
+  illuminance: 'hass:brightness-5',
+  temperature: 'hass:thermometer',
+  battery: 'hass:battery'
+};
 
 class MiniGraphCard extends LitElement {
   constructor() {
     super();
-    this.conf = {};
-    this._icons = {
-      humidity: 'hass:water-percent',
-      illuminance: 'hass:brightness-5',
-      temperature: 'hass:thermometer',
-      battery: 'hass:battery'
-    };
   }
 
   createRenderRoot() {
@@ -21,12 +20,10 @@ class MiniGraphCard extends LitElement {
 
   set hass(hass) {
     this._hass = hass;
-    if (hass) {
-      const entity = hass.states[this.config.entity];
-      if (entity && this.entity !== entity) {
-        this.entity = entity;
-        this.getHistory();
-      }
+    const entity = hass.states[this.config.entity];
+    if (entity && this.entity !== entity) {
+      this.entity = entity;
+      this.getHistory();
     }
   }
 
@@ -35,7 +32,8 @@ class MiniGraphCard extends LitElement {
       _hass: Object,
       config: Object,
       entity: Object,
-      line: String
+      line: String,
+      Graph: String
     };
   }
 
@@ -43,22 +41,27 @@ class MiniGraphCard extends LitElement {
     if (!config.entity || config.entity.split('.')[0] !== 'sensor')
       throw new Error('Specify an entity from within the sensor domain.');
 
-    this.style = 'display: flex;';
+    this.style = 'display: flex; flex-direction: column;';
     const conf = Object.assign({
       icon: false,
       more_info: true,
       hours_to_show: 24,
-      accuracy: 10,
+      detail: 1,
       height: 100,
+      labels: false,
       line_color: 'var(--accent-color)',
       line_width: 5,
       font_size: FONT_SIZE,
       hide_icon: false
     }, config);
-    conf.font_size = (config.font_size / 100) * FONT_SIZE;
-    conf.accuracy = Number(conf.accuracy);
+    conf.font_size = (config.font_size  / 100) * FONT_SIZE || FONT_SIZE;
+    conf.hours_to_show = Math.floor(Number(conf.hours_to_show)) || 24;
     conf.height = Number(conf.height);
     conf.line_width = Number(conf.line_width);
+    conf.detail = (conf.detail === 1 || conf.detail === 2) ? conf.detail : 1;
+
+    if (!this.Graph)
+      this.Graph = new Graph(500, conf.height, conf.line_width);
 
     this.config = conf;
   }
@@ -68,19 +71,15 @@ class MiniGraphCard extends LitElement {
     const startTime = new Date();
     startTime.setHours(endTime.getHours() - config.hours_to_show);
     const stateHistory = await this.fetchRecent(config.entity, startTime, endTime);
-    const history = stateHistory[0];
-    const valArray = [history[history.length - 1]];
 
-    let pos = history.length - 1;
-    const accuracy = (this.config.accuracy) <= pos ? this.config.accuracy : pos;
-    let increment = Math.ceil(history.length / accuracy);
-    if (accuracy === pos) increment = 1;
-    increment = (increment <= 0) ? 1 : increment;
-    for (let i = accuracy; i >= 1; i--) {
-      pos -= increment;
-      valArray.unshift(pos >= 0 ? history[pos] : history[0]);
-    }
-    this.line = Graph(valArray, 500, this.config.height, config.line_width);
+    if (stateHistory[0].length < 1) return;
+
+    const coords = this.Graph.coordinates(
+      stateHistory[0],
+      config.hours_to_show,
+      config.detail
+    );
+    this.line = this.Graph.getPath(coords);
   }
 
   shouldUpdate(changedProps) {
@@ -91,32 +90,42 @@ class MiniGraphCard extends LitElement {
   }
 
   render({config, entity} = this) {
+    const path = svg`
+      <svg width='100%' viewBox='0 0 500 ${this.config.height}'>
+        <path d=${this.line} fill='none' stroke=${this.computeColor()}
+          stroke-width=${config.line_width} stroke-linecap='round' stroke-linejoin='round' />
+      </svg>`;
     return html`
       ${this._style()}
-      <ha-card ?group=${config.group} @click='${(e) => this.handleMore()}'
+      <ha-card ?group=${config.group} ?labels=${config.labels} @click='${(e) => this.handleMore()}'
         ?more-info=${config.more_info} style='font-size: ${config.font_size}px;'>
         <div class='flex title' ?hide=${config.hide_icon}>
           <div class='icon'>
             <ha-icon .icon=${this.computeIcon(entity)}></ha-icon>
           </div>
           <div class='header'>
-            <span class='name'>${this.computeName(entity)}</span>
+            <span class='name ellipsis'>${this.computeName(entity)}</span>
           </div>
         </div>
         <div class='flex info'>
-          <span id='value'>${entity.state}</span>
-          <span id='measurement'>${this.computeUom(entity)}</span>
+          <span id='value' class='ellipsis'>${entity.state}</span>
+          <span id='measurement' class='ellipsis'>${this.computeUom(entity)}</span>
         </div>
         <div class='graph'>
-          <div>
-            ${this.line ? svg`
-            <svg width='100%' viewBox='0 0 500 ${this.config.height}'>
-              <path d=${this.line} fill='none' stroke=${this.computeColor()}
-                stroke-width=${config.line_width} stroke-linecap='round' stroke-linejoin='round' />
-            </svg>` : '' }
+          ${config.labels ? this.renderLabels() : ''}
+          <div class='svg'>
+            ${this.line ? path : ''}
           </div>
         </div>
       </ha-card>`;
+  }
+
+  renderLabels() {
+    return html`
+      <div class='label'>
+        <span class='label--max'>${this.Graph.max}</span>
+        <span class='label--min'>${this.Graph.min}</span>
+      </div>`;
   }
 
   handleMore({config} = this) {
@@ -153,7 +162,8 @@ class MiniGraphCard extends LitElement {
   computeIcon(entity) {
     return this.config.icon ||
       entity.attributes.icon ||
-      this._icons[entity.attributes.device_class];
+      ICON[entity.attributes.device_class] ||
+      ICON.temperature;
   }
 
   computeUom(entity) {
@@ -175,6 +185,7 @@ class MiniGraphCard extends LitElement {
         :host {
           display: flex;
           flex-direction: column;
+          flex: 1;
         }
         ha-card {
           display: flex;
@@ -203,18 +214,10 @@ class MiniGraphCard extends LitElement {
           opacity: .8;
         }
         .name {
-          display: block;
-          display: -webkit-box;
           font-size: 1.2rem;
           font-weight: 500;
           max-height: 1.4rem;
           opacity: .75;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          word-wrap: break-word;
-          word-break: break-all;
         }
         .icon {
           display: inline-block;
@@ -241,6 +244,7 @@ class MiniGraphCard extends LitElement {
           line-height: 1em;
           display: inline-block;
           margin-right: 4px;
+          max-size: 100%;
         }
         #measurement {
           display: inline-block;
@@ -258,16 +262,50 @@ class MiniGraphCard extends LitElement {
           margin-bottom: 0px;
           position: relative;
           width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
         }
-        .graph > div {
+        .graph > .svg {
           align-self: flex-end;
           margin: auto 8px;
+          flex: 1;
+        }
+        svg {
+          overflow: visible;
+        }
+        .label {
+          font-size: .8em;
+          display: flex;
+          flex-direction: column;
+          opacity: .5;
+          font-weight: 400;
+          justify-content: space-between;
+          margin-left: 8px;
+        }
+        .label--max {
+          align-self: flex-end;
+        }
+        .label--min {
+          align-self: flex-end;
+        }
+        .label--min:after,
+        .label--max:after {
+          content: ' -'
+        }
+        .ellipsis {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        ha-card[labels] .graph > .svg {
+          margin-left: 16px;
         }
       </style>`;
   }
 
   getCardSize() {
-    return 1;
+    return 3;
   }
 }
 
