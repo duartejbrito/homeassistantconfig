@@ -207,6 +207,18 @@ input_number:
     unit_of_measurement: '°C'
     icon: mdi:thermometer
 
+input_datetime:
+  kids_room_start_time_motion_sensor:
+    name: Start Time Motion Sensor
+    has_date: false
+    has_time: true
+    initial: '09:00'
+  kids_room_end_time_motion_sensor:
+    name: End Time Motion Sensor
+    has_date: false
+    has_time: true
+    initial: '23:00'
+
 ####################################################
 #                                                  #
 #            END OF CONFIGURATION FILE             #

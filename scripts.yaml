@@ -137,7 +137,7 @@ turn_off_all_media:
 check_kids_room_movement:
   alias: Check Kids Room Movement
   sequence:
-  - service_template: "light.turn_{% if (is_state('binary_sensor.motion_sensor_158d00029a9d0e', 'on')) and (states('sensor.illumination_158d00029a9d0e') | float < 15) and (now().strftime('%R') > '09:00' and now().strftime('%R') < '23:00') %}on{% else %}off{% endif %}"
+  - service_template: "light.turn_{% if (is_state('binary_sensor.motion_sensor_158d00029a9d0e', 'on')) and (states('sensor.illumination_158d00029a9d0e') | float < 15) and (now().strftime('%R') > states('input_datetime.kids_room_start_time_motion_sensor') and now().strftime('%R') < states('input_datetime.kids_room_end_time_motion_sensor')) %}on{% else %}off{% endif %}"
     entity_id: light.yeelight_color_bulb_2
 
 ### Living room heating system ###

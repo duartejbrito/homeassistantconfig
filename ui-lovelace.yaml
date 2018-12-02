@@ -159,6 +159,13 @@ views:
             more_info: true
             accuracy: 25
             hours_to_show: 24
+      - id: kids-room-controls
+        title: Controls
+        type: entities
+        show_header_toggle: false
+        entities:
+          - input_datetime.kids_room_start_time_motion_sensor
+          - input_datetime.kids_room_end_time_motion_sensor
   - id: media
     title: Media
     icon: mdi:play-network
