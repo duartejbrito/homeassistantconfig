@@ -6,8 +6,8 @@
 
   - platform: mqtt
     name: "Aquarium"
-    command_topic: "cmnd/sonoffDVES_24D53B/power"
-    state_topic: "stat/sonoffDVES_24D53B/POWER"
+    command_topic: "cmnd/sonoff/power"
+    state_topic: "stat/sonoff/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
