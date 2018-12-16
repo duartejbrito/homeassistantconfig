@@ -154,5 +154,5 @@
   action:
     - service: mqtt.publish
       data:
-        topic: "cmnd/sonoffs/state"
+        topic: "cmnd/sonoffs/POWER"
         payload: "" 
