@@ -40,6 +40,15 @@ sensor.humidity_158d0002786e71:
 sensor.pressure_158d0002786e71:
   friendly_name: Pressure
 
+sensor.temperature_158d00027897c8:
+  friendly_name: Temperature
+
+sensor.humidity_158d00027897c8:
+  friendly_name: Humidity
+
+sensor.pressure_158d00027897c8:
+  friendly_name: Pressure
+
 binary_sensor.door_window_sensor_158d00028de42c:
   friendly_name: Front door
 
