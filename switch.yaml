@@ -11,4 +11,4 @@
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
-    retain: true
+    retain: false
