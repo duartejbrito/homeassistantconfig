@@ -144,3 +144,15 @@
       entity_id: input_number.living_room_heating_system_temperature
   action:
   - service: script.check_living_room_heating_system
+
+### SYSTEM ###
+- id: power_state_on_HA_start-up
+  alias: "Power state on HA start-up"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/state"
+        payload: "" 
