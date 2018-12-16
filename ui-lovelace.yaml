@@ -61,6 +61,36 @@ views:
         type: entities
         entities:
           - binary_sensor.door_window_sensor_158d00028de42c
+      - id: hall-temp-sensors
+        type: vertical-stack
+        cards:
+          - entity: sensor.temperature_158d00027897c8
+            type: "custom:mini-graph-card"
+            line_width: 4
+            font_size: 50
+            color: '#3498db'
+            more_info: true
+            hours_to_show: 24
+            detail: 2
+          - type: horizontal-stack
+            cards:
+              - entity: sensor.humidity_158d00027897c8
+                type: "custom:mini-graph-card"
+                line_width: 4
+                font_size: 50
+                color: '#3498db'
+                more_info: true
+                hours_to_show: 24
+                detail: 2
+              - entity: sensor.pressure_158d00027897c8
+                type: "custom:mini-graph-card"
+                line_width: 4
+                font_size: 50
+                color: '#3498db'
+                more_info: true
+                hours_to_show: 24
+                detail: 2
+                icon: mdi:gauge
   - id: living-room
     title: Living Room
     cards:

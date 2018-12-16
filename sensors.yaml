@@ -90,11 +90,17 @@
         value_template: >
           {{ states.binary_sensor.door_window_sensor_158d00028de42c.attributes.battery_level | int }}
       temperature_158d0002786e71_battery:
-        friendly_name: Temperature Sensor
+        friendly_name: Living Room Temperature Sensor
         unit_of_measurement: '%'
         device_class: battery
         value_template: >
           {{ states.sensor.temperature_158d0002786e71.attributes.battery_level | int }}
+      temperature_158d00027897c8_battery:
+        friendly_name: Hall Temperature Sensor
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: >
+          {{ states.sensor.temperature_158d00027897c8.attributes.battery_level | int }}
       dlink_smart_plug_w215_temperature:
         unit_of_measurement: '°C'
         device_class: temperature
