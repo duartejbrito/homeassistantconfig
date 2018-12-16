@@ -99,6 +99,7 @@ views:
             show_header_toggle: false
             entities:
               - entity: switch.dlink_smart_plug_w215
+              - entity: switch.aquarium
           - title: Temperature
             type: gauge
             entity: sensor.dlink_smart_plug_w215_temperature

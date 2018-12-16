@@ -3,3 +3,12 @@
     host: !secret dlink_host
     username: !secret dlink_username
     password: !secret dlink_password
+
+  - platform: mqtt
+    name: "Aquarium"
+    command_topic: "cmnd/sonoffDVES_24D53B/power"
+    state_topic: "stat/sonoffDVES_24D53B/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true

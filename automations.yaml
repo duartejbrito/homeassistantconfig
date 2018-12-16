@@ -69,8 +69,7 @@
     entity_id: sun.sun
     state: below_horizon
   action:
-  - data: {}
-    service: script.arrive_home
+  - service: script.arrive_home
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
@@ -88,8 +87,7 @@
     value_template: >
       {{ not is_state('device_tracker.silvia', 'home') }}
   action:
-  - data: {}
-    service: script.leave_home
+  - service: script.leave_home
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
@@ -107,8 +105,7 @@
     value_template: >
       {{ not is_state('device_tracker.duarte', 'home') }}
   action:
-  - data: {}
-    service: script.leave_home
+  - service: script.leave_home
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
