@@ -63,6 +63,8 @@ logbook:
 sun:
 map:
 hassio:
+lovelace:
+  mode: yaml
 
 panel_iframe:
   configurator:
