@@ -53,6 +53,9 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 2
   base_url: hassio.duartebrito.pw
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.20
 
 logger:
   default: error
@@ -70,8 +73,8 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: http://192.168.1.30:3218/
-#    url: http://hassio-config.duartebrito.pw/
+#    url: http://192.168.1.30:3218/
+    url: http://hassio-config.duartebrito.pw/
 
 ####################################################
 #                                                  #
