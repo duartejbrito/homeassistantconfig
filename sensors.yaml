@@ -30,7 +30,7 @@
     name: "duartedeviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
-    json_attributes:
+    json_attributes_topic:
       - charge_type
       - battery_charging
       - current_foreground_app
@@ -45,7 +45,7 @@
     name: "silviadeviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
-    json_attributes:
+    json_attributes_topic:
       - charge_type
       - battery_charging
       - current_foreground_app
@@ -60,7 +60,7 @@
     name: "beatrizdeviceinfo"
     value_template: '{{ value_json.device_info }}'
     retain: true
-    json_attributes:
+    json_attributes_topic:
       - charge_type
       - battery_charging
       - current_foreground_app
