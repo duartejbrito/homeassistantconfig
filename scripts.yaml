@@ -145,7 +145,7 @@ check_living_room_heating_system:
   alias: Check Living Room Heating System
   sequence:
   - service_template: "{% if (is_state('input_boolean.living_room_heating_system', 'on')) and (states('sensor.temperature_158d0002786e71') | float < states('input_number.living_room_heating_system_temperature') | float) %}switch.turn_on{% else %}switch.turn_off{% endif %}"
-    entity_id: switch.dlink_smart_plug_w215
+    entity_id: switch.d_link_smart_plug_w215
 
 ### INPUT_BOOLEAN ###
 turn_off_all_input_boolean:

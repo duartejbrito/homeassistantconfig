@@ -128,11 +128,11 @@ views:
             type: entities
             show_header_toggle: false
             entities:
-              - entity: switch.dlink_smart_plug_w215
+              - entity: switch.d_link_smart_plug_w215
               - entity: switch.aquarium
           - title: Temperature
             type: gauge
-            entity: sensor.dlink_smart_plug_w215_temperature
+            entity: sensor.d_link_smart_plug_w215_temperature
             severity:
               green: 0
               yellow: 60

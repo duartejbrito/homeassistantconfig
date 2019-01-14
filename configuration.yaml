@@ -39,7 +39,7 @@ cloud:
         room: Living Room
       input_boolean.living_room_heating_system:
         room: Living Room
-      switch.dlink_smart_plug_w215:
+      switch.d_link_smart_plug_w215:
         room: Living Room
       light.yeelight_color_bulb_2:
         room: Kids Room

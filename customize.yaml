@@ -65,7 +65,7 @@ sensor.beatrizbatterylevel:
   friendly_name: Battery
 
 ### SWITCHS ###
-switch.dlink_smart_plug_w215:
+switch.d_link_smart_plug_w215:
   friendly_name: Heater
 
 ### ZONES ###
