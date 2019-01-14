@@ -101,8 +101,8 @@
         device_class: battery
         value_template: >
           {{ states.sensor.temperature_158d00027897c8.attributes.battery_level | int }}
-      dlink_smart_plug_w215_temperature:
-        unit_of_measurement: '°C'
-        device_class: temperature
-        value_template: >
-          {{ states.switch.dlink_smart_plug_w215.attributes.temperature }}
+#      dlink_smart_plug_w215_temperature:
+#        unit_of_measurement: '°C'
+#        device_class: temperature
+#        value_template: >
+#          {{ states.switch.dlink_smart_plug_w215.attributes.temperature }}
