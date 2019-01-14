@@ -94,9 +94,9 @@ views:
   - id: living-room
     title: Living Room
     cards:
-      - id: living-room-tv
-        type: media-control
-        entity: media_player.samsung_tv_remote
+#      - id: living-room-tv
+#        type: media-control
+#        entity: media_player.samsung_tv_remote
       - id: living-room-lights
         title: Lights
         type: entities
