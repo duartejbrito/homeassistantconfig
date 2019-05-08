@@ -8,28 +8,24 @@
     state_topic: "zanzito/duarte/battery_level"
     name: "duartebatterylevel"
     unit_of_measurement: '%'
-    retain: true
     device_class: battery
 
   - platform: mqtt
     state_topic: "zanzito/silvia/battery_level"
     name: "silviabatterylevel"
     unit_of_measurement: '%'
-    retain: true
     device_class: battery
 
   - platform: mqtt
     state_topic: "zanzito/beatriz/battery_level"
     name: "beatrizbatterylevel"
     unit_of_measurement: '%'
-    retain: true
     device_class: battery
 
   - platform: mqtt
     state_topic: "zanzito/duarte/device_info"
     name: "duartedeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    retain: true
     json_attributes:
       - charge_type
       - battery_charging
@@ -44,7 +40,6 @@
     state_topic: "zanzito/sp/device_info"
     name: "silviadeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    retain: true
     json_attributes:
       - charge_type
       - battery_charging
@@ -59,7 +54,6 @@
     state_topic: "zanzito/beatriz/device_info"
     name: "beatrizdeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    retain: true
     json_attributes:
       - charge_type
       - battery_charging
