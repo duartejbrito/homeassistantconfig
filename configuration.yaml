@@ -28,7 +28,7 @@ cloud:
         - light
         - media_player
       exclude_entities:
-        - media_player.lovelace_player_pc
+#        - media_player.lovelace_player_pc
         - media_player.spotify
     entity_config:
       light.gateway_light_7c49eb193581:

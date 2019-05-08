@@ -181,12 +181,12 @@ notify_zanzito:
       payload: '{{ message }}'
       qos: 1
       retain: 0
-notify_lovelace:
-  alias: Notify Lovelace
-  sequence:
-  - service: tts.google_say
-    entity_id: media_player.lovelace_player_pc
-    data_template:
-      message: '{{ message }}'
-      language: '{{ language|default("pt") }}'
-      cache: false
+#notify_lovelace:
+#  alias: Notify Lovelace
+#  sequence:
+#  - service: tts.google_say
+#    entity_id: media_player.lovelace_player_pc
+#    data_template:
+#      message: '{{ message }}'
+#      language: '{{ language|default("pt") }}'
+#      cache: false
