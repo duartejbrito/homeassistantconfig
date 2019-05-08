@@ -69,12 +69,12 @@ hassio:
 lovelace:
   mode: yaml
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
+#panel_iframe:
+#  configurator:
+#    title: Configurator
+#    icon: mdi:wrench
 #    url: http://192.168.1.30:3218/
-    url: http://hassio-config.duartebrito.pw/
+#    url: http://hassio-config.duartebrito.pw/
 
 ####################################################
 #                                                  #
