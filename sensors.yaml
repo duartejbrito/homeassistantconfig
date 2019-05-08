@@ -64,10 +64,10 @@
       - current_wifi
       - current_operator
 
-  - platform: tautullicustom
-    api_key: !secret tautulli_api_key
-    host: !secret tautulli_host
-    monitored_conditions:
+#  - platform: tautullicustom
+#    api_key: !secret tautulli_api_key
+#    host: !secret tautulli_host
+#    monitored_conditions:
 
   - platform: template
     sensors:

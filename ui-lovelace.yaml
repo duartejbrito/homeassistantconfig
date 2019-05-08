@@ -211,19 +211,19 @@ views:
               top: 7%
               left: 15px
               transform: none
-          - type: custom:state-attribute-element
-            entity: sensor.tautullicustom
-            attribute: 'sessions'
-            sub_attribute: 'title'
-            suffix: ', '
-            isMulti: true
-            show_empty: false
-            style:
-              top: 20%
-              left: 15px
-              font-size: 16px
-              color: white
-              transform: none
+#          - type: custom:state-attribute-element
+#            entity: sensor.tautullicustom
+#            attribute: 'sessions'
+#            sub_attribute: 'title'
+#            suffix: ', '
+#            isMulti: true
+#            show_empty: false
+#            style:
+#              top: 20%
+#              left: 15px
+#              font-size: 16px
+#              color: white
+#              transform: none
           - type: custom:text-element
             text: "<b style='color: orange; font-size: 18px'>Statistics: </b>"
             style:
