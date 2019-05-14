@@ -4,7 +4,7 @@
   trigger:
   - event: sunset
     platform: sun
-    offset: -00:30:00
+    offset: -00:10:00
   condition:
   - condition: or
     conditions:
