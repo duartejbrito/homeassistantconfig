@@ -1,8 +1,0 @@
-  - platform: yeelight
-    devices:
-      !secret yeelight_device_1:
-        name: Yeelight Color Bulb
-        save_on_change: True
-      !secret yeelight_device_2:
-        name: Yeelight Color Bulb 2
-        save_on_change: True
