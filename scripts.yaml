@@ -113,7 +113,7 @@ turn_on_presence_lights:
   - service: light.turn_on
     data:
       entity_id: light.gateway_light_7c49eb193581
-      brightness: 3
+      brightness: 1
       rgb_color:
       - 255
       - 255
