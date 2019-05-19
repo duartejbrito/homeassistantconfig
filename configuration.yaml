@@ -67,7 +67,7 @@ sun:
 map:
 hassio:
 lovelace:
-  mode: yaml
+#  mode: yaml
 
 ####################################################
 #                                                  #
