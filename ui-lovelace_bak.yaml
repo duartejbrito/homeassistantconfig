@@ -1,118 +1,108 @@
-
 resources:
-  - url: /local/mini-media-player/mini-media-player.js?v=0.8.9
-    type: module
-  - url: /local/mini-graph-card/mini-graph-card.js?v=0.0.8
-    type: module
-  - url: /local/slider-entity-row/slider-entity-row.js
-    type: js
-  - url: /local/text-element/text-element.js?v=0
-    type: js
-  - url: /local/state-attribute-element/state-attribute-element.js?v=0
-    type: js
-  - url: /local/lovelace-player/lovelace-player.js
-    type: js
-  - url: /local/lovelace-player/lovelace-player-config.js
-    type: js
-  - url: /local/monster-card/monster-card.js
-    type: js
-  - url: /local/plan-coordinates/plan-coordinates.js
-    type: js
-
-title: Home
+  - type: module
+    url: /local/mini-media-player/mini-media-player.js?v=0.8.9
+  - type: module
+    url: /local/mini-graph-card/mini-graph-card.js?v=0.0.8
+  - type: js
+    url: /local/slider-entity-row/slider-entity-row.js
+  - type: js
+    url: /local/text-element/text-element.js?v=0
+  - type: js
+    url: /local/state-attribute-element/state-attribute-element.js?v=0
+  - type: js
+    url: /local/lovelace-player/lovelace-player.js
+  - type: js
+    url: /local/lovelace-player/lovelace-player-config.js
+  - type: js
+    url: /local/monster-card/monster-card.js
+  - type: js
+    url: /local/plan-coordinates/plan-coordinates.js
+title: SyTeR Home
 views:
-  - id: home
-    title: Home
-    icon: mdi:home-assistant
+  - badges: []
     cards:
-      - type: custom:monster-card
-        show_empty: false
-        card:
-          type: entities
+      - card:
+          show_header_toggle: false
           title: Lights On
+          type: entities
         filter:
           include:
             - domain: light
               state: 'on'
-  - id: hall
-    title: Hall
+        show_empty: false
+        type: 'custom:monster-card'
+    icon: 'mdi:home-assistant'
+    path: home
+    title: Home
+  - badges: []
     cards:
-      - id: hall-lights
-        type: vertical-stack
-        cards:
-          - title: Lights
-            type: entities
-            show_header_toggle: false
-            entities:
+      - cards:
+          - entities:
               - entity: light.gateway_light_7c49eb193581
-                type: custom:slider-entity-row
                 hide_when_off: true
-          - entity: sensor.illumination_7c49eb193581
-            type: "custom:mini-graph-card"
-            height: 100
-            line_width: 4
-            font_size: 50
+                type: 'custom:slider-entity-row'
+            show_header_toggle: false
+            title: Lights
+            type: entities
+          - accuracy: 25
             color: '#3498db'
-            more_info: true
-            accuracy: 25
+            entity: sensor.illumination_7c49eb193581
+            font_size: 50
+            height: 100
             hours_to_show: 24
-      - id: hall-sensors
+            line_width: 4
+            more_info: true
+            type: 'custom:mini-graph-card'
+        type: vertical-stack
+      - entities:
+          - binary_sensor.door_window_sensor_158d00028de42c
+        show_header_toggle: false
         title: Sensors
         type: entities
-        entities:
-          - binary_sensor.door_window_sensor_158d00028de42c
-      - id: hall-temp-sensors
-        type: vertical-stack
-        cards:
-          - entity: sensor.temperature_158d00027897c8
-            type: "custom:mini-graph-card"
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            hours_to_show: 24
+      - cards:
+          - color: '#3498db'
             detail: 2
-          - type: horizontal-stack
-            cards:
-              - entity: sensor.humidity_158d00027897c8
-                type: "custom:mini-graph-card"
-                line_width: 4
-                font_size: 50
-                color: '#3498db'
-                more_info: true
-                hours_to_show: 24
+            entity: sensor.temperature_158d00027897c8
+            font_size: 50
+            hours_to_show: 24
+            line_width: 4
+            more_info: true
+            type: 'custom:mini-graph-card'
+          - cards:
+              - color: '#3498db'
                 detail: 2
-              - entity: sensor.pressure_158d00027897c8
-                type: "custom:mini-graph-card"
-                line_width: 4
+                entity: sensor.humidity_158d00027897c8
                 font_size: 50
-                color: '#3498db'
-                more_info: true
                 hours_to_show: 24
+                line_width: 4
+                more_info: true
+                type: 'custom:mini-graph-card'
+              - color: '#3498db'
                 detail: 2
-                icon: mdi:gauge
-  - id: living-room
-    title: Living Room
+                entity: sensor.pressure_158d00027897c8
+                font_size: 50
+                hours_to_show: 24
+                icon: 'mdi:gauge'
+                line_width: 4
+                more_info: true
+                type: 'custom:mini-graph-card'
+            type: horizontal-stack
+        type: vertical-stack
+    path: hall
+    title: Hall
+  - badges: []
     cards:
-#      - id: living-room-tv
-#        type: media-control
-#        entity: media_player.samsung_tv_remote
-      - id: living-room-lights
+      - entities:
+          - entity: light.sala
+            hide_when_off: true
+            type: 'custom:slider-entity-row'
+          - entity: light.yeelight_color_bulb
+            hide_when_off: true
+            type: 'custom:slider-entity-row'
+        show_header_toggle: true
         title: Lights
         type: entities
-        show_header_toggle: true
-        entities:
-          - entity: light.sala
-            type: custom:slider-entity-row
-            hide_when_off: true
-          - entity: light.yeelight_color_bulb
-            type: custom:slider-entity-row
-            hide_when_off: true
-      - id: living-room-controls
-        title: Controls
-        type: entities
-        show_header_toggle: false
-        entities:
+      - entities:
           - input_boolean.living_room_heating_system
           - input_number.living_room_heating_system_temperature
           - type: divider
@@ -121,293 +111,158 @@ views:
           - script.turn_on_lights_living_room
           - script.turn_on_movie_time_lights_living_room
           - script.turn_off_lights_living_room
-      - id: living-room-switchs
-        type: vertical-stack
-        cards:
-          - title: Switchs
-            type: entities
-            show_header_toggle: false
-            entities:
-              - entity: switch.d_link_smart_plug_w215
-              - entity: switch.aquarium
-          - title: Temperature
-            type: gauge
-            entity: sensor.d_link_smart_plug_w215_temperature
-            severity:
-              green: 0
-              yellow: 60
-              red: 70
-      - id: living-room-sensors
-        type: vertical-stack
-        cards:
-          - entity: sensor.temperature_158d0002786e71
-            type: "custom:mini-graph-card"
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            hours_to_show: 24
-            detail: 2
-          - type: horizontal-stack
-            cards:
-              - entity: sensor.humidity_158d0002786e71
-                type: "custom:mini-graph-card"
-                line_width: 4
-                font_size: 50
-                color: '#3498db'
-                more_info: true
-                hours_to_show: 24
-                detail: 2
-              - entity: sensor.pressure_158d0002786e71
-                type: "custom:mini-graph-card"
-                line_width: 4
-                font_size: 50
-                color: '#3498db'
-                more_info: true
-                hours_to_show: 24
-                detail: 2
-                icon: mdi:gauge
-  - id: kids-room
-    title: Kids Room
-    cards:
-      - id: kids-room-lights
-        type: vertical-stack
-        cards:
-          - type: entities
-            title: Lights
-            show_header_toggle: false
-            entities:
-              - entity: light.yeelight_color_bulb_2
-                type: custom:slider-entity-row
-                hide_when_off: true
-              - entity: binary_sensor.motion_sensor_158d00029a9d0e
-          - entity: sensor.illumination_158d00029a9d0e
-            type: "custom:mini-graph-card"
-            height: 100
-            line_width: 4
-            font_size: 50
-            color: '#3498db'
-            more_info: true
-            accuracy: 25
-            hours_to_show: 24
-      - id: kids-room-controls
+        show_header_toggle: false
         title: Controls
         type: entities
-        show_header_toggle: false
-        entities:
+      - cards:
+          - entities:
+              - entity: switch.d_link_smart_plug_w215
+              - entity: switch.aquarium
+            show_header_toggle: false
+            title: Switchs
+            type: entities
+          - entity: sensor.d_link_smart_plug_w215_temperature
+            severity:
+              green: 0
+              red: 70
+              yellow: 60
+            title: Temperature
+            type: gauge
+        type: vertical-stack
+      - cards:
+          - color: '#3498db'
+            detail: 2
+            entity: sensor.temperature_158d0002786e71
+            font_size: 50
+            hours_to_show: 24
+            line_width: 4
+            more_info: true
+            type: 'custom:mini-graph-card'
+          - cards:
+              - color: '#3498db'
+                detail: 2
+                entity: sensor.humidity_158d0002786e71
+                font_size: 50
+                hours_to_show: 24
+                line_width: 4
+                more_info: true
+                type: 'custom:mini-graph-card'
+              - color: '#3498db'
+                detail: 2
+                entity: sensor.pressure_158d0002786e71
+                font_size: 50
+                hours_to_show: 24
+                icon: 'mdi:gauge'
+                line_width: 4
+                more_info: true
+                type: 'custom:mini-graph-card'
+            type: horizontal-stack
+        type: vertical-stack
+    path: living-room
+    title: Living Room
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: light.yeelight_color_bulb_2
+                hide_when_off: true
+                type: 'custom:slider-entity-row'
+              - entity: binary_sensor.motion_sensor_158d00029a9d0e
+            show_header_toggle: false
+            title: Lights
+            type: entities
+          - accuracy: 25
+            color: '#3498db'
+            entity: sensor.illumination_158d00029a9d0e
+            font_size: 50
+            height: 100
+            hours_to_show: 24
+            line_width: 4
+            more_info: true
+            type: 'custom:mini-graph-card'
+        type: vertical-stack
+      - entities:
           - input_datetime.kids_room_start_time_motion_sensor
           - input_datetime.kids_room_end_time_motion_sensor
-  - id: media
-    title: Media
-    icon: mdi:play-network
+        show_header_toggle: false
+        title: Controls
+        type: entities
+    path: kids-room
+    title: Kids Room
+  - badges: []
     cards:
-#      - id: media-plex
-#        type: picture-elements
-#        image: /local/plex.jpg
-#        elements:
-#          - type: custom:text-element
-#            text: "<b style='color: orange; font-size: 18px'>Now Playing: </b>"
-#            style:
-#              top: 7%
-#              left: 15px
-#              transform: none
-#          - type: custom:state-attribute-element
-#            entity: sensor.tautullicustom
-#            attribute: 'sessions'
-#            sub_attribute: 'title'
-#            suffix: ', '
-#            isMulti: true
-#            show_empty: false
-#            style:
-#              top: 20%
-#              left: 15px
-#              font-size: 16px
-#              color: white
-#              transform: none
-#          - type: custom:text-element
-#            text: "<b style='color: orange; font-size: 18px'>Statistics: </b>"
-#            style:
-#              top: 47%
-#              left: 15px
-#              transform: none
-#          - type: custom:state-attribute-element
-#            entity: sensor.tautullicustom
-#            attribute: "top_movie"
-#            show_empty: true
-#            prefix: "<b style='color: orange; margin-right: 5px'>Most played movie: </b>"
-#            style:
-#              top: 60%
-#              left: 15px
-#              color: white
-#              transform: none
-#          - type: custom:state-attribute-element
-#            entity: sensor.tautullicustom
-#            attribute: "top_tv_show"
-#            show_empty: true
-#            prefix: "<b style='color: orange; margin-right: 11px'>Most played show: </b>"
-#            style:
-#              top: 70%
-#              left: 15px
-#              color: white
-#              transform: none
-#          - type: custom:state-attribute-element
-#            entity: sensor.tautullicustom
-#            attribute: "top_user"
-#            show_empty: true
-#            prefix: "<b style='color: orange; margin-right: 20px'>Most active user: </b>"
-#            style:
-#              top: 80%
-#              left: 15px
-#              color: white
-#              transform: none
-      - id: media-spotify
-        type: custom:mini-media-player
-        entity: media_player.spotify
-        name: Spotify Player
-        artwork: cover
-        toggle_power: false
-        power_color: true
-        hide_volume: true
-        show_progress: true
-        show_source: true
-      - id: media-chromecast
-        type: custom:mini-media-player
-        entity: media_player.chromecast_bedroom
-  - id: weather
-    title: Weather
-    icon: mdi:weather-cloudy
-    cards:
-      - id: weather-ipma
-        type: weather-forecast
-        entity: weather.lisboa
-      - id: weather-windy
-        type: iframe
-        url: https://embed.windy.com/embed2.html
-        aspect_ratio: 80%
-  - id: phones-status
-    title: Phones Status
-    icon: mdi:cellphone-android
-    cards:
-      - id: phones-status-duarte
-        type: vertical-stack
-        cards:
-          - type: entities
-            title: Duarte Phone Status
-            show_header_toggle: true
-            entities:
+      - cards:
+          - entities:
               - device_tracker.duarte
               - sensor.duartebatterylevel
-          - type: map
-            entities:
+            show_header_toggle: false
+            title: Duarte Phone Status
+            type: entities
+          - entities:
               - device_tracker.duarte
               - zone.home
               - zone.rita_school
               - zone.carolina_school
-      - id: phones-status-silvia
+            type: map
         type: vertical-stack
-        cards:
-          - type: entities
-            title: Silvia Phone Status
-            show_header_toggle: true
-            entities:
+      - cards:
+          - entities:
               - device_tracker.silvia
               - sensor.silviabatterylevel
-          - type: map
-            entities:
+            show_header_toggle: false
+            title: Silvia Phone Status
+            type: entities
+          - entities:
               - device_tracker.silvia
               - zone.home
               - zone.rita_school
               - zone.carolina_school
-      - id: phones-status-beatriz
+            type: map
         type: vertical-stack
-        cards:
-          - type: entities
-            title: Beatriz Phone Status
-            show_header_toggle: true
-            entities:
+      - cards:
+          - entities:
               - device_tracker.beatriz
               - sensor.beatrizbatterylevel
-          - type: map
-            entities:
+            show_header_toggle: false
+            title: Beatriz Phone Status
+            type: entities
+          - entities:
               - device_tracker.beatriz
               - zone.mom_home
-  - id: automation
-    title: Automation
-    icon: mdi:home-automation
+            type: map
+        type: vertical-stack
+    icon: 'mdi:cellphone-android'
+    path: phones-status
+    title: Phones Status
+  - badges: []
     cards:
-      - id: automation-automations-dyn
-        type: custom:monster-card
-        show_empty: true
-        card:
-          type: entities
-          title: Automations
+      - card:
           show_header_toggle: false
+          title: Automations
+          type: entities
         filter:
           include:
             - domain: automation
-      - id: automation-scripts-dyn
-        type: custom:monster-card
         show_empty: true
-        card:
-          type: entities
-          title: Scripts
+        type: 'custom:monster-card'
+      - card:
           show_header_toggle: false
+          title: Scripts
+          type: entities
         filter:
           include:
             - domain: script
-      - id: automation-batteries
-        type: entities
-        title: Batteries
-        show_header_toggle: true
-        entities:
+        show_empty: true
+        type: 'custom:monster-card'
+      - entities:
           - sensor.tradfri_remote_control
           - sensor.motion_sensor_158d00029a9d0e_battery
           - sensor.door_window_sensor_158d00028de42c_battery
           - sensor.temperature_158d0002786e71_battery
           - sensor.temperature_158d00027897c8_battery
-  - id: blueprint
-    title: Blueprint
-    icon: mdi:wrench
-    panel: false
-    cards:
-      - type: vertical-stack
-        cards:                  
-          - type: picture-elements
-            image: /local/floorplan/living-room-blueprint.png
-            elements:
-            - type: image
-              tap_action: toggle
-              entity: light.gateway_light_7c49eb193581
-              image: /local/floorplan/living-room-celling-overlay.png
-              state_filter:
-                "unavailable": opacity(50%)
-                "off": opacity(50%)
-                "on": opacity(1%)
-              style:
-                width: 100%
-                left: 50%
-                top: 50%
-            - type: image
-              tap_action: toggle
-              entity: light.sala
-              image: /local/floorplan/living-room-floorlamp1-overlay.png
-              state_filter:
-                "unavailable": opacity(50%)
-                "off": opacity(50%)
-                "on": opacity(1%)
-              style:
-                width: 45.2%
-                left: 78%
-                top: 66.3%
-            - type: image
-              tap_action: toggle
-              entity: light.yeelight_color_bulb
-              image: /local/floorplan/living-room-floorlamp2-overlay.png
-              state_filter:
-                "unavailable": opacity(50%)
-                "off": opacity(50%)
-                "on": opacity(1%)
-              style:
-                width: 44.45%
-                left: 22%
-                top: 66%
+        show_header_toggle: false
+        title: Batteries
+        type: entities
+    icon: 'mdi:home-automation'
+    path: automation
+    title: Automation

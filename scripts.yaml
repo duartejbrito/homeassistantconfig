@@ -47,15 +47,13 @@ turn_on_yeelight_light:
 turn_on_lights_living_room:
   alias: Turn On Lights Living Room
   sequence:
-  - alias: 'Tradfri'
-    service: script.turn_on_tradfri_light
+  - service: script.turn_on_tradfri_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
       entity_id:
       - light.sala
-  - alias: 'Yeelight'
-    service: script.turn_on_yeelight_light
+  - service: script.turn_on_yeelight_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
@@ -84,15 +82,13 @@ turn_on_medium_lights_living_room:
   alias: Turn On Medium Lights Living Room
   sequence:
   - service: script.turn_off_lights_living_room
-  - alias: 'Tradfri'
-    service: script.turn_on_tradfri_light
+  - service: script.turn_on_tradfri_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
       entity_id:
       - light.sala
-  - alias: 'Yeelight'
-    service: script.turn_on_yeelight_light
+  - service: script.turn_on_yeelight_light
     data_template:
       brightness_pct: '{{ brightness_pct|default(100) }}'
       transition: '{{ transition|default(1) }}'
