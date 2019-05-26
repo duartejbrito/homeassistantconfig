@@ -1,4 +1,5 @@
 secrets.yaml
+ip_bans.yaml
 home-assistant_v2.db
 home-assistant.log
 known_devices.yaml
@@ -9,3 +10,4 @@ tts/
 deps/
 .storage/
 .cloud/
+.Trash-0/
