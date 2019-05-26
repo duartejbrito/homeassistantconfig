@@ -2,3 +2,10 @@ secrets.yaml
 home-assistant_v2.db
 home-assistant.log
 known_devices.yaml
+.HA_VERSION
+.spotify-token-cache
+*.pyc
+tts/
+deps/
+.storage/
+.cloud/
