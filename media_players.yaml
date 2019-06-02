@@ -1,7 +1,7 @@
-  #- platform: samsungtv
-  #  host: !secret samgungtv_host
-  #  port: !secret samgungtv_port
-  #  mac: !secret samgungtv_mac
+  - platform: samsungtv
+    host: !secret samgungtv_host
+    port: !secret samgungtv_port
+    mac: !secret samgungtv_mac
 
 #  - platform: floorplan_speaker
 #    name: lovelace_player_pc
