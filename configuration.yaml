@@ -195,8 +195,6 @@ yeelight: !include yeelight.yaml
 google_assistant:
   project_id: !secret project_id
   api_key: !secret api_key
-  exposed_domains:
-    - light
 
 ####################################################
 #                                                  #
