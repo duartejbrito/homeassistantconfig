@@ -60,6 +60,7 @@ http:
 logger:
   default: error
 
+system_health:
 recorder:
 history:
 logbook:

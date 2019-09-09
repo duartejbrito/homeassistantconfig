@@ -1,8 +1,8 @@
 
-  - platform: dlink
-    host: !secret dlink_host
-    username: !secret dlink_username
-    password: !secret dlink_password
+#  - platform: dlink
+#    host: !secret dlink_host
+#    username: !secret dlink_username
+#    password: !secret dlink_password
 
   - platform: mqtt
     name: "Aquarium"
