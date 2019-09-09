@@ -195,6 +195,25 @@ yeelight: !include yeelight.yaml
 google_assistant:
   project_id: !secret project_id
   api_key: !secret api_key
+  exposed_domains:
+    - input_boolean
+    - script
+    - switch
+    - light
+    - media_player
+  entity_config:
+    light.gateway_light_7c49eb193581:
+      room: Hall
+    light.sala:
+      room: Living Room
+    light.yeelight_color_bulb:
+      room: Living Room
+    # input_boolean.living_room_heating_system:
+    #   room: Living Room
+    # switch.d_link_smart_plug_w215:
+    #   room: Living Room
+    light.yeelight_color_bulb_2:
+      room: Kids Room
 
 ####################################################
 #                                                  #
