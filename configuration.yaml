@@ -51,11 +51,11 @@ frontend:
 http:
   api_password: !secret api_password
   ip_ban_enabled: true
-  login_attempts_threshold: 2
-  base_url: hassio.duartebrito.pw
+  login_attempts_threshold: 5
+  base_url: hassio.duartebrito.com
   use_x_forwarded_for: true
   trusted_proxies:
-    - 192.168.1.20
+    - 192.168.1.30
 
 logger:
   default: error
