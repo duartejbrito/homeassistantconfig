@@ -5,7 +5,7 @@
     password: !secret dlink_password
 
   - platform: mqtt
-    name: "SonoffSmartplug"
+    name: "sonoff_smartplug"
     command_topic: "cmnd/sonoffsmartplug/power"
     state_topic: "stat/sonoffsmartplug/POWER"
     qos: 1
