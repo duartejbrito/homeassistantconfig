@@ -117,7 +117,7 @@ views:
       - cards:
           - entities:
               - entity: switch.d_link_smart_plug_w215
-              - entity: switch.aquarium
+              - entity: switch.SonoffSmartplug
             show_header_toggle: false
             title: Switchs
             type: entities
