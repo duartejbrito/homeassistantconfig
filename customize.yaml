@@ -66,7 +66,10 @@ sensor.beatrizbatterylevel:
 
 ### SWITCHS ###
 switch.d_link_smart_plug_w215:
-  friendly_name: Heater
+  friendly_name: Empty
+
+switch.sonoff_smartplug:
+  friendly_name: Christmas Tree
 
 ### ZONES ###
 zone.silvia_work:
