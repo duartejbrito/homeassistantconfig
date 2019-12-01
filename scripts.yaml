@@ -1,3 +1,13 @@
+sun_below:
+  alias: Sun below
+  sequence:
+  - service: script.turn_on_low_lights_living_room
+  - service: script.turn_on_presence_lights
+sun_above:
+  alias: Sun Above
+  sequence:
+  - service: script.turn_off_presence_lights
+
 ### Device Tracking ###
 arrive_home:
   alias: Arrive Home

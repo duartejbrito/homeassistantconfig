@@ -15,8 +15,7 @@
       entity_id: device_tracker.silvia
       state: home
   action:
-  - service: script.turn_on_low_lights_living_room
-  - service: script.turn_on_presence_lights
+  - service: script.sun_below
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
@@ -29,7 +28,7 @@
     platform: sun
   condition: []
   action:
-  - service: script.turn_off_presence_lights
+  - service: script.sun_above
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
