@@ -1,0 +1,8 @@
+title: SyTeR Home
+views:
+  - title: Home
+    path: home
+    icon: 'mdi:home-assistant'
+    badges: []
+    
+    
