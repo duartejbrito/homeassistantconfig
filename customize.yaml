@@ -68,6 +68,9 @@ sensor.beatrizbatterylevel:
 switch.d_link_smart_plug_w215:
   friendly_name: Empty
 
+sensor.d_link_smart_plug_w215_temperature:
+  friendly_name: Temperature
+
 switch.sonoff_smartplug:
   friendly_name: Christmas Tree
 
