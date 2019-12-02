@@ -1,7 +1,9 @@
 sun_below:
   alias: Sun below
   sequence:
-  - service: script.turn_on_low_lights_living_room
+  - service: script.turn_on_medium_lights_living_room
+    data:
+      brightness_pct: 50
   - service: script.turn_on_presence_lights
   - service: script.turn_on_christmas_tree
 sun_above:
@@ -21,7 +23,9 @@ gotobed:
 arrive_home:
   alias: Arrive Home
   sequence:
-  - service: script.turn_on_low_lights_living_room
+  - service: script.turn_on_medium_lights_living_room
+    data:
+      brightness_pct: 50
   - service: script.turn_on_presence_lights
   - service: script.turn_on_christmas_tree
 leave_home:
