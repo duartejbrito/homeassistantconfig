@@ -3,10 +3,19 @@ sun_below:
   sequence:
   - service: script.turn_on_low_lights_living_room
   - service: script.turn_on_presence_lights
+  - service: script.turn_on_christmas_tree
 sun_above:
   alias: Sun Above
   sequence:
   - service: script.turn_off_presence_lights
+  - service: script.turn_off_christmas_tree
+
+gotobed:
+  alias: Go to bed
+  sequence:
+  - service: script.turn_off_lights_living_room
+    data: {}
+  - service: script.turn_off_christmas_tree
 
 ### Device Tracking ###
 arrive_home:
@@ -14,6 +23,7 @@ arrive_home:
   sequence:
   - service: script.turn_on_low_lights_living_room
   - service: script.turn_on_presence_lights
+  - service: script.turn_on_christmas_tree
 leave_home:
   alias: Leave Home
   sequence:
@@ -170,6 +180,20 @@ turn_off_all_switchs:
     data_template:
       entity_id: >
         {% for item in dict(states.switch|groupby("state"))["on"] -%}{{ item.entity_id | lower }}{%- if not loop.last -%},{%- endif -%}{%- endfor %}
+
+turn_on_christmas_tree:
+  alias: Turn on Christmas Tree
+  sequence:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.sonoff_smartplug
+
+turn_off_christmas_tree:
+  alias: Turn off Christmas Tree
+  sequence:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.sonoff_smartplug
 
 ### Notifies ###
 notify_slack:

@@ -43,8 +43,7 @@
     platform: time
   condition: []
   action:
-  - data: {}
-    service: script.turn_off_lights_living_room
+  - service: script.gotobed
   - service: script.notify_zanzito
     data_template:
       entity_id: device_tracker.duarte
