@@ -49,7 +49,7 @@ frontend:
   javascript_version: latest
 
 http:
-  api_password: !secret api_password
+#  api_password: !secret api_password
   ip_ban_enabled: true
   login_attempts_threshold: 5
   base_url: hassio.duartebrito.com
