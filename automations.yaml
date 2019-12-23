@@ -164,3 +164,8 @@
       to: "on"
   action:
     - service: script.xiaomi_alarm_siren
+    - service: script.notify_zanzito
+      data_template:
+        entity_id: device_tracker.duarte
+        message: >
+          Door open
