@@ -154,3 +154,13 @@
       data:
         topic: "cmnd/sonoffs/POWER"
         payload: "" 
+
+- id: door_alarm
+  alias: "Door Alarm"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00028de42c
+      from: off
+      to: on
+  action:
+    - service: script.xiaomi_alarm_siren
