@@ -155,17 +155,70 @@
         topic: "cmnd/sonoffs/POWER"
         payload: "" 
 
-- id: door_alarm
-  alias: "Door Alarm"
+- id: send_notification_when_alarm_triggered
+  alias: 'Send notification when alarm triggered'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00028de42c
-      from: "off"
-      to: "on"
+      entity_id: alarm_control_panel.ha_alarm
+      to: "triggered"
   action:
     - service: script.xiaomi_alarm_siren
     - service: script.notify_zanzito
       data_template:
         entity_id: device_tracker.duarte
         message: >
-          Door open
+          ALARM! The alarm has been triggered
+
+- id: send_notification_when_alarm_is_disarmed
+  alias: "Send notification when alarm is Disarmed"
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: "disarmed"
+  action:
+    - service: script.xiaomi_alarm_siren_cancel
+    - service: script.notify_zanzito
+      data_template:
+        entity_id: device_tracker.duarte
+        message: >
+          ALARM! The alarm is Disarmed at {{ states('sensor.date_time') }}
+
+- id: trigger_alarm_while_armed_away
+  alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00028de42c
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.ha_alarm
+
+- id: send_notification_when_alarm_is_armed_in_away_mode
+  alias: 'Send notification when alarm is Armed in Away mode'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_away'
+  action:
+    - service: script.notify_zanzito
+      data_template:
+        entity_id: device_tracker.duarte
+        message: >
+          ALARM! The alarm is armed in Away mode {{ states('sensor.date_time') }}
+
+- id: send_notification_when_alarm_is_armed_in_home_mode
+  alias: 'Send notification when alarm is Armed in Home mode'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_home'
+  action:
+    - service: script.notify_zanzito
+      data_template:
+        entity_id: device_tracker.duarte
+        message: >
+          ALARM! The alarm is armed in Home mode {{ states('sensor.date_time') }}
