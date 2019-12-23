@@ -188,7 +188,8 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00028de42c
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     - condition: state
       entity_id: alarm_control_panel.home_alarm
