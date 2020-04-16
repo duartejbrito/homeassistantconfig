@@ -194,7 +194,7 @@ yeelight: !include yeelight.yaml
 
 google_assistant:
   project_id: !secret project_id
-  api_key: !secret api_key
+  service_account: !include SERVICE_ACCOUNT.json
   exposed_domains:
     - input_boolean
     - script
