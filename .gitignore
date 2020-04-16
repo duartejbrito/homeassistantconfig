@@ -1,4 +1,5 @@
 secrets.yaml
+SERVICE_ACCOUNT.json
 ip_bans.yaml
 home-assistant_v2.db
 home-assistant.log
