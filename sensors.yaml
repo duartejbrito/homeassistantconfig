@@ -26,43 +26,19 @@
     state_topic: "zanzito/duarte/device_info"
     name: "duartedeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes:
-      - charge_type
-      - battery_charging
-      - current_foreground_app
-      - screen_on
-      - screen_locked
-      - screen_orientation
-      - current_wifi
-      - current_operator
+    json_attributes_topic: '{"charge_type": "charge_type", "battery_charging": "battery_charging", "current_foreground_app": "current_foreground_app", "screen_on" : "screen_on", "screen_locked", "screen_locked", "screen_orientation", "screen_orientation", "current_wifi": "current_wifi", "current_operator": "current_operator"}'
 
   - platform: mqtt
     state_topic: "zanzito/sp/device_info"
     name: "silviadeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes:
-      - charge_type
-      - battery_charging
-      - current_foreground_app
-      - screen_on
-      - screen_locked
-      - screen_orientation
-      - current_wifi
-      - current_operator
+    json_attributes_topic: '{"charge_type": "charge_type", "battery_charging": "battery_charging", "current_foreground_app": "current_foreground_app", "screen_on" : "screen_on", "screen_locked", "screen_locked", "screen_orientation", "screen_orientation", "current_wifi": "current_wifi", "current_operator": "current_operator"}'
 
   - platform: mqtt
     state_topic: "zanzito/beatriz/device_info"
     name: "beatrizdeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes:
-      - charge_type
-      - battery_charging
-      - current_foreground_app
-      - screen_on
-      - screen_locked
-      - screen_orientation
-      - current_wifi
-      - current_operator
+    json_attributes_topic: '{"charge_type": "charge_type", "battery_charging": "battery_charging", "current_foreground_app": "current_foreground_app", "screen_on" : "screen_on", "screen_locked", "screen_locked", "screen_orientation", "screen_orientation", "current_wifi": "current_wifi", "current_operator": "current_operator"}'
 
 #  - platform: tautullicustom
 #    api_key: !secret tautulli_api_key
