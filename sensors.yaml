@@ -26,7 +26,7 @@
     state_topic: "zanzito/duarte/device_info"
     name: "duartedeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes_topic:
+    json_attributes:
       - charge_type
       - battery_charging
       - current_foreground_app
@@ -40,7 +40,7 @@
     state_topic: "zanzito/sp/device_info"
     name: "silviadeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes_topic:
+    json_attributes:
       - charge_type
       - battery_charging
       - current_foreground_app
@@ -54,7 +54,7 @@
     state_topic: "zanzito/beatriz/device_info"
     name: "beatrizdeviceinfo"
     value_template: '{{ value_json.device_info }}'
-    json_attributes_topic:
+    json_attributes:
       - charge_type
       - battery_charging
       - current_foreground_app
