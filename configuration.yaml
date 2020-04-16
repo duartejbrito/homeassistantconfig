@@ -18,38 +18,12 @@ homeassistant:
 #                                                  #
 ####################################################
 
-# cloud:
-#   google_actions:
-#     filter:
-#       include_domains:
-#         - input_boolean
-#         - script
-#         - switch
-#         - light
-#         - media_player
-#       exclude_entities:
-# #        - media_player.lovelace_player_pc
-#         - media_player.spotify
-#     entity_config:
-#       light.gateway_light_7c49eb193581:
-#         room: Hall
-#       light.sala:
-#         room: Living Room
-#       light.yeelight_color_bulb:
-#         room: Living Room
-#       input_boolean.living_room_heating_system:
-#         room: Living Room
-#       switch.d_link_smart_plug_w215:
-#         room: Living Room
-#       light.yeelight_color_bulb_2:
-#         room: Kids Room
 config:
 
 frontend:
   javascript_version: latest
 
 http:
-#  api_password: !secret api_password
   ip_ban_enabled: true
   login_attempts_threshold: 5
   base_url: hassio.duartebrito.com
