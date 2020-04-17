@@ -30,7 +30,7 @@ http:
   base_url: hassio.duartebrito.com
   use_x_forwarded_for: true
   trusted_proxies:
-    - 192.168.1.30
+    - !secret proxy_ip
 
 logger:
   default: error
