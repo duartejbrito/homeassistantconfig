@@ -3,9 +3,6 @@
     port: !secret samgungtv_port
     mac: !secret samgungtv_mac
 
-#  - platform: floorplan_speaker
-#    name: lovelace_player_pc
-
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret

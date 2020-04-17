@@ -40,11 +40,6 @@
     value_template: '{{ value_json.device_info }}'
     json_attributes_topic: '{"charge_type": "charge_type", "battery_charging": "battery_charging", "current_foreground_app": "current_foreground_app", "screen_on" : "screen_on", "screen_locked", "screen_locked", "screen_orientation", "screen_orientation", "current_wifi": "current_wifi", "current_operator": "current_operator"}'
 
-#  - platform: tautullicustom
-#    api_key: !secret tautulli_api_key
-#    host: !secret tautulli_host
-#    monitored_conditions:
-
   - platform: template
     sensors:
       motion_sensor_158d00029a9d0e_battery:

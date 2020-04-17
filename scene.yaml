@@ -31,5 +31,3 @@
         state: true
         brightness_pct: 100
         color_temp: 357
-#  - name: Living Room Movie Time
-#    entities:
