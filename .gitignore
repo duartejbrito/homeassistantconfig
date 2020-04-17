@@ -12,3 +12,6 @@ deps/
 .storage/
 .cloud/
 .Trash-0/
+themes/
+custom_components/
+www/community/

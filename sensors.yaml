@@ -76,3 +76,8 @@
         device_class: temperature
         value_template: >
           {{ states.switch.d_link_smart_plug_w215.attributes.temperature }}
+
+  - platform: diskspace
+    name: Main Disk
+    path: "/"
+    unit_of_measure: "GB"
