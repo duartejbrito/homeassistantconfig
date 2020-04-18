@@ -66,11 +66,11 @@
         device_class: battery
         value_template: >
           {{ states.sensor.temperature_158d00027897c8.attributes.battery_level | int }}
-      d_link_smart_plug_w215_temperature:
-        unit_of_measurement: '°C'
-        device_class: temperature
-        value_template: >
-          {{ states.switch.d_link_smart_plug_w215.attributes.temperature }}
+      # d_link_smart_plug_w215_temperature:
+      #   unit_of_measurement: '°C'
+      #   device_class: temperature
+      #   value_template: >
+      #     {{ states.switch.d_link_smart_plug_w215.attributes.temperature }}
 
   - platform: diskspace
     name: Main Disk
